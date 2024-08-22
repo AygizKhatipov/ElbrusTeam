@@ -7,8 +7,8 @@ import { MantineProvider } from "@mantine/core";
 
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
-  <MantineProvider>
-      <App />
+      <MantineProvider>
+        <App />
       </MantineProvider>
   </BrowserRouter>
 )

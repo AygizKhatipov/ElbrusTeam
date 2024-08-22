@@ -1,10 +1,6 @@
 // import React from 'react';
 import { Link } from 'react-router-dom';
-
-
 import "@mantine/core/styles.css";
-
-
 import {
   HoverCard,
   Group,
@@ -72,16 +68,12 @@ function Navbar(): JSX.Element {
         <Link to={item.description} className={classes.link}>
         <Group wrap="nowrap" align="flex-start">
           <ThemeIcon size={34} variant="default" radius="md">
-          
-            <item.icon style={{ width: rem(22), height: rem(22) }} color={theme.colors.blue[6]} />
+            <item.icon style={{ width: rem(22), height: rem(22) }} color={theme.colors.violet[5]} />
           </ThemeIcon>
           <div>
-          
             <Text size="sm" fw={500}>
               {item.title}
             </Text>
-            
-            
           </div>
         </Group>
         </Link>
@@ -97,7 +89,7 @@ function Navbar(): JSX.Element {
     
   <img src='https://habrastorage.org/getpro/moikrug/uploads/company/100/007/092/7/logo/medium_a88920f785a30e86c6e4a0cebbc66644.png' style={{width:40}} alt="logo" />
     <Group h="100%" gap={0} visibleFrom="sm">
-    <Link to="/" className={classes.link}>Главная</Link>
+    <Link to="/"  className={classes.link}>Главная</Link>
       
       <Link to="/events" className={classes.link}>События</Link>
       <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>

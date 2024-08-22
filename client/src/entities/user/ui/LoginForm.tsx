@@ -23,11 +23,11 @@ function LoginForm(): JSX.Element {
     return (
 <Container size={420} my={40}>
       <Title ta="center" className={classes.title}>
-        Вход!
+        Вход
       </Title>
       <Text c="dimmed" onClick={handleSubmit} size="sm" ta="center" mt={5}>
         У вас нет аккаунта?
-        <Anchor size="sm" component="button">
+        <Anchor size="sm" component="button" style={{ color: "#833cdb" }}>
           Создать аккаунт
         </Anchor>
       </Text>
