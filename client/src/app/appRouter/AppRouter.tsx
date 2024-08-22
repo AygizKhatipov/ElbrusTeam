@@ -7,6 +7,8 @@ import GraduatesPage from '../../pages/Community/GraduatesPage';
 import StudentsPage from '../../pages/Community/StudentsPage';
 import TeachersPage from '../../pages/Community/TeachersPage';
 import EventsPage from '../../pages/EventsPage';
+import LoginForm from '../../entities/user/ui/LoginForm';
+import RegistrationForm from '../../entities/user/ui/RegistrationForm';
 
 
 function AppRoutes(): JSX.Element {
@@ -19,8 +21,8 @@ function AppRoutes(): JSX.Element {
         <Route path="/students" element={<StudentsPage />} />
         <Route path="/teachers" element={< TeachersPage/>} />
         <Route path="/events" element={<EventsPage />} />
-{/* <Route path="/login" element={<LoginForm />} /> */}
-        {/* всегда внизу */}
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/registration" element={<RegistrationForm />} />
         <Route path="*" element={<div>404</div>} />
       </Routes>
     </>
