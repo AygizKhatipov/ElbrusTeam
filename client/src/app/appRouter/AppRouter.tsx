@@ -1,14 +1,13 @@
-import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import LoginForm from '../../entities/user/ui/LoginForm';
 import RegistrationForm from '../../entities/user/ui/RegistrationForm';
 import Navbar from "../../shared/layout/NavBar/NavBar";
-import HomePage from "../../pages/HomePage";
+import HomePage from "../../pages/HomePage/HomePage";
 import GraduatesPage from "../../pages/Community/GraduatesPage";
 import StudentsPage from "../../pages/Community/StudentsPage";
 import TeachersPage from "../../pages/Community/TeachersPage";
-import EventsPage from "../../pages/EventsPage";
-import BasePage from "../../pages/Base/BasePage";
+import EventsPage from "../../pages/EventsPage/EventsPage";
+import BasePage from "../../pages/BasePage/BasePage";
 import CouchesPage from "../../pages/Community/Couches/CouchesPage";
 import PersonalPage from "../../pages/PersonalAccount/PersonalPage";
 import { FooterSocial } from "../../shared/layout/Footer/Footer";
@@ -31,9 +30,7 @@ function AppRoutes(): JSX.Element {
         <Route path="/base" element={<BasePage />} />
 
         <Route path="*" element={<div>404</div>} />
-       
       </Routes>
-       <FooterSocial/>
     </>
   );
 }

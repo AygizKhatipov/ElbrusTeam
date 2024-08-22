@@ -1,11 +1,20 @@
-.footer {  
-    margin-top: rem(60px); /* Отделяем футер от содержимого выше */  
-    border-top: rem(1px) solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-5));  
-    position: absolute; /* Используем абсолютное позиционирование */  
-    bottom: 0; /* Прикрепляем футер к низу */  
-    width: 100%; /* Устанавливаем ширину на 100% */  
+/* Добавьте эти стили в ваш файл CSS */
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Занимаем всю высоту экрана */
+  }
   
-}  
+  .content {
+    flex: 1; /* Занимаем все доступное пространство, кроме футера */
+  }
+  
+  .footer {
+    margin-top: rem(60px); /* Отделяем футер от содержимого выше */
+    border-top: rem(1px) solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-5));  
+    width: 100%;
+  } 
 
 .inner {  
     display: flex;  
