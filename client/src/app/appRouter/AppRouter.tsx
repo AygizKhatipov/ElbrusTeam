@@ -1,6 +1,7 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
-
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import LoginForm from '../../entities/user/ui/LoginForm';
+import RegistrationForm from '../../entities/user/ui/RegistrationForm';
 import Navbar from "../../shared/layout/NavBar/NavBar";
 import HomePage from "../../pages/HomePage";
 import GraduatesPage from "../../pages/Community/GraduatesPage";
@@ -11,6 +12,7 @@ import BasePage from "../../pages/Base/BasePage";
 import CouchesPage from "../../pages/Community/Couches/CouchesPage";
 import PersonalPage from "../../pages/PersonalAccount/PersonalPage";
 import { FooterSocial } from "../../shared/layout/Footer/Footer";
+
 
 function AppRoutes(): JSX.Element {
   return (
@@ -24,10 +26,10 @@ function AppRoutes(): JSX.Element {
         <Route path="/couches" element={<CouchesPage />} />
         <Route path="/personal" element={<PersonalPage />} />
         <Route path="/events" element={<EventsPage />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/registration" element={<RegistrationForm />} />
         <Route path="/base" element={<BasePage />} />
 
-        {/* <Route path="/login" element={<LoginForm />} /> */}
-        {/* всегда внизу */}
         <Route path="*" element={<div>404</div>} />
        
       </Routes>
