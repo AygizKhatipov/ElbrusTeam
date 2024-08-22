@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 
 import "@mantine/core/styles.css";
-;
+
 
 import {
   HoverCard,
@@ -95,8 +95,7 @@ function Navbar(): JSX.Element {
 <header className={classes.header}>
   <Group justify="space-between" h="100%">
     
-    <MantineLogo size={30} />
-
+  <img src='https://habrastorage.org/getpro/moikrug/uploads/company/100/007/092/7/logo/medium_a88920f785a30e86c6e4a0cebbc66644.png' style={{width:40}} alt="logo" />
     <Group h="100%" gap={0} visibleFrom="sm">
     <Link to="/" className={classes.link}>Главная</Link>
       

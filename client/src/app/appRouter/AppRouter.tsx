@@ -10,6 +10,7 @@ import EventsPage from "../../pages/EventsPage";
 import BasePage from "../../pages/Base/BasePage";
 import CouchesPage from "../../pages/Community/Couches/CouchesPage";
 import PersonalPage from "../../pages/PersonalAccount/PersonalPage";
+import { FooterSocial } from "../../shared/layout/Footer/Footer";
 
 function AppRoutes(): JSX.Element {
   return (
@@ -28,7 +29,9 @@ function AppRoutes(): JSX.Element {
         {/* <Route path="/login" element={<LoginForm />} /> */}
         {/* всегда внизу */}
         <Route path="*" element={<div>404</div>} />
+       
       </Routes>
+       <FooterSocial/>
     </>
   );
 }
