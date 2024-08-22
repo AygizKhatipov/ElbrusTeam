@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 
 import "@mantine/core/styles.css";
-;
+
 
 import {
   HoverCard,
@@ -27,10 +27,10 @@ import {
 import { MantineLogo } from '@mantinex/mantine-logo';
 import { useDisclosure } from '@mantine/hooks';
 import {
-  IconNotification,
-  IconCode,
+  IconBrandReactNative,
+  IconCurrencyDollar,
   IconBook,
-  IconChartPie3,
+  IconSchool,
   IconFingerprint,
   IconCoin,
   IconChevronDown,
@@ -39,24 +39,24 @@ import classes from './HeaderMegaMenu.module.css';
 
 const mockdata = [
   {
-    icon: IconCode,
+    icon: IconBrandReactNative,
     title: 'Преподаватели',
-    description: 'ф',
+    description: '/teachers',
   },
   {
-    icon: IconCoin,
+    icon: IconSchool,
     title: 'Выпускники',
-    description: 'The fluid of Smeargle’s tail secretions changes',
+    description: '/graduates',
   },
   {
     icon: IconBook,
     title: 'Студенты',
-    description: 'Yanma is capable of seeing 360 degrees without',
+    description: '/students',
   },
   {
-    icon: IconFingerprint,
+    icon: IconCurrencyDollar,
     title: 'Карьерные коучи',
-    description: 'The shell’s rounded shape and the grooves on its.',
+    description: '/couches',
   },
   
 ];
@@ -69,42 +69,37 @@ function Navbar(): JSX.Element {
   
     const links = mockdata.map((item) => (
       <UnstyledButton className={classes.subLink} key={item.title}>
+        <Link to={item.description} className={classes.link}>
         <Group wrap="nowrap" align="flex-start">
           <ThemeIcon size={34} variant="default" radius="md">
+          
             <item.icon style={{ width: rem(22), height: rem(22) }} color={theme.colors.blue[6]} />
           </ThemeIcon>
           <div>
+          
             <Text size="sm" fw={500}>
               {item.title}
             </Text>
-            <Text size="xs" c="dimmed">
-              {item.description}
-            </Text>
+            
+            
           </div>
         </Group>
+        </Link>
       </UnstyledButton>
     ));
 
   return (
-    // <div>
-    //   {user ? <div>Привет, {user.name}</div> : <div>Привет, Гость</div>}
-
-    //   <nav>
-    //     <Link to="/">Home</Link>
-    //     <Link to="/login">Login</Link>
-    //     <Link to="/race">Race</Link>
-    //     <Link to="/characters">Character</Link>
-    //   </nav>
-    // </div>
+    
 
 <Box pb={120}>
 <header className={classes.header}>
   <Group justify="space-between" h="100%">
-    <MantineLogo size={30} />
-
+    
+  <img src='https://habrastorage.org/getpro/moikrug/uploads/company/100/007/092/7/logo/medium_a88920f785a30e86c6e4a0cebbc66644.png' style={{width:40}} alt="logo" />
     <Group h="100%" gap={0} visibleFrom="sm">
-      События
-      <Link to="/" className={classes.link}></Link>
+    <Link to="/" className={classes.link}>Главная</Link>
+      
+      <Link to="/events" className={classes.link}>События</Link>
       <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
         <HoverCard.Target>
         <Link to="/" className={classes.link}>
@@ -123,9 +118,7 @@ function Navbar(): JSX.Element {
         <HoverCard.Dropdown style={{ overflow: 'hidden' }}>
           <Group justify="space-between" px="md">
             <Text fw={500}>Коммьюнити</Text>
-            <Anchor href="#" fz="xs">
-              View all
-            </Anchor>
+            
           </Group>
 
           <Divider my="sm" />
@@ -134,7 +127,7 @@ function Navbar(): JSX.Element {
             {links}
           </SimpleGrid>
 
-          <div className={classes.dropdownFooter}>
+          {/* <div className={classes.dropdownFooter}>
             <Group justify="space-between">
               <div>
                 <Text fw={500} fz="sm">
@@ -144,22 +137,22 @@ function Navbar(): JSX.Element {
                   Their food sources have decreased, and their numbers
                 </Text>
               </div>
-              <Button variant="default">Get started</Button>
+             
             </Group>
-          </div>
+          </div> */}
         </HoverCard.Dropdown>
       </HoverCard>
-      <a href="#" className={classes.link}>
+      {/* <a href="#" className={classes.link}>
         Learn
-      </a>
-      <a href="#" className={classes.link}>
-        Academy
-      </a>
+      </a> */}
+      <Link to="/base" className={classes.link}>База знаний</Link>
+        
+     
     </Group>
 
     <Group visibleFrom="sm">
-      <Button variant="default">Log in</Button>
-      <Button>Sign up</Button>
+    <Button variant="default"><Link to="/personal" className={classes.link}>Личный кабинет</Link></Button>
+      {/* <Button>Sign up</Button> */}
     </Group>
 
     <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm" />
@@ -204,7 +197,7 @@ function Navbar(): JSX.Element {
 
     <Group justify="center" grow pb="xl" px="md">
       <Button variant="default">Личный кабинет</Button>
-      <Button>Sign up</Button>
+      {/* <Button>Sign up</Button> */}
     </Group>
   </ScrollArea>
 </Drawer>

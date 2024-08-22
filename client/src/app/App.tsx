@@ -7,6 +7,7 @@ function App() {
   
   <AppRoutes /> 
   
+  
   </>}</MantineProvider>;
 }
 
