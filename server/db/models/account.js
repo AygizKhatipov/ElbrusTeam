@@ -1,20 +1,25 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Account extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
-      // define association here
+      // Связь один к одному с моделью User
+      this.belongsTo(models.User, {
+        foreignKey: "idUser",  // Связываем поле idUser с id в User
+        
+      });
+      this.hasMany(models.Point, {
+        foreignKey: "userId"
+      });
     }
   }
+
   Account.init({
-    idUser: DataTypes.INTEGER,
+    idUser: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,  // Делаем idUser первичным ключом
+    },
     photo: DataTypes.STRING,
     country: DataTypes.STRING,
     city: DataTypes.STRING,
@@ -24,5 +29,6 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Account',
   });
+
   return Account;
 };
