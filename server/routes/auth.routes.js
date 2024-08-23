@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const {User} = require('../db/models');
+const {User, Account, Point} = require('../db/models');
 const bcrypt = require('bcrypt');
 const generateTokens = require('../utils/generateTokens');
 const jwtConfig = require('../config/jwtConfig');
@@ -15,7 +15,7 @@ router.post('/registration', async (req, res) => {
             return res.status(400).json({message: 'Пустые поля'})
         }
 
-        const userInDb = await User.findOne({where: {email}});
+        const userInDb = await User.findOne({where: {email}, include:{model:Account, include:{model:Point}}});
 
         if (userInDb) {
             return res.status(400).json({message: 'Данный пользователь зарегистрирован'})
