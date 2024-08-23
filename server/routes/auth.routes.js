@@ -7,8 +7,9 @@ const jwtConfig = require('../config/jwtConfig');
 router.post('/registration', async (req, res) => {
     try {
         console.log(111)
-        const {name, email, password} = req.body;
-        if (name.trim() === '' ||
+        const {lastName,firstName, email, password, isMember, roleId} = req.body;
+        if (lastName.trim() === '' ||
+        firstName.trim() === '' ||
             email.trim() === ''|| 
             password.trim() === '') {
             return res.status(400).json({message: 'Пустые поля'})
@@ -19,7 +20,7 @@ router.post('/registration', async (req, res) => {
         if (userInDb) {
             return res.status(400).json({message: 'Данный пользователь зарегистрирован'})
         } else {
-            const user = (await User.create({name, email, password: await bcrypt.hash(password, 10)})).get();
+            const user = (await User.create({lastName,firstName, email, password: await bcrypt.hash(password, 10), isMember, roleId})).get();
             
             const {accessToken, refreshToken} = generateTokens({user});
 
