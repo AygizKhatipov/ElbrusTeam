@@ -11,21 +11,14 @@ import {
   import classes from '../css/AuthenticationImage.module.css';
 import { useNavigate } from 'react-router-dom';
 import { SubmitHandler, useForm } from "react-hook-form"
-
-type Inputs = {
-    telephone: string,
-    name: string,
-    password: string,
-    email: string,
-    confirmPassword: string
-  };
+import {  UserWithoutId } from '../types/userType';
 
 
 function RegistrationForm(): JSX.Element {
 
     const navigate = useNavigate();
 
-    const { register, handleSubmit, formState: { errors }, watch } = useForm<Inputs>({
+    const { register, handleSubmit, formState: { errors }, watch } = useForm<UserWithoutId>({
         mode: 'onChange',
     });
 
@@ -46,13 +39,20 @@ function RegistrationForm(): JSX.Element {
         </Anchor>
       </Text>
       <Paper withBorder shadow="md" p={30} mt={30} radius="md">
-        <TextInput  label="Имя" placeholder="Имя" required {...register("name", {
+        <TextInput  label="Имя" placeholder="Имя" required {...register("firstName", {
             pattern: {
                 value: /.{2,}/,
-                message: "Введите имя",
+                message: "Введите корректное имя",
             }
         })} />
-        {errors.name && <p style={{ color: "red" }}>{errors.name.message}</p>}
+        {errors.firstName && <p style={{ color: "red" }}>{errors.firstName.message}</p>}
+        <TextInput style={{ marginTop: "10px" }}  label="Фамилия" placeholder="Фамилия" required {...register("lastName", {
+            pattern: {
+                value: /.{2,}/,
+                message: "Введите корректную Фамилию",
+            }
+        })} />
+        {errors.lastName && <p style={{ color: "red" }}>{errors.lastName.message}</p>}
         <TextInput style={{ marginTop: "10px" }}  label="Email" placeholder="you@elbrus.bootcamp" required {...register("email", {
             pattern: {
                 value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
