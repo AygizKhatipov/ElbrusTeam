@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { GroupType } from '../types/groupType';
 import { initialState } from '../../../app/providers/initialState/initialState';
 
 

@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { RoleType } from '../types/roleTypes';
 import { initialState } from '../../../app/providers/initialState/initialState';
 
 
