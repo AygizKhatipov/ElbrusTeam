@@ -101,7 +101,7 @@ function Navbar(): JSX.Element {
               </Box>
               <IconChevronDown
                 style={{ width: rem(16), height: rem(16) }}
-                color={theme.colors.blue[6]}
+                color={theme.colors.violet[6]}
               />
             </Center>
           </Link>
