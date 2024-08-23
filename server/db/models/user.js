@@ -4,14 +4,27 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     static associate(models) {
+      this.hasMany(models.UserGroup, {
+        foreignKey: "userId"
+      }),
+      this.hasMany(models.DataBase, {
+        foreignKey: "userId"
+      }),
+      this.hasMany(models.Chat, {
+        foreignKey: "fromId"
+      }),
+      this.hasMany(models.Chat, {
+        foreignKey: "toId"
+      }),
       // Связь один к одному с моделью Account
       this.hasOne(models.Account, {
-        foreignKey: "idUser",  // Указываем, что внешний ключ в Account это idUser
+        foreignKey: "idUser"  // Указываем, что внешний ключ в Account это idUser
         
       });
       this.belongsTo(models.Role, {
         foreignKey: "roleId"
       });
+
     }
   }
 

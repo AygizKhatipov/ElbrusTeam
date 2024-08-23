@@ -10,21 +10,26 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       team: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       start: {
+        allowNull: false,
         type: Sequelize.DATE
       },
       end: {
+        allowNull: false,
         type: Sequelize.DATE
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: new Date()
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: new Date()
       }
     });
   },
