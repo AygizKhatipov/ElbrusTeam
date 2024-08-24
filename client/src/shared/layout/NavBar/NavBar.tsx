@@ -9,7 +9,6 @@ import {
   Text,
   SimpleGrid,
   ThemeIcon,
-  Anchor,
   Divider,
   Center,
   Box,
@@ -81,9 +80,7 @@ function Navbar(): JSX.Element {
     ));
 
   return (
-    
-
-<Box pb={120}>
+<Box pb={50}>
 <header className={classes.header}>
   <Group justify="space-between" h="100%">
     

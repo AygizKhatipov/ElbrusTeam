@@ -1,8 +1,10 @@
 import type { AxiosError, AxiosInstance, InternalAxiosRequestConfig } from 'axios';
 import axios from 'axios';
-// import type { User } from '../entities/user/types/userType';
-//Надо получить типизацию для юзера
-// Допом слайс для юзера
+import type { User } from '../entities/user/types/userType';
+import store from "../app/providers/store/store"
+import { setAccessToken } from '../entities/user/model/userSlice';
+
+
 
 
 type RetryConfig = {
@@ -17,22 +19,18 @@ type TokensRefreshResponse = {
 axios.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8';
 
 const axiosInstance: AxiosInstance = axios.create({
-  baseURL: '/api/v1',
+  baseURL: '/api/',
   withCredentials: true,
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
-let accessToken = ""
-
-function setAccessToken(token: string) : void {
-    accessToken = token
-}
 
 axiosInstance.interceptors.request.use(
   (config: InternalAxiosRequestConfig): InternalAxiosRequestConfig => {
     if (!config.headers.Authorization) {
+      const {accessToken} = store.getState().user;
       config.headers.Authorization = `Bearer ${accessToken}`;
     }
     return config;
@@ -47,7 +45,7 @@ axiosInstance.interceptors.response.use(
       return Promise.reject(error);
     }
     if (error?.response?.status === 403 && !prevRequest.sent) {
-      const response = await axios<TokensRefreshResponse>('/api/v1/tokens/refresh');
+      const response = await axios<TokensRefreshResponse>('/api/tokens/refresh');
       const newAccessToken = response.data.accessToken;
         setAccessToken(newAccessToken)
         prevRequest.sent = true;
