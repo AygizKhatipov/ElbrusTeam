@@ -11,6 +11,7 @@ router.get("/", verifyAccessToken, async (req, res) => {
       res.status(500).json({ error: error.message });
     }
   });
+
 // router.get("/", verifyAccessToken, async (req, res) => {
 //   const { id } = req.params;
 
@@ -50,6 +51,7 @@ router.put("/", verifyAccessToken, async (req, res) => {
       res.status(500).json({ error: error.message });
     }
   });
+
 // router.delete("/:id", verifyAccessToken,async (req, res) => {
 
 //   try {
@@ -63,5 +65,6 @@ router.put("/", verifyAccessToken, async (req, res) => {
 //     res.status(500).json({ error: error.message });
 //   }
 // });
+
 
 module.exports = router;
