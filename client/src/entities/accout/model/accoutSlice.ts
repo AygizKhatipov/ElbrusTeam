@@ -1,19 +1,25 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { initialState } from '../../../app/providers/initialState/initialState';
+import { initialState } from '../../../app/providers/initialState/initialState'
+import PersonalAPI from '../api/personalAPI';
 
+// const getAllAccounts = createAsyncThunk('account/getAllAccounts', async () => {
+//     return await PersonalAPI.getAllAccounts();
+// });
 
+const getOneAccount = createAsyncThunk('account/getOneAccount', async (id: number ) => {
+    return await PersonalAPI.getOneAccount(id);
+});
 
-
-
-const accountSlice  = createSlice({
+const accountSlice = createSlice({
     name: 'account',
     initialState,
-    reducers: {
+    reducers: {},
+    extraReducers: (builder) => {
+        builder.addCase(getOneAccount.fulfilled, (state, action) => {
+            state.account = action.payload});
     },
-    extraReducers: (builder) => {}
 });
 
 
-
-
-export default accountSlice.reducer
+export {getOneAccount}
+export default accountSlice.reducer;

@@ -10,10 +10,11 @@ import EventsPage from "../../pages/EventsPage/EventsPage";
 import BasePage from "../../pages/BasePage/BasePage";
 import CouchesPage from "../../pages/Community/Couches/CouchesPage";
 import PersonalPage from "../../pages/PersonalAccount/PersonalPage";
-import { FooterSocial } from "../../shared/layout/Footer/Footer";
+
 
 
 function AppRoutes(): JSX.Element {
+
   return (
     <>
       <Navbar />
@@ -28,7 +29,6 @@ function AppRoutes(): JSX.Element {
         <Route path="/login" element={<LoginForm />} />
         <Route path="/registration" element={<RegistrationForm />} />
         <Route path="/base" element={<BasePage />} />
-
         <Route path="*" element={<div>404</div>} />
       </Routes>
     </>

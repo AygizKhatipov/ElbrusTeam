@@ -1,6 +1,9 @@
 import type { AxiosError, AxiosInstance, InternalAxiosRequestConfig } from 'axios';
 import axios from 'axios';
 import type { User } from '../entities/user/types/userType';
+import store from "../app/providers/store/store"
+import { setAccessToken } from '../entities/user/model/userSlice';
+
 
 
 
@@ -23,15 +26,11 @@ const axiosInstance: AxiosInstance = axios.create({
   },
 });
 
-let accessToken = ""
-
-function setAccessToken(token: string) : void {
-    accessToken = token
-}
 
 axiosInstance.interceptors.request.use(
   (config: InternalAxiosRequestConfig): InternalAxiosRequestConfig => {
     if (!config.headers.Authorization) {
+      const {accessToken} = store.getState().user;
       config.headers.Authorization = `Bearer ${accessToken}`;
     }
     return config;
