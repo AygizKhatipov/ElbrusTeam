@@ -2,6 +2,7 @@ import { Container, TextInput, Textarea, Button, Grid, Text } from '@mantine/cor
 import classes from '../style/UserCardImage.module.css';
 import { useAppSelector } from '../../../app/providers/store/store';
 import { useForm } from 'react-hook-form';
+import { IMaskInput } from 'react-imask';
 
 
 function PersonalAccoutInfo(): JSX.Element {
@@ -37,7 +38,7 @@ function PersonalAccoutInfo(): JSX.Element {
             </Grid>
             <Grid> 
                 <Grid.Col span={3}>
-                    <TextInput label="Номер телефона" placeholder="+7 (999) 999-99-99" {...register("phone")} />
+                    <TextInput label="Номер телефона" component={IMaskInput} mask="+7 (000) 000-00-00" placeholder="+7 (999) 999-99-99" {...register("phone")} />
                 </Grid.Col>
                 <Grid.Col span={9}>
                     <TextInput label="Email" placeholder="Email" {...register("email")} />
