@@ -8,11 +8,10 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       this.belongsTo(models.Event, {
         foreignKey: "eventId"
-      }),
+      });
       this.belongsTo(models.User, {
         foreignKey: "userId"
-      }),
-
+      });
     }
   }
   UserEvent.init({

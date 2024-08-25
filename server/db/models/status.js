@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   class Status extends Model {
    
     static associate(models) {
-      this.hasMany(models.UserGroups, {
+      this.hasMany(models.UserGroup, {
         foreignKey: "statusId"
       })
     }
