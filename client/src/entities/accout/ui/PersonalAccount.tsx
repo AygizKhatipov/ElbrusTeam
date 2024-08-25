@@ -1,13 +1,16 @@
 import { useAppSelector } from "../../../app/providers/store/store";
 import { Card, Avatar, Text, Group, Button } from '@mantine/core';
 import classes from '../style/UserCardImage.module.css';
+import { useDisclosure } from '@mantine/hooks';
+import { Modal } from '@mantine/core';
+import PersonalAccoutInfo from "./PersonalAccoutModal";
 
 
 
 function PersonalAccount(): JSX.Element {
-
+  const [opened, { open, close }] = useDisclosure(false);
     const account = useAppSelector(state => state.account.account) //Получаем аккаунт
-    const {Account} = account // В нашем аккаунте есть аккаунт с персональными данными нашего пользователя и так же там находятся его points
+    const {Account} = account // В нашем аккаунте есть Account с персональными данными нашего пользователя и так же там находятся его points
 
 
     return (
@@ -34,10 +37,13 @@ function PersonalAccount(): JSX.Element {
         <Text ta="center" fz="sm" c="dimmed">
           Fullstack engineer
         </Text>
-        <Group mt="md" justify="center" gap={30}>
-          {/* {items} */}
-        </Group>
-        <Button fullWidth radius="md" mt="xl" size="md" variant="default">
+        <Text ta="center" fz="lg" fw={500} mt="sm">
+          {account.email}
+        </Text >
+        <Modal opened={opened} size="75%" onClose={close}  centered>
+        <PersonalAccoutInfo/>
+      </Modal>
+        <Button onClick={open} fullWidth color="violet" radius="md" mt="xl" size="md" variant="outline">
           Редактировать
         </Button>
       </Card>

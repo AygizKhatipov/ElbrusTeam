@@ -19,18 +19,16 @@ import {
   rem,
   useMantineTheme,
 } from '@mantine/core';
-import { MantineLogo } from '@mantinex/mantine-logo';
 import { useDisclosure } from '@mantine/hooks';
 import {
   IconBrandReactNative,
   IconCurrencyDollar,
   IconBook,
   IconSchool,
-  IconFingerprint,
-  IconCoin,
   IconChevronDown,
 } from '@tabler/icons-react';
 import classes from './HeaderMegaMenu.module.css';
+import PersonalPageLink from './PersonalPageLink';
 
 const mockdata = [
   {
@@ -80,7 +78,7 @@ function Navbar(): JSX.Element {
     ));
 
   return (
-<Box pb={50}>
+<Box pb={0}>
 <header className={classes.header}>
   <Group justify="space-between" h="100%">
     
@@ -185,7 +183,7 @@ function Navbar(): JSX.Element {
     <Divider my="sm" />
 
     <Group justify="center" grow pb="xl" px="md">
-      <Button variant="default">Личный кабинет</Button>
+    <Button variant="default">Личный кабинет</Button>
       {/* <Button>Sign up</Button> */}
     </Group>
   </ScrollArea>
