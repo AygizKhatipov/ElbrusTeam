@@ -10,6 +10,7 @@ config(app)
 
 app.use('/api', apiRouter)
 
+
 app.listen(PORT, ()=> {
     console.log(`PORT:${3000}`)
 })

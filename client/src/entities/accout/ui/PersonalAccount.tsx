@@ -4,6 +4,7 @@ import classes from '../style/UserCardImage.module.css';
 import { useDisclosure } from '@mantine/hooks';
 import { Modal } from '@mantine/core';
 import PersonalAccoutInfo from "./PersonalAccoutModal";
+import UpdateAvatar from "./UpdateAvatar";
 
 
 
@@ -24,7 +25,7 @@ function PersonalAccount(): JSX.Element {
           }}
         />
         <Avatar
-          src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-9.png"
+          src={account.Account?.photo}
           size={80}
           radius={80}
           mx="auto"
@@ -40,6 +41,7 @@ function PersonalAccount(): JSX.Element {
         <Text ta="center" fz="lg" fw={500} mt="sm">
           {account.email}
         </Text >
+        <UpdateAvatar/>
         <Modal opened={opened} size="75%" onClose={close}  centered>
         <PersonalAccoutInfo/>
       </Modal>
