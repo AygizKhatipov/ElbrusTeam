@@ -29,7 +29,7 @@ const loadGraduates = createAsyncThunk<PesonalComType[]>('graduates/load', () =>
     CommunityApi.getAllGraduates()
 );
 const loadCouches = createAsyncThunk<PesonalComType[]>('couches/load', () =>
-    CommunityApi.getAllTeachers()
+    CommunityApi.getAllCouches()
 );
 
 // Создаем slice для управления состоянием тем

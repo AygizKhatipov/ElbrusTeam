@@ -1,57 +1,60 @@
-import React from 'react';
-import { IconHeart } from '@tabler/icons-react';
-import { Card, Image, Text, Group, Badge, Button, ActionIcon } from '@mantine/core';
-import classes from './BadgeCard.module.css';
-import { PesonalCommunityType } from '../types/communityType';
-const TeacherCard = ({el}) => {
 
-   console.log(el);
+import { Grid, rem } from '@mantine/core';
+import {  
+  Card,  
+  Image,  
+  Text,  
    
+  Group,  
+  Center,  
+  Avatar
+} from '@mantine/core';  
+import classes from './ArticleCard.module.css';  
 
+const TeacherCard = ({ el }) => {  
+  const linkProps = { href: 'https://mantine.dev', target: '_blank', rel: 'noopener noreferrer' };  
+  // const theme = useMantineTheme();  
 
+  return (  
+      <>
+    <Grid.Col span={3} style={{ minHeight: rem(80) }}>
+    <Card withBorder radius="md" className={classes.card}>  
+      <Card.Section>  
+        <a {...linkProps}>  
+          <Image src={el.photo} height={180} />  
+        </a>  
+      </Card.Section>  
 
+      {/* <Badge className={classes.rating} variant="gradient" gradient={{ from: 'yellow', to: 'red' }}>  
+        outstanding  
+      </Badge>   */}
 
+      <Text className={classes.title} fw={500} component="a" {...linkProps}>  
+        {el.firstName} {el.lastName} 
+      </Text>  
 
-    return (
-        <Card withBorder radius="md" p="md" className={classes.card}>
-      <Card.Section>
-        <Image src='https://images.unsplash.com/photo-1437719417032-8595fd9e9dc6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80'
-    height={180} />
-      </Card.Section>
+      <Text fz="sm" c="dimmed" lineClamp={4}>  
+        {el.description}
+      </Text>  
 
-      <Card.Section className={classes.section} mt="md">
-        <Group justify="apart">
-          <Text fz="lg" fw={500}>
-            {el.firstName}
-          </Text>
-          <Badge size="sm" variant="light">
-            {el.country}
-          </Badge>
-        </Group>
-        <Text fz="sm" mt="xs">
-          {el.description}
-        </Text>
-      </Card.Section>
+      <Group justify="space-between" className={classes.footer}>  
+        <Center>  
+          <Avatar  
+            src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-1.png"  
+            size={24}  
+            radius="xl"  
+            mr="xs"  
+          />  
+          <Text fz="sm" inline>  
+            Bill Wormeater  
+          </Text>  
+        </Center>  
 
-      <Card.Section className={classes.section}>
-        {/* <Text mt="md" className={classes.label} c="dimmed">
-          Perfect for you, if you enjoy
-        </Text> */}
-        <Group gap={7} mt={5}>
-          {el.features}
-        </Group>
-      </Card.Section>
-
-      <Group mt="xs">
-        <Button radius="md" style={{ flex: 1 }}>
-          Подробнее
-        </Button>
-        <ActionIcon variant="default" radius="md" size={36}>
-          <IconHeart className={classes.like} stroke={1.5} />
-        </ActionIcon>
-      </Group>
-    </Card>
-    );
-}
+     
+      </Group>  
+    </Card>  </Grid.Col>
+    </>
+  );  
+}  
 
 export default TeacherCard;
