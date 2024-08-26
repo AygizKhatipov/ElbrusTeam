@@ -6,6 +6,7 @@ import { useAppDispatch, useAppSelector } from "./providers/store/store";
 import { useEffect } from "react";
 import { userRefreshTokens } from "../entities/user/model/userSlice";
 import { getOneAccount } from "../entities/accout/model/accoutSlice";
+import { FooterLinks } from "../shared/layout/Footer/Footer2";
 
 function App() {
   const dispatch = useAppDispatch();
