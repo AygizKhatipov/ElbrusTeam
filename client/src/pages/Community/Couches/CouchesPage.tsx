@@ -1,10 +1,11 @@
 import React from 'react';
 
 const CouchesPage = () => {
-    return (
+    return (<>
+        <title>Коучи</title>
         <div>
 CouchesPage
-        </div>
+        </div></>
     );
 }
 

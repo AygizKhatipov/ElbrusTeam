@@ -31,6 +31,9 @@ function LogoutPage() {
   };
 
   return (
+    <>
+    <title>Выход</title>
+    
     <div
       style={{
         display: 'flex',
@@ -41,8 +44,7 @@ function LogoutPage() {
     >
       <h1 style={{ textAlign: 'center', fontWeight: 'bold', fontSize: '30px' }}>Выйти?</h1>
       <button onClick={logoutUser}>Да, выйти!</button>
-    </div>
-  );
+    </div></>)
 }
 
 export default LogoutPage;

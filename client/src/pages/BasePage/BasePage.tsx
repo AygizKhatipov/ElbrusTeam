@@ -1,10 +1,11 @@
 import React from 'react';
 
 const BasePage = () => {
-    return (
+    return (<>
+        <title>База знаний</title>
         <div>
             base
-        </div>
+        </div></>
     );
 }
 

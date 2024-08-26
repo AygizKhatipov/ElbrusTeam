@@ -1,10 +1,11 @@
 import React from 'react';
 
 const StudentsPage = () => {
-    return (
+    return (<>
+        <title>Студенты</title>
         <div>
             StudentsPage
-        </div>
+        </div></>
     );
 }
 
