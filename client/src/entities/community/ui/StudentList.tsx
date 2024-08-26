@@ -1,19 +1,18 @@
-import React from "react";
+import React from 'react';
 import { useAppSelector } from "../../../app/providers/store/store";
 import CommunityCard from "./CommunityCard";
-import { PesonalCommunityType } from "../types/communityType";
+const StudentList = () => {
 
-const TeacherList = () => {
   const teacherAll = useAppSelector((state) => state.community);
-  return (
-    <div>
-      {teacherAll.teachers.map((el) => (
+    return (
+        <div>
+           {teacherAll.students.map((el) => (
         <div key={el.id}>
           <CommunityCard el={el} />
         </div>
-      ))}
-    </div>
-  );
-};
+      ))} 
+        </div>
+    );
+}
 
-export default TeacherList;
+export default StudentList;
