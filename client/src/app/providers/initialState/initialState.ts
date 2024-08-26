@@ -34,4 +34,5 @@ export const initialState:InitialStateType ={
     account: initialAccount, 
     group: [],  
     userGroup: [],
+    
 }

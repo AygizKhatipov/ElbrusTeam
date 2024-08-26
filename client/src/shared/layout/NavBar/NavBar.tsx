@@ -84,7 +84,8 @@ function Navbar(): JSX.Element {
     <Box pb={0}>  
       <header className={classes.header}>  
         <Group justify="space-between" h="100%">  
-          <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHM9FmNNdeWyfoOje6_NEcOzzPRH6DLudrKw&s' style={{ width: 100 }} alt="logo" />  
+          <img  src='https://habrastorage.org/getpro/moikrug/uploads/company/100/007/092/7/logo/medium_a88920f785a30e86c6e4a0cebbc66644.png'  
+          style={{ width: 50 }} alt="logo" />  
           {user ? (  
             <>  
               <Group h="100%" gap={0} visibleFrom="sm">  
