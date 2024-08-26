@@ -29,6 +29,7 @@ import {
 } from '@tabler/icons-react';
 import classes from './HeaderMegaMenu.module.css';
 import PersonalPageLink from './PersonalPageLink';
+import { useAppSelector } from '../../../app/providers/store/store';
 
 const mockdata = [
   {
@@ -56,6 +57,7 @@ const mockdata = [
 
 
 function Navbar(): JSX.Element {
+  const user = useAppSelector((state)=> state.user.user)
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
     const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
     const theme = useMantineTheme();
@@ -114,32 +116,26 @@ function Navbar(): JSX.Element {
             {links}
           </SimpleGrid>
 
-          {/* <div className={classes.dropdownFooter}>
-            <Group justify="space-between">
-              <div>
-                <Text fw={500} fz="sm">
-                  Get started
-                </Text>
-                <Text size="xs" c="dimmed">
-                  Their food sources have decreased, and their numbers
-                </Text>
-              </div>
-             
-            </Group>
-          </div> */}
+      
         </HoverCard.Dropdown>
       </HoverCard>
-      {/* <a href="#" className={classes.link}>
-        Learn
-      </a> */}
+     
       <Link to="/base" className={classes.link}>База знаний</Link>
         
      
     </Group>
 
     <Group visibleFrom="sm">
-    <Button variant="default"><Link to="/personal" className={classes.link}>Личный кабинет</Link></Button>
-      {/* <Button>Sign up</Button> */}
+      {user?(
+        <><Button variant="default"><Link to="/personal" className={classes.link}>Личный кабинет</Link></Button>
+        <Button variant="default"><Link to="/logout" className={classes.link}>Выйти</Link></Button></>):(
+        <>
+        <Button variant="default"><Link to="/login" className={classes.link}>Войти</Link></Button>
+
+        <Button variant="default"><Link to="/registration" className={classes.link}>Зарегистрироваться</Link></Button>
+        </>
+      )}
+   
     </Group>
 
     <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm" />

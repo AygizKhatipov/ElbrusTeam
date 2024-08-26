@@ -1,3 +1,4 @@
+import { AxiosResponse } from "axios";
 import axiosInstance from "../../../services/apiAxiosInstance"
 import {  LoginFormType, User, userWithoutConfirmPassword } from "../types/userType"
 
@@ -23,9 +24,10 @@ class AuthApi {
         return response.data
     }
 
-    static logout = async (): Promise<boolean> => {
-        const response = await axiosInstance.post('/auth/logout');
-        return response.status === 200
+    static logout = async (): Promise<{ user: User; accessToken: string }>=> {
+        const response: AxiosResponse<{ user: User; accessToken: string }> =
+      await axiosInstance.delete('/auth/logout');
+      return response.data;
     }
 }
 
