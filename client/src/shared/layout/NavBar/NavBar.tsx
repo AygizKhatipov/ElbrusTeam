@@ -85,6 +85,7 @@ function Navbar(): JSX.Element {
   <Group justify="space-between" h="100%">
     
   <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHM9FmNNdeWyfoOje6_NEcOzzPRH6DLudrKw&s' style={{width:100}} alt="logo" />
+  {user?(<>
     <Group h="100%" gap={0} visibleFrom="sm">
     <Link to="/"  className={classes.link}>Главная</Link>
       
@@ -126,17 +127,28 @@ function Navbar(): JSX.Element {
     </Group>
 
     <Group visibleFrom="sm">
-      {user?(
-        <><Button variant="default"><Link to="/personal" className={classes.link}>Личный кабинет</Link></Button>
-        <Button variant="default"><Link to="/logout" className={classes.link}>Выйти</Link></Button></>):(
-        <>
+     
+        <Button variant="default"><Link to="/personal" className={classes.link}>Личный кабинет</Link></Button>
+        <Button variant="default"><Link to="/logout" className={classes.link}>Выйти</Link></Button>
+   
+    </Group>
+
+  </>):(<><Group h="100%" gap={0} visibleFrom="sm">
+    <Link to="/"  className={classes.link}>Главная</Link>
+        
+     
+    </Group>
+
+    <Group visibleFrom="sm">
+     
         <Button variant="default"><Link to="/login" className={classes.link}>Войти</Link></Button>
 
         <Button variant="default"><Link to="/registration" className={classes.link}>Зарегистрироваться</Link></Button>
-        </>
-      )}
+       
    
-    </Group>
+    </Group></>)}
+   
+  
 
     <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm" />
   </Group>

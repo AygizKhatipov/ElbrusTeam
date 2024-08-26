@@ -31,12 +31,12 @@ export function FooterSocial() {
           </ActionIcon>  
         </Group>  
         <Text flex-align="center" size="sm" color="dimmed" className={classes.year}>  
-          &copy; {currentYear} 
+          
           <a href="https://github.com/AygizKhatipov/ElbrusTeam">  
           <p>С любовью Рыси!</p>
               {/* <IconBrandTelegram style={{ width: rem(18), height: rem(18) }} stroke={1.5} />   */}
             </a> 
-          
+          &copy; {currentYear} 
         </Text>  
       </Container>  
     </div>  
