@@ -14,7 +14,8 @@ import { loadCouches, loadGraduates, loadStudents, loadTeachers } from "../entit
 function App() {
   const dispatch = useAppDispatch();
   const userId = useAppSelector(state => state.user.user?.id); 
-  const teacherAll = useAppSelector(state=> state.community)
+  
+  const teacherAll = useAppSelector(state=> state.community.teachers)
   console.log(teacherAll);
   
 
