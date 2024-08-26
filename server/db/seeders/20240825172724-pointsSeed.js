@@ -7,12 +7,12 @@ module.exports = {
   async up (queryInterface, Sequelize) {
    
      await queryInterface.bulkInsert('Points', [{
-       point: '30',
-       userId: '2'
+       point: 30,
+       userId: 8
       },
       {
-       point: '30',
-       userId: '3'
+       point: 30,
+       userId: 9
       }
     ], {});
     
