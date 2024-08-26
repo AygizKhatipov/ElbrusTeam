@@ -25,4 +25,13 @@ export type PesonalPageType = {
     Account: AccountType | null
 }
 
-export type AccountWithoutId = Omit<AccountType, 'id'>
+
+export interface UpdateAccountType {
+    firstName: string,
+    lastName: string,
+    email: string,
+    country: string,
+    city: string,
+    phone: string,
+    about: string
+}
