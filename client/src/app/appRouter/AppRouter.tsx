@@ -10,7 +10,7 @@ import EventsPage from "../../pages/EventsPage/EventsPage";
 import BasePage from "../../pages/BasePage/BasePage";
 import CouchesPage from "../../pages/Community/Couches/CouchesPage";
 import PersonalPage from "../../pages/PersonalAccount/PersonalPage";
-import LogoutPage from '../../pages/LogOutPage/LogOut';
+import LogoutPage from '../../pages/LogOut/LogOut';
 
 
 
