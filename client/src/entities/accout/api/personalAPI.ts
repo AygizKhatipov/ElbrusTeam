@@ -1,6 +1,6 @@
 import { AxiosResponse } from "axios";
 import axiosInstance from "../../../services/apiAxiosInstance";
-import { PesonalPageType } from "../types/accountType";
+import { AccountType, PesonalPageType } from "../types/accountType";
 
 
 
@@ -21,8 +21,12 @@ class PersonalAPI {
         return response.data
     }
 
-    static updateAvatar = async (data: any): Promise<PesonalPageType> => {
-        const response: AxiosResponse<PesonalPageType> = await axiosInstance.put('/upload/upload-avatar', data)
+    static updateAvatar = async (formData: any): Promise<AccountType> => {
+        const response: AxiosResponse<AccountType> = await axiosInstance.put('/upload/upload-avatar', formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            },
+        })
         return response.data
     }
 }

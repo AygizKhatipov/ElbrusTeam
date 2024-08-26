@@ -1,14 +1,20 @@
 const upload = require('../middleware/multerMiddleware');
 const router = require('express').Router();
-const { User } = require('../db/models');
+const { Account } = require('../db/models');
 
 
 
-router.post('/upload-avatar', upload.single('avatar'), (req, res) => {
+
+router.put('/upload-avatar', upload.single('avatar'), async(req, res) => {
     try {
-        console.log(req)
-        
-        res.json({ url: `/uploads/${req.file.filename}` });
+        const fileUrl = `/uploads/${req.file.filename}`;
+        const { userId } = req.body;
+        console.log(userId)
+        console.log(fileUrl)
+        const userUpdate =await  Account.update({ photo: fileUrl }, { where: { idUser: userId } });
+        const user = (await Account.findOne({ where: { idUser: userId } })).get();
+        console.log(user)
+        res.status(200).json(user);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
