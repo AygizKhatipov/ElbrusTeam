@@ -1,10 +1,12 @@
 import RegistrationForm from '../../entities/user/ui/RegistrationForm';
 
 function RegistrationPage(): JSX.Element {
-    return (
+    return ( <>
+        <title>Регистрация</title>
+        
         <div>
             <RegistrationForm/>
-        </div>
+        </div></>
     );
 }
 

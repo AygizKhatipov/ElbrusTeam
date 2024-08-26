@@ -2,9 +2,11 @@ import React from 'react';
 
 const TeachersPage = () => {
     return (
+        <>
+        <title>Преподаватели</title>
         <div>
-           TeachersPage 
-        </div>
+        Преподаватели
+        </div></>
     );
 }
 

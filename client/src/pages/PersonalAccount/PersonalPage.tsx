@@ -4,11 +4,13 @@ import PersonalAccountInformation from "../../entities/accout/ui/PersonalAccount
 import './style/personalPageCss.css';
 
 const PersonalPage = () => {
-    return (
+    return (<>
+        <title>Личный кабинет</title>
+        
         <div className="personal-page">
             <PersonalAccount/>
             <PersonalAccountInformation/>
-        </div>
+        </div></>
     );
 }
 

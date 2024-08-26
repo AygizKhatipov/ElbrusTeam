@@ -2,9 +2,11 @@ import React from 'react';
 
 const EventPage = () => {
     return (
+         <>
+        <title>События</title>
         <div>
-            EventPage
-        </div>
+        События
+        </div></>
     );
 }
 
