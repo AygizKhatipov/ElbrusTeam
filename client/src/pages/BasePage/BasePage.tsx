@@ -3,28 +3,28 @@ import { SimpleGrid, Card, Image, Text, Container, AspectRatio } from '@mantine/
 import classes from './ArticlesCardsGrid.module.css';
 const mockdata = [
     {
-      title: 'Top 10 places to visit in Norway this summer',
+      title: 'Топ 10 вопросов на собеседование',
       image:
-        'https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80',
-      date: 'August 18, 2022',
+        'https://i.postimg.cc/Hs87C8Dy/IMG-8790.jpg',
+      date: 'Август 18, 2024',
     },
     {
-      title: 'Best forests to visit in North America',
+      title: 'Секреты успешных сданных экзаменов',
       image:
-        'https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80',
-      date: 'August 27, 2022',
+        'https://i.postimg.cc/J0f0hKVB/IMG-0082.jpg',
+      date: 'Июль 17, 2024',
     },
     {
-      title: 'Hawaii beaches review: better than you think',
+      title: 'Повтор не приговор? Приемыши и не только',
       image:
-        'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80',
-      date: 'September 9, 2022',
+        'https://i.postimg.cc/MGxPh8Lh/IMG-8929.jpg',
+      date: 'Август 22, 2024',
     },
     {
-      title: 'Mountains at night: 12 best locations to enjoy the view',
+      title: 'Беня - Тимлид за делом!',
       image:
-        'https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80',
-      date: 'September 12, 2022',
+        'https://i.postimg.cc/50GNPptk/IMG-8794.jpg',
+      date: 'Июль 30, 2024',
     },
   ];
 
