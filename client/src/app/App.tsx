@@ -7,10 +7,14 @@ import { useEffect } from "react";
 import { userRefreshTokens } from "../entities/user/model/userSlice";
 import { getOneAccount } from "../entities/accout/model/accoutSlice";
 import { FooterLinks } from "../shared/layout/Footer/Footer2";
+import { loadTeachers } from "../entities/community/model/communitySlice";
 
 function App() {
   const dispatch = useAppDispatch();
   const userId = useAppSelector(state => state.user.user?.id); 
+  const teacherAll = useAppSelector(state=> state.community)
+  console.log(teacherAll);
+  
 
   useEffect(() => {
     dispatch(userRefreshTokens())
@@ -22,6 +26,11 @@ function App() {
       })
       .catch(console.log);
   }, [userId]);
+
+  useEffect(() => {
+    dispatch(loadTeachers())
+      .catch(console.log);
+  }, []);
 
   return (
     <div className="app-wrapper">
