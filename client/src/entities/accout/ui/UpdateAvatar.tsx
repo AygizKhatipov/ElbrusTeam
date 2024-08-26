@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { FileInput, Button, Loader } from '@mantine/core';
-import axiosInstance from '../../../services/apiAxiosInstance';
 import { useAppDispatch, useAppSelector } from '../../../app/providers/store/store';
 import { updateAvatar } from '../model/accoutSlice';
 

@@ -52,7 +52,7 @@ function LoginForm(): JSX.Element {
       <form  onSubmit={handleSubmit(login)} >
       <Paper withBorder shadow="md" p={30} mt={30} radius="md">
         <TextInput label="Email" placeholder="you@elbrus.bootcamp" required  {...register("email")}/>
-        <PasswordInput label="Password" placeholder="Пароль" required mt="md" {...register("password")} />
+        <PasswordInput label="Пароль" placeholder="Пароль" required mt="md" {...register("password")} />
         <Button  type="submit" color="violet" fullWidth mt="xl">
           Войти
         </Button >

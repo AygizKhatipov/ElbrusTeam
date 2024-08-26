@@ -12,7 +12,31 @@ router
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
+})
+.put('/', async (req, res) => {
+  try {
+    const {firstName, lastName, city, country, phone, email, about} = req.body.data
+    const {accountId} = req.body
+    const [account] = await Account.update({city, country, phone, email, about }, {
+      where: { idUser: accountId },
+    })
+    const [user] = await User.update({firstName, lastName}, {
+      where: { id: accountId },
+    });
+    
+    if(user && account) {
+      const updatingUser = (await User.findOne({
+        where: { id: accountId },
+        include: { model: Account, include: { model: Point } },
+      })).get();
+      delete updatingUser["password"];
+      res.status(200).json(updatingUser);
+    }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 });
+
 
 
 
@@ -29,6 +53,6 @@ router.route("/:id")
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
-});
+})
 
 module.exports = router;
