@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { LoginFormType, User, UserWithoutId, userWithoutConfirmPassword } from '../../../entities/user/types/userType';
+import { LoginFormType, User, userWithoutConfirmPassword } from '../../../entities/user/types/userType';
 import AuthApi from '../api/authApi';
 
 

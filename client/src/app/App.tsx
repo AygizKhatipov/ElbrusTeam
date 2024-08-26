@@ -6,8 +6,10 @@ import { useAppDispatch, useAppSelector } from "./providers/store/store";
 import { useEffect } from "react";
 import { userRefreshTokens } from "../entities/user/model/userSlice";
 import { getOneAccount } from "../entities/accout/model/accoutSlice";
-import { FooterLinks } from "../shared/layout/Footer/Footer2";
 import { loadTeachers } from "../entities/community/model/communitySlice";
+
+
+
 
 function App() {
   const dispatch = useAppDispatch();

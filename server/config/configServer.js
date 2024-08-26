@@ -6,8 +6,6 @@ const config = (app) => {
     app.use(express.urlencoded({ extended: true }));
     app.use(express.json());
     app.use(cookieParser());
-
-    // Используйте path.join для правильного пути
     app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 };
 
