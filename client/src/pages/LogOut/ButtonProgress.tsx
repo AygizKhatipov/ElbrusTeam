@@ -23,9 +23,7 @@ function LogoutPage() {
 
       {/* Контент страницы */}
       <div className="logout-page-content">
-        <h1 style={{ fontWeight: 'bold', fontSize: '30px' }}>Ты точно хочешь уйти?</h1>
-        
-        
+        <h1>Ты точно хочешь уйти?</h1>
         <div onClick={logoutUser} className="logout-page-button">
           <ButtonProgress />
         </div>
