@@ -32,6 +32,7 @@ import {
 } from '@tabler/icons-react';  
 import classes from './HeaderMegaMenu.module.css';  
 import { useAppSelector } from '../../../app/providers/store/store';  
+import PersonalPageLink from './PersonalPageLink';
 
 const mockdata = [  
   {  
@@ -85,10 +86,11 @@ function Navbar(): JSX.Element {
       <header className={classes.header}>  
         <Group justify="space-between" h="100%">  
           <img  src='https://habrastorage.org/getpro/moikrug/uploads/company/100/007/092/7/logo/medium_a88920f785a30e86c6e4a0cebbc66644.png'  
-          style={{ width: 50 }} alt="logo" />  
+          style={{ width: 50, marginBottom:10 }} alt="logo" />  
           {user ? (  
             <>  
               <Group h="100%" gap={0} visibleFrom="sm">  
+                
                 <Link to="/" className={classes.link}>Главная</Link>  
                 <Link to="/events" className={classes.link}>События</Link>  
                 <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>  
@@ -117,9 +119,14 @@ function Navbar(): JSX.Element {
                 </HoverCard>  
                 <Link to="/base" className={classes.link}>База знаний</Link>  
               </Group>  
-              <Group visibleFrom="sm">  
-                <Button variant="default"><Link to="/personal" className={classes.link}>Личный кабинет</Link></Button>  
-                <Button variant="default"><Link to="/logout" className={classes.link}>Выйти</Link></Button>  
+               
+              <Group visibleFrom="sm" >  
+                {/* <Button variant="default"><Link to="/personal" className={classes.link}><PersonalPageLink/></Link></Button>   */}
+                <PersonalPageLink/>
+                <Link to="/logout" className={classes.link}>Выйти</Link> 
+                <Button variant="default" onClick={() => toggleColorScheme()} aria-label="Toggle theme">  
+            {colorScheme === 'dark' ? <IconSun size={16} /> : <IconMoon size={16} />}  
+          </Button> 
               </Group>  
             </>  
           ) : (  
@@ -127,23 +134,25 @@ function Navbar(): JSX.Element {
               <Group h="100%" gap={0} visibleFrom="sm">  
                 <Link to="/" className={classes.link}>Главная</Link>  
               </Group>  
+              
               <Group visibleFrom="sm">  
-                <Button variant="default"><Link to="/login" className={classes.link}>Войти</Link></Button>  
-                <Button variant="default"><Link to="/registration" className={classes.link}>Зарегистрироваться</Link></Button>  
+               <Link to="/login" className={classes.link}>Войти</Link> 
+               <Link to="/registration" className={classes.link}>Зарегистрироваться</Link> 
+                <Button variant="default" onClick={() => toggleColorScheme()} aria-label="Toggle theme">  
+            {colorScheme === 'dark' ? <IconSun size={16} /> : <IconMoon size={16} />}  
+          </Button> 
               </Group>  
             </>  
           )}  
           
           {/* Theme Toggle Button */}  
-          <Button variant="default" onClick={() => toggleColorScheme()} aria-label="Toggle theme">  
-            {colorScheme === 'dark' ? <IconSun size={16} /> : <IconMoon size={16} />}  
-          </Button>  
+          
 
           <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm" />  
         </Group>  
       </header>  
 
-      <Drawer  
+      {/* <Drawer  
         opened={drawerOpened}  
         onClose={closeDrawer}  
         size="100%"  
@@ -180,7 +189,7 @@ function Navbar(): JSX.Element {
             <Button variant="default">Личный кабинет</Button>  
           </Group>  
         </ScrollArea>  
-      </Drawer>  
+      </Drawer>   */}
     </Box>  
   );  
 }  

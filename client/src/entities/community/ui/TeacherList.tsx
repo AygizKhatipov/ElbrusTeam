@@ -1,17 +1,19 @@
 import React from "react";
 import { useAppSelector } from "../../../app/providers/store/store";
-import TeacherCard from "./TeacherCard";
+import CommunityCard from "./CommunityCard";
 import { PesonalCommunityType } from "../types/communityType";
+import { Grid } from "@mantine/core";
 
 const TeacherList = () => {
   const teacherAll = useAppSelector((state) => state.community);
   return (
     <div>
-      {teacherAll.map((el) => (
+        <Grid justify="center" align="stretch">
+      {teacherAll.teachers.map((el) => (
         <div key={el.id}>
-          <TeacherCard el={el} />
+          <CommunityCard el={el} />
         </div>
-      ))}
+      ))}</Grid>
     </div>
   );
 };

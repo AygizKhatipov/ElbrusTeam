@@ -16,8 +16,9 @@ class PersonalAPI {
         return response.data
     }
 
-    static updateAccount = async (data: any): Promise<PesonalPageType> => {
-        const response: AxiosResponse<PesonalPageType> = await axiosInstance.put('/users', data)
+    static updateAccount = async ({data, accountId}: any): Promise<PesonalPageType> => {
+        console.log(data)
+        const response: AxiosResponse<PesonalPageType> = await axiosInstance.put('/users', {data, accountId})
         return response.data
     }
 

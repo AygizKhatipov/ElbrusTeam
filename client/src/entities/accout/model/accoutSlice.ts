@@ -15,6 +15,10 @@ const updateAvatar = createAsyncThunk('account/updateAvatar', async (formData: a
     return await PersonalAPI.updateAvatar(formData);
 });
 
+const updateAccount = createAsyncThunk('account/updateAccount', async ({data, accountId}: any) => {
+return await PersonalAPI.updateAccount({data, accountId});
+});
+
 const accountSlice = createSlice({
     name: 'account',
     initialState,
@@ -23,12 +27,14 @@ const accountSlice = createSlice({
         builder.addCase(getOneAccount.fulfilled, (state, action) => {
             state.account = action.payload});
         builder.addCase(updateAvatar.fulfilled, (state, action) => {
-            console.log(action.payload)
             state.account.Account = action.payload
+        })
+        builder.addCase(updateAccount.fulfilled, (state, action) => {
+            state.account = action.payload
         })
     },
 });
 
 
-export {getOneAccount, updateAvatar}
+export {getOneAccount, updateAvatar, updateAccount}
 export default accountSlice.reducer;

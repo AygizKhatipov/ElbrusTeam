@@ -10,8 +10,7 @@ import UpdateAvatar from "./UpdateAvatar";
 
 function PersonalAccount(): JSX.Element {
   const [opened, { open, close }] = useDisclosure(false);
-    const account = useAppSelector(state => state.account.account) //Получаем аккаунт
-    const {Account} = account // В нашем аккаунте есть Account с персональными данными нашего пользователя и так же там находятся его points
+    const account = useAppSelector(state => state.account.account) 
 
 
     return (

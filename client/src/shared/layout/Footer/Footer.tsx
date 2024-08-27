@@ -8,11 +8,13 @@ export function FooterSocial() {
   return (  
     <div className={classes.footer}>  
       <Container className={classes.inner}>  
+      <a href='https://elbrusboot.camp/'>  
         <img  
           src='https://habrastorage.org/getpro/moikrug/uploads/company/100/007/092/7/logo/medium_a88920f785a30e86c6e4a0cebbc66644.png'  
           style={{ width: 50 }}  
           alt="logo"  
         />  
+        </a>
         <Group gap={0} className={classes.links} justify="flex-end" wrap="nowrap">  
           <ActionIcon size="lg" color="gray" variant="subtle">  
             <a href='https://vk.com/elbrusbootcamp'>  

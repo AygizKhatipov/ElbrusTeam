@@ -1,11 +1,10 @@
 import React from 'react';
+import CoucheList from '../../../entities/community/ui/CoucheList';
 
 const CouchesPage = () => {
     return (<>
         <title>Коучи</title>
-        <div>
-CouchesPage
-        </div></>
+        <CoucheList/></>
     );
 }
 

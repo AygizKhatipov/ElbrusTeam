@@ -17,7 +17,22 @@ export type CommunityType = {
     about: string | null,
 }
 
-
+export type PesonalComType = {
+    id:0,
+    firstName: '',
+    lastName: '',
+    email: '',
+    isMember: null,
+    roleId: null,
+    Account: {
+      idUser: null|0,
+      photo: null,
+      country: null,
+      city: null,
+      phone: null,
+      about: null
+    },
+  };
 
 
 export type CommunityWithoutId = Omit<PesonalCommunityType, 'id'>

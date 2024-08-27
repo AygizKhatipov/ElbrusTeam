@@ -23,7 +23,7 @@ function PersonalAccountInformation(): JSX.Element {
         <Title  order={3} textWrap="wrap">{Account?.phone}</Title >
         <Divider my="md" />
 
-        <Title order={3} textWrap="wrap"><p>{Account?.about}</p></Title>
+        <Title order={3} textWrap="wrap">{Account?.about}</Title>
     </Container>
     );
 }

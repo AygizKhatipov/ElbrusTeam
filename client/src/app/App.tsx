@@ -6,8 +6,10 @@ import { useAppDispatch, useAppSelector } from "./providers/store/store";
 import { useEffect } from "react";
 import { userRefreshTokens } from "../entities/user/model/userSlice";
 import { getOneAccount } from "../entities/accout/model/accoutSlice";
-import { loadTeachers } from "../entities/community/model/communitySlice";
+
 import { loadBaseDates } from "../entities/baseDates/model/baseDateSlice";
+import { loadCouches, loadGraduates, loadStudents, loadTeachers } from "../entities/community/model/communitySlice";
+
 
 
 
@@ -17,6 +19,7 @@ function App() {
   const userId = useAppSelector(state => state.user.user?.id); 
   const teacherAll = useAppSelector(state=> state.community);
   const baseDatesAll = useAppSelector(state => state.baseDate);
+
   console.log(teacherAll);
   console.log('База знаний', baseDatesAll);
   
@@ -34,6 +37,18 @@ function App() {
 
   useEffect(() => {
     dispatch(loadTeachers())
+      .catch(console.log);
+  }, []);
+  useEffect(() => {
+    dispatch(loadStudents())
+      .catch(console.log);
+  }, []);
+  useEffect(() => {
+    dispatch(loadCouches())
+      .catch(console.log);
+  }, []);
+  useEffect(() => {
+    dispatch(loadGraduates())
       .catch(console.log);
   }, []);
 
