@@ -13,10 +13,10 @@ router.get("/",  async (req, res) => {
   }
 });
 router.post("/", async (req, res) => {
-  const { title, description, pic } = req.body;
+  const { title, description, article, pic } = req.body;
 
   try {
-    const roleCreate = await DataBase.create({title, description, pic  } );
+    const roleCreate = await DataBase.create({title, description, article, pic  } );
    
 
     res.status(200).json(roleCreate.dataValues);
@@ -42,7 +42,7 @@ router.route("/:id")
     try {
         const {id} =req.params
         const {title, description, pic}= req.body
-        const baseUpdate = await DataBase.update({title, description, pic}, {where:{id}})
+        const baseUpdate = await DataBase.update({title, description, article, pic}, {where:{id}})
 
         res.status(201).json(baseUpdate)
     } catch (error) {
