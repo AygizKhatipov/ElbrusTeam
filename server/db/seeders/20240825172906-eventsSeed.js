@@ -8,6 +8,22 @@ module.exports = {
       date: '2024-08-30',
       title: 'Выпускной Рысек',
       description: "Lorem ipsum dolor sit amet"
+     },
+     {
+      date: '2024-09-02',
+      title: 'Встречаем новеньких!',
+      description: "Lorem ipsum dolor sit amet"
+     },
+     {
+      date: '2024-09-06',
+      title: 'Мафия',
+      description: "Lorem ipsum dolor sit amet"
+     },
+     
+     {
+      date: '2024-09-12',
+      title: 'Турнир по теннису',
+      description: "Lorem ipsum dolor sit amet"
      }], {});
     
   },
