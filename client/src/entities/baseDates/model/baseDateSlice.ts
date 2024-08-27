@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import type { PesonalCommunityType } from '../types/communityType';
+import type { PesonalCommunityType } from '../types/baseDatesType';
 import baseDatesApi from '../api/baseDatesApi';
 import { BaseDatesType } from '../types/baseDatesType';
 
@@ -20,7 +20,7 @@ const baseDatesSlice = createSlice({
     // Обработка успешного выполнения thunk loadThemes
     builder.addCase(
         loadBaseDates.fulfilled,
-      (state, action: PayloadAction<PesonalCommunityType[]>) => {
+      (state, action: PayloadAction<BaseDatesType[]>) => {
         state.push(...action.payload); 
       },
     );
