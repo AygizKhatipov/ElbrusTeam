@@ -8,6 +8,7 @@ const basedatesRouter= require('./base.routes')
 const eventsRouter= require('./events.routes')
 const pointsRouter= require('./point.routes')
 
+
 const usersRouter= require('./user.routes')
 const accountsRouter= require('./account.routes')
 
@@ -18,7 +19,6 @@ router.use('/users', usersRouter);
 router.use('/upload', uploadsRouter)
 router.use('/community', communityRouter);
 router.use('/basedates', basedatesRouter);
-router.use('/events', eventsRouter)
 
 router.use('/auth', authRouter)
 router.use('/tokens', tokensRouter);

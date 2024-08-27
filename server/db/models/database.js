@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
   DataBase.init({
     title: DataTypes.STRING,
     description: DataTypes.STRING,
+    article: DataTypes.TEXT,
     pic: DataTypes.STRING,
     userId: DataTypes.INTEGER
   }, {
