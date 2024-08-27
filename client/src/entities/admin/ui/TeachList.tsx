@@ -1,6 +1,6 @@
 import { Avatar, Badge, Table, Group, Text, Select } from "@mantine/core";
 import { useAppSelector } from "../../../app/providers/store/store";
-const TeachList = ({ el }) => {
+const TeachList = ({ el }: any) => {
     const roles = useAppSelector(state=> state.role.roles)
 
 

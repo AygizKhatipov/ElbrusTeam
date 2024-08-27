@@ -1,7 +1,7 @@
 
 import LoginForm from '../../entities/user/ui/LoginForm';
 
-function LoginPage(props): JSX.Element {
+function LoginPage(): JSX.Element {
     return (
         <div>
             <LoginForm/>

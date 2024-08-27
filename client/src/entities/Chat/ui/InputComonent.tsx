@@ -5,16 +5,17 @@ import MessageComponent from './MessageComponent';
 import { useEffect, useRef, useState } from 'react';
 // import axios from 'axios';
 import { useAppDispatch, useAppSelector } from '../../../app/providers/store/store';
+import { setMessage } from '../model/chatSlice';
 
 function InputComonent(): JSX.Element {
     const [value, setValue] = useState('');
     const [connected, setConnected] = useState(false);
     const socket = useRef<WebSocket>()
+    const messages = useAppSelector(state => state.chat.messages);
     const dispatch = useAppDispatch();
-    const messages = useAppSelector(state=> state.chat.chat)
-    console.log(messages)
     const userId = useAppSelector(state => state.user.user?.id);
     const userName = useAppSelector(state => state.user.user?.firstName);
+    const lastName = useAppSelector(state => state.user.user?.lastName);
 
     useEffect(() => {   
         socket.current = new WebSocket('ws://localhost:3000')
@@ -25,11 +26,18 @@ function InputComonent(): JSX.Element {
         }
         socket.current.onmessage = (event) => {
             const message = JSON.parse(event.data)
+            dispatch(setMessage(message));
         }
         socket.current.onerror = (error)=> {
             console.log(error)
         }
-    }, [])
+
+        return () => {
+            if (socket.current) {
+              socket.current.close();
+            }
+          };
+    }, [messages])
 
 
     const sendMessage = async()=> {
@@ -37,10 +45,13 @@ function InputComonent(): JSX.Element {
             const message = {
                 event: 'message',
                 fromId: userId,
-                toId: '123',
-                message: value
+                toId: userName,
+                message: value,
+                username: userName,
+
             };
             socket.current.send(JSON.stringify(message))
+            setValue('')
         } else {
             console.log('Соединение не установлено')
         }
@@ -56,12 +67,12 @@ function InputComonent(): JSX.Element {
     <>
       <Container className={classes.containermessage} p="xl">
         {messages.map((message) => (
-          <MessageComponent key={message.id} message={message}/>
+          <MessageComponent key={message.id} userMessage={message}/>
         ))}
       </Container>
       <Container className={classes.container} p="xl">
         <form onSubmit={handleSubmit}>
-          <Grid>
+          <Grid >
             <Grid.Col span={10}>
               <Textarea
                 value={value}
@@ -73,10 +84,11 @@ function InputComonent(): JSX.Element {
                 maxRows={5}
               />
             </Grid.Col>
-            <Grid.Col span={2}>
+            <Grid.Col span={2} style={{padding: '8px 0px 8px 25px'}}>
               <Button
               type='submit'
                 radius="md"
+                
                 variant="gradient"
                 gradient={{ from: 'grape', to: 'yellow', deg: 291 }}
               >
