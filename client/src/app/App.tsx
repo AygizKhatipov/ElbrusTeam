@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { userRefreshTokens } from "../entities/user/model/userSlice";
 import { getOneAccount } from "../entities/accout/model/accoutSlice";
 import { loadCouches, loadGraduates, loadStudents, loadTeachers } from "../entities/community/model/communitySlice";
+import { loadRoles } from "../entities/role/model/roleSlice";
 
 
 
@@ -32,6 +33,10 @@ function App() {
 
   useEffect(() => {
     dispatch(loadTeachers())
+      .catch(console.log);
+  }, []);
+  useEffect(() => {
+    dispatch(loadRoles())
       .catch(console.log);
   }, []);
   useEffect(() => {
