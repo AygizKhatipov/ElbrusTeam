@@ -32,7 +32,7 @@ function AppRoutes(): JSX.Element {
         <Route path="/registration" element={<RegistrationForm />} />
         <Route path="/base" element={<BasePage />} />
         <Route path="/logout" element={<LogoutPage />} />
-        <Route path='/chat' element={<ChatPage/>}/>
+        <Route  path= "/chat" element={<ChatPage/>}/>
         <Route path="*" element={<div>404</div>} />
       </Routes>
     </>

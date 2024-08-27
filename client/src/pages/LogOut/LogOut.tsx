@@ -1,13 +1,10 @@
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import apiAxiosInstance from '../../services/apiAxiosInstance';
-import setAccessToken from '../../services/apiAxiosInstance';
-import React, { type Dispatch } from 'react';
-import { type user, type userArray } from '../type';
 import { useAppDispatch, useAppSelector } from '../../app/providers/store/store';
 import { userLogout } from '../../entities/user/model/userSlice';
-// import './LogoutPage.css';
+import { ButtonProgress } from './ButtonProgress';
+import './LogoutPage.css'; // Подключаем CSS файл
 
-/* eslint-disable react/prop-types */
 function LogoutPage() {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
@@ -17,34 +14,22 @@ function LogoutPage() {
     dispatch(userLogout())
       .then(() => navigate('/'))
       .catch((error) => console.log(error));
-    // event.preventDefault();
-
-    // apiAxiosInstance.delete('/auth/logout')
-    //     .then(({data}) => {
-    //         setAccessToken(data.accessToken);
-    //         setUser(null);
-    //         navigate('/auth/authorization');
-    //     })
-    //     .catch(err => {
-    //         console.log(err);
-    //     });
   };
 
   return (
-    <>
-    <title>Выход</title>
-    
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-    >
-      <h1 style={{ textAlign: 'center', fontWeight: 'bold', fontSize: '30px' }}>Выйти?</h1>
-      <button onClick={logoutUser}>Да, выйти!</button>
-    </div></>)
+    <div className="logout-page-container">
+      {/* Полупрозрачный оверлей */}
+      <div className="logout-page-overlay"></div>
+
+      {/* Контент страницы */}
+      <div className="logout-page-content">
+        <h1>Ты точно хочешь уйти?!</h1>
+        <div onClick={logoutUser} className="logout-page-button">
+          <ButtonProgress />
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default LogoutPage;

@@ -1,13 +1,24 @@
-
+/* 
   .personal-page {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-
-    gap: 2rem;
+    grid-template-columns: 1fr 2fr ;
+    gap: 4rem;
     padding: 1rem;
     min-height: 75vh;
     border-left : 1px solid rgb(85, 85, 85);
     border-right : 1px solid rgb(85, 85, 85);
     border-top : 0px solid rgb(85, 85, 85);
   }
-  
+   */
+   .personal-page {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    padding: 1rem;
+    min-height: 75vh;
+    border-left : 1px solid rgb(85, 85, 85);
+    border-right : 1px solid rgb(85, 85, 85);
+    border-top : 0px solid rgb(85, 85, 85);
+   }

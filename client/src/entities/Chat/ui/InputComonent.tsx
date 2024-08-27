@@ -9,16 +9,18 @@ import { useAppDispatch, useAppSelector } from '../../../app/providers/store/sto
 function InputComonent(): JSX.Element {
     const [value, setValue] = useState('');
     const [connected, setConnected] = useState(false);
-    const socket = useRef<WebSocket|null>()
+    const socket = useRef<WebSocket>()
     const dispatch = useAppDispatch();
     const messages = useAppSelector(state=> state.chat.chat)
+    console.log(messages)
     const userId = useAppSelector(state => state.user.user?.id);
+    const userName = useAppSelector(state => state.user.user?.firstName);
 
     useEffect(() => {   
         socket.current = new WebSocket('ws://localhost:3000')
         socket.current.onopen = () => {
             setConnected(true)
-            const connectMessage = JSON.stringify({ event: 'connection', username: 'ВашеИмяПользователя' });
+            const connectMessage = JSON.stringify({ event: 'connection', username: userName });
             socket.current.send(connectMessage);
         }
         socket.current.onmessage = (event) => {
