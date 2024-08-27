@@ -8,7 +8,7 @@ const TeacherList = () => {
   const teacherAll = useAppSelector((state) => state.community);
   return (
     <div>
-        <Grid justify="space-between" align="flex-start">
+        <Grid justify="center" align="stretch">
       {teacherAll.teachers.map((el) => (
         <div key={el.id}>
           <CommunityCard el={el} />
