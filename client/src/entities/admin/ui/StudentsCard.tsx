@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+
 import { Avatar, Badge, Table, Group, Text, Select } from "@mantine/core";
 import { useAppDispatch, useAppSelector } from "../../../app/providers/store/store";
 import { updatePoints } from '../../point/model/pointSlice';
 import { PointsWithoutId } from '../../point/type/pointType';
 
-const StudentsCard = ({el}) => {
+const StudentsCard = ({el}: any) => {
 
 
 

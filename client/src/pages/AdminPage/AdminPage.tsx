@@ -1,5 +1,5 @@
-import { Avatar, Badge, Table, Group, Text, Select } from '@mantine/core';
-import React from 'react';
+import { Table } from '@mantine/core';
+
 import { useAppSelector } from '../../app/providers/store/store';
 import StudentsCard from '../../entities/admin/ui/StudentsCard';
 import TeachList from '../../entities/admin/ui/TeachList';

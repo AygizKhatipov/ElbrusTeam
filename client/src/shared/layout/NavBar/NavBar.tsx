@@ -144,6 +144,7 @@ function Navbar(): JSX.Element {
                 <Link to="/base" className={classes.link}>
                   База знаний
                 </Link>
+                <Link to="/chat" className={classes.link}>Чат</Link>
                 {user.roleId === 2 ||
                 user.roleId === 1 ||
                 user.roleId === 3 ||

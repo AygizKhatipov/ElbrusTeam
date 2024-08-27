@@ -16,10 +16,10 @@
   }
 
   .container {
-    background-color: red;
+    /* background-color: red; */
   }
 
   .containermessage {
     min-height: 600px;
-    background-color: rgb(130, 123, 123);
+    /* background-color: rgb(130, 123, 123); */
   }
