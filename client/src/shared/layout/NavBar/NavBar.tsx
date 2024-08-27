@@ -201,7 +201,10 @@ function Navbar(): JSX.Element {
                   Зарегистрироваться
                 </Link>
                 <Button
-                  variant="default"
+                h="100%"
+                  color="gray"
+                  visibleFrom="sm"
+                  variant="subtle"
                   onClick={() => toggleColorScheme()}
                   aria-label="Toggle theme"
                 >
