@@ -2,8 +2,9 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { PesonalCommunityType } from '../types/communityType';
 import baseDatesApi from '../api/baseDatesApi';
+import { BaseDatesType } from '../types/baseDatesType';
 
-const initialState: PesonalCommunityType[] = [];
+const initialState: BaseDatesType[] = [];
 
 // Создаем асинхронный thunk для загрузки базы знаний с использованием API
 const loadBaseDates = createAsyncThunk<PesonalCommunityType[]>('basedates/load', () =>
