@@ -10,6 +10,7 @@ import { getOneAccount } from "../entities/accout/model/accoutSlice";
 import { loadBaseDates } from "../entities/baseDates/model/baseDateSlice";
 import { loadCouches, loadGraduates, loadStudents, loadTeachers } from "../entities/community/model/communitySlice";
 import { loadRoles } from "../entities/role/model/roleSlice";
+import { loadPoints } from "../entities/point/model/pointSlice";
 
 
 
@@ -38,6 +39,10 @@ function App() {
 
   useEffect(() => {
     dispatch(loadTeachers())
+      .catch(console.log);
+  }, []);
+  useEffect(() => {
+    dispatch(loadPoints())
       .catch(console.log);
   }, []);
   useEffect(() => {

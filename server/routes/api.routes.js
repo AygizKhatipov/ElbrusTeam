@@ -6,11 +6,13 @@ const uploadsRouter= require('./uploads.routes')
 const communityRouter= require('./community.routes')
 const basedatesRouter= require('./base.routes')
 const eventsRouter= require('./events.routes')
+const pointsRouter= require('./point.routes')
 
 const usersRouter= require('./user.routes')
 const accountsRouter= require('./account.routes')
 
 router.use('/accounts', accountsRouter);
+router.use('/points', pointsRouter);
 router.use('/roles', rolesRouter);
 router.use('/users', usersRouter);
 router.use('/upload', uploadsRouter)
