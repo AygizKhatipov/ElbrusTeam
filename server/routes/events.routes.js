@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
   }
 });
 router.post("/",verifyAccessToken, async (req, res) => {
-  const { date, title, description } = req.body;
+  const { date, title, description, pic } = req.body;
   res.locals.user = user;
 
   try {
@@ -21,7 +21,7 @@ router.post("/",verifyAccessToken, async (req, res) => {
       user.roleId === 3 ||
       user.roleId === 6
     ) {
-      const eventCreate = await Event.create({ date, title, description });
+      const eventCreate = await Event.create({ date, title, description, pic });
       res.status(200).json(eventCreate.dataValues);
     }
   } catch (error) {
@@ -44,9 +44,9 @@ router.delete("/:id", async (req, res) => {
 router.route("/:id").put(async (req, res) => {
   try {
     const { id } = req.params;
-    const { date, title, description } = req.body;
+    const { date, title, description, pic } = req.body;
     const eventCreate = await Event.update(
-      { date, title, description },
+      { date, title, description, pic },
       { where: { id } }
     );
 
