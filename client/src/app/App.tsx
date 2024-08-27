@@ -23,7 +23,7 @@ function App() {
   const teacherAll = useAppSelector(state=> state.community.teachers)
 
   // const teacherAll = useAppSelector(state=> state.community);
-  const baseDatesAll = useAppSelector(state => state.baseDate);
+  const baseDatesAll = useAppSelector(state => state.baseDate)
 
 
   // console.log(teacherAll);

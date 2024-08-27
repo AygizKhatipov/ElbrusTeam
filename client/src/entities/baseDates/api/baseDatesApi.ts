@@ -5,7 +5,6 @@ import type { PesonalCommunityType} from '../types/baseDatesType'; //ИСПРА�
 class baseDatesApi {
   static getAllBaseDates = async (): Promise<PesonalCommunityType[]> => {
     const response: AxiosResponse<PesonalCommunityType[]> = await axiosInstance.get('/basedates');
-    console.log(response.data)
     return response.data;
   };
 }

@@ -7,6 +7,7 @@ import groupSliceReducer from '../../../entities/group/model/groupSlice';
 import accoutSliceReducer from '../../../entities/accout/model/accoutSlice';
 import communitySliceReducer from '../../../entities/community/model/communitySlice';
 import chatSliceReducer from '../../../entities/Chat/model/chatSlice';
+import baseDateSliceReducer from '../../../entities/baseDates/model/baseDateSlice';
 
 
 
@@ -19,7 +20,8 @@ const store = configureStore({
         group: groupSliceReducer,
         account :accoutSliceReducer,
         community: communitySliceReducer,
-        chat: chatSliceReducer
+        chat: chatSliceReducer,
+        baseDate: baseDateSliceReducer
     }
 })
 
