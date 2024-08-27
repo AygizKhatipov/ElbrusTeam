@@ -118,6 +118,9 @@ function Navbar(): JSX.Element {
                   </HoverCard.Dropdown>  
                 </HoverCard>  
                 <Link to="/base" className={classes.link}>База знаний</Link>  
+                {(user.roleId===2||user.roleId===1||user.roleId===3||user.roleId===4)?(
+                  <Link to="/admin" className={classes.link}>Админка</Link> 
+                ):(<></>)}
               </Group>  
                
               <Group visibleFrom="sm" >  

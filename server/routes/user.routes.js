@@ -15,12 +15,12 @@ router
 })
 .put('/', async (req, res) => {
   try {
-    const {firstName, lastName, city, country, phone, email, about} = req.body.data
+    const {firstName, lastName, city, country, phone, email, about, isMember, roleId } = req.body.data
     const {accountId} = req.body
-    const [account] = await Account.update({city, country, phone, email, about }, {
+    const [account] = await Account.update({city, country, phone, email, about}, {
       where: { idUser: accountId },
     })
-    const [user] = await User.update({firstName, lastName}, {
+    const [user] = await User.update({firstName, lastName, isMember, roleId }, {
       where: { id: accountId },
     });
     

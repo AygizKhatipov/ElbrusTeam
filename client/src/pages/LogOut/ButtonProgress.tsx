@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../app/providers/store/store';
 import { userLogout } from '../../entities/user/model/userSlice';
-import { ButtonProgress } from './ButtonProgress';
+import  ButtonProgress  from './ButtonProgress.module.css';
 import './LogoutPage.css'; // Подключаем CSS файл
 
 function LogoutPage() {
