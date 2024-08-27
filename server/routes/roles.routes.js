@@ -2,7 +2,7 @@ const router = require("express").Router();
 const verifyAccessToken = require("../middleware/verifyAccessToken");
 const { Role } = require("../db/models");
 
-router.get("/", verifyAccessToken, async (req, res) => {
+router.get("/", async (req, res) => {
 
 
   try {

@@ -6,6 +6,7 @@ export type User = {
     email: string,
     confirmPassword: string,
     isMember: boolean,
+    roleId: number
   };
 
   export type LoginFormType = {
