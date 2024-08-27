@@ -16,13 +16,37 @@ const AdminPage = () => {
    
     
       return (
-      <><Table.ScrollContainer minWidth={800}>
-      <Table verticalSpacing="sm">
+      <>
+      
+      <Table.ScrollContainer minWidth={800}>
+      <Table  verticalSpacing="sm">
+        <Table.Thead>
+          <Table.Tr>
+            <Table.Th>Студенты</Table.Th>
+            <Table.Th>Роли</Table.Th>
+            <Table.Th>Баллы</Table.Th>
+            <Table.Th>Статус</Table.Th>
+          </Table.Tr>
+        </Table.Thead>
+        <Table.Tbody><div>
+      {students.map((el) => (
+        
+        <div key={el.id}>
+          <StudentsCard el={el} />
+        </div>
+      ))} 
+    </div></Table.Tbody>
+      </Table>
+    </Table.ScrollContainer>
+       
+      
+      <Table.ScrollContainer minWidth={800}>
+      <Table  verticalSpacing="sm">
         <Table.Thead>
           <Table.Tr>
             <Table.Th>Преподаватели</Table.Th>
             <Table.Th>Роли</Table.Th>
-            {/* <Table.Th>Баллы</Table.Th> */}
+            
             <Table.Th>Статус</Table.Th>
           </Table.Tr>
         </Table.Thead>
@@ -36,14 +60,7 @@ const AdminPage = () => {
       </Table>
     </Table.ScrollContainer>
        
-    <div>
-      {students.map((el) => (
-        
-        <div key={el.id}>
-          <StudentsCard el={el} />
-        </div>
-      ))} 
-    </div>
+    
     
     
     </>

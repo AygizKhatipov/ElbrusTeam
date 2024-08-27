@@ -6,8 +6,10 @@ import roleSliceReducer from '../../../entities/role/model/roleSlice';
 import groupSliceReducer from '../../../entities/group/model/groupSlice';
 import accoutSliceReducer from '../../../entities/accout/model/accoutSlice';
 import communitySliceReducer from '../../../entities/community/model/communitySlice';
+import pointSlice from '../../../entities/point/model/pointSlice';
 import chatSliceReducer from '../../../entities/Chat/model/chatSlice';
 import baseDateSliceReducer from '../../../entities/baseDates/model/baseDateSlice';
+
 
 
 
@@ -20,8 +22,10 @@ const store = configureStore({
         group: groupSliceReducer,
         account :accoutSliceReducer,
         community: communitySliceReducer,
+        point: pointSlice
         chat: chatSliceReducer,
         baseDate: baseDateSliceReducer
+
     }
 })
 
