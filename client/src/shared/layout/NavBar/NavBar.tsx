@@ -118,6 +118,7 @@ function Navbar(): JSX.Element {
                   </HoverCard.Dropdown>  
                 </HoverCard>  
                 <Link to="/base" className={classes.link}>База знаний</Link>  
+                <Link to="/chat" className={classes.link}>Чат</Link>
               </Group>  
                
               <Group visibleFrom="sm" >  

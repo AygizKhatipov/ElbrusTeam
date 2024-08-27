@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { userRefreshTokens } from "../entities/user/model/userSlice";
 import { getOneAccount } from "../entities/accout/model/accoutSlice";
 import { loadCouches, loadGraduates, loadStudents, loadTeachers } from "../entities/community/model/communitySlice";
+import { getAllMessages } from "../entities/Chat/model/chatSlice";
 
 
 
@@ -14,7 +15,6 @@ import { loadCouches, loadGraduates, loadStudents, loadTeachers } from "../entit
 function App() {
   const dispatch = useAppDispatch();
   const userId = useAppSelector(state => state.user.user?.id); 
-  
   const teacherAll = useAppSelector(state=> state.community.teachers)
   console.log(teacherAll);
   
@@ -46,6 +46,10 @@ function App() {
     dispatch(loadGraduates())
       .catch(console.log);
   }, []);
+  useEffect(() => {
+    dispatch(getAllMessages())
+    .catch(console.log);
+  })
 
   return (
     <div className="app-wrapper">
