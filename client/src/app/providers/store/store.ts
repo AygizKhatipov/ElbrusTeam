@@ -6,6 +6,7 @@ import roleSliceReducer from '../../../entities/role/model/roleSlice';
 import groupSliceReducer from '../../../entities/group/model/groupSlice';
 import accoutSliceReducer from '../../../entities/accout/model/accoutSlice';
 import communitySliceReducer from '../../../entities/community/model/communitySlice';
+import baseDateSlice from '../../../entities/baseDates/model/baseDateSlice';
 
 
 
@@ -17,7 +18,8 @@ const store = configureStore({
         role: roleSliceReducer,
         group: groupSliceReducer,
         account :accoutSliceReducer,
-        community: communitySliceReducer
+        community: communitySliceReducer,
+        baseDate: baseDateSlice
     }
 })
 
