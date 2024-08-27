@@ -1,16 +1,23 @@
+
 import PersonalAccount from "../../entities/accout/ui/PersonalAccount";
 import PersonalAccountInformation from "../../entities/accout/ui/PersonalAccountInformation";
 
 import './style/personalPageCss.css';
 
-const PersonalPage = () => {
-    return (<>
-        <title>Личный кабинет</title>
+const PersonalPage = (): JSX.Element => {
+    return (
+       
+
         
-        <div className="personal-page">
+         <div className="personal-page"> 
+          <title>Личный кабинет</title>
             <PersonalAccount/>
-            <PersonalAccountInformation/>
-        </div></>
+           {/* <PersonalAccountInformation/> */}
+            </div>
+
+
+
+        
     );
 }
 

@@ -16,6 +16,9 @@ import { UserWithoutId } from "../types/userType";
 import { useAppDispatch } from "../../../app/providers/store/store";
 import { userRegistration } from "../model/userSlice";
 
+
+
+
 function RegistrationForm(): JSX.Element {
   const dispatch = useAppDispatch();
 

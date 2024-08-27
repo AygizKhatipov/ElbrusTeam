@@ -11,7 +11,7 @@ import BasePage from "../../pages/BasePage/BasePage";
 import CouchesPage from "../../pages/Community/Couches/CouchesPage";
 import PersonalPage from "../../pages/PersonalAccount/PersonalPage";
 import LogoutPage from '../../pages/LogOut/LogOut';
-import AdminPage from '../../pages/AdminPage/AdminPage';
+import ChatPage from '../../pages/ChatPage/ChatPage';
 
 
 
@@ -32,7 +32,7 @@ function AppRoutes(): JSX.Element {
         <Route path="/registration" element={<RegistrationForm />} />
         <Route path="/base" element={<BasePage />} />
         <Route path="/logout" element={<LogoutPage />} />
-        <Route path="/admin" element={<AdminPage/>} />
+        <Route  path= "/chat" element={<ChatPage/>}/>
         <Route path="*" element={<div>404</div>} />
       </Routes>
     </>

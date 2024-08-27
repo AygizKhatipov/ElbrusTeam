@@ -6,16 +6,15 @@ import { Modal } from '@mantine/core';
 import PersonalAccoutInfo from "./PersonalAccoutModal";
 import UpdateAvatar from "./UpdateAvatar";
 
-
-
 function PersonalAccount(): JSX.Element {
   const [opened, { open, close }] = useDisclosure(false);
-    const account = useAppSelector(state => state.account.account) 
+  const account = useAppSelector(state => state.account.account);
+  const { Account } = account;
+  console.log(account);
 
-
-    return (
+  return (
     <div className={classes.container}>
-        <Card  withBorder padding="xl" radius="md" className={classes.card}>
+      <Card withBorder padding="xl" radius="md" className={classes.card}>
         <Card.Section
           h={150}
           style={{
@@ -34,22 +33,29 @@ function PersonalAccount(): JSX.Element {
         <Text ta="center" fz="lg" fw={500} mt="sm">
           {account?.firstName}{" "}{account?.lastName}
         </Text>
-        <Text ta="center" fz="sm" c="dimmed">
-          Fullstack engineer
-        </Text>
         <Text ta="center" fz="lg" fw={500} mt="sm">
-          {account.email}
+          Email: {account.email}
+        </Text >
+        <Text ta="center" fz="lg" fw={500} mt="sm">
+        Страна: {Account?.country}{' '}{Account?.city}
+        </Text >
+        <Text ta="center" fz="lg" fw={500} mt="sm">
+          Телефон: {Account?.phone}
+        </Text >
+        <Text ta="center" fz="lg" fw={500} mt="sm">
+          {Account?.about}
         </Text >
         <UpdateAvatar/>
-        <Modal opened={opened} size="75%" onClose={close}  centered>
-        <PersonalAccoutInfo/>
-      </Modal>
+        <Modal opened={opened} size="75%" onClose={close} centered>
+
+          <PersonalAccoutInfo onClose={close} />
+        </Modal>
         <Button onClick={open} fullWidth color="violet" radius="md" mt="xl" size="md" variant="outline">
           Редактировать
         </Button>
       </Card>
     </div>
-    );
+  );
 }
 
 export default PersonalAccount;

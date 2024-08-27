@@ -13,9 +13,6 @@ import {
   Center,  
   Box,  
   Burger,  
-  Drawer,  
-  Collapse,  
-  ScrollArea,  
   rem,  
   useMantineTheme,  
   useMantineColorScheme,  
@@ -118,10 +115,9 @@ function Navbar(): JSX.Element {
                   </HoverCard.Dropdown>  
                 </HoverCard>  
                 <Link to="/base" className={classes.link}>База знаний</Link>  
-                {(user.roleId===2||user.roleId===1||user.roleId===3||user.roleId===4)?(
-                  <Link to="/admin" className={classes.link}>Админка</Link> 
-                ):(<></>)}
+                <Link to='/chat' className={classes.link}>Чат</Link>
               </Group>  
+             
                
               <Group visibleFrom="sm" >  
                 {/* <Button variant="default"><Link to="/personal" className={classes.link}><PersonalPageLink/></Link></Button>   */}
