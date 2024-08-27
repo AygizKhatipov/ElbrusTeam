@@ -20,7 +20,7 @@ const HomePage = () => {
                 variant="gradient"
                 gradient={{ from: 'pink', to: 'yellow' }}
               >
-                ТЫ ЧАСТЬ ЛУЧШЕГО
+               ТЫ ЧАСТЬ ЛУЧШЕГО
               </Text>{' '}
               сообщества IT!
             </Title>
