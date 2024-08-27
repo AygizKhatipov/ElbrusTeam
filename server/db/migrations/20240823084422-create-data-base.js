@@ -15,8 +15,11 @@ module.exports = {
       description: {
         type: Sequelize.STRING
       },
+      article: {
+        type: Sequelize.TEXT,
+      },
       pic: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       userId: {
         type: Sequelize.INTEGER,
