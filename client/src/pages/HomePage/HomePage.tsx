@@ -1,9 +1,11 @@
 import { Container, Title, Text, Button } from '@mantine/core';
 import classes from './HeroImageRight.module.css';
 import { useAppSelector } from '../../app/providers/store/store';
+import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
     const userId = useAppSelector(state => state.user.user?.id)
+    const navigate = useNavigate()
     return (
         <>
         <title>Главная</title>
@@ -30,7 +32,7 @@ const HomePage = () => {
               <p>А еще быть в курсе всех событий, добавлять свои материалы и пользоваться нашей базой знаний, кропотливо собранной такими же ребятами, как ты.</p>
               <p>P.S. Для доступа ко всем возможностям пройди авторизацию или зарегистрируйся.</p>
             </Text>
-                {userId? <Button
+                {userId? <Button onClick={()=> navigate('/community')}
               variant="gradient"
               gradient={{ from: 'pink', to: 'yellow' }}
               size="xl"

@@ -118,7 +118,7 @@ function Navbar(): JSX.Element {
                   withinPortal
                 >
                   <HoverCard.Target>
-                    <Link to="/" className={classes.link}>
+                    <Link to="/community" className={classes.link}>
                       <Center inline>
                         <Box component="span" color="#5430b0" mr={5}>
                           Коммьюнити
@@ -213,7 +213,7 @@ function Navbar(): JSX.Element {
                   aria-label="Toggle theme"
                 >
                   {colorScheme === "dark" ? (
-                    <IconSun color="#5430b0" size={16} />
+                    <IconSun color="white" size={16} />
                   ) : (
                     <IconMoon color="#5430b0" size={16} />
                   )}

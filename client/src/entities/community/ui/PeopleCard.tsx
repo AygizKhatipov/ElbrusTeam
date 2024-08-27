@@ -12,7 +12,7 @@ import {
 import classes from './ArticleCard.module.css';  
 import { useAppSelector } from '../../../app/providers/store/store';
 
-const TeacherCard = ({ el }) => {  
+const PeopleCard = ({ el }) => {  
   const linkProps = { href: 'https://mantine.dev', target: '_blank', rel: 'noopener noreferrer' };  
   // const theme = useMantineTheme();  
   console.log(333, el);
@@ -52,4 +52,4 @@ const TeacherCard = ({ el }) => {
   );  
 }  
 
-export default TeacherCard;
+export default PeopleCard;
