@@ -10,12 +10,12 @@ const StudentsCard = ({el}) => {
 
 
     const roles = useAppSelector(state=> state.role.roles) 
-    const points = useAppSelector(state=> state.point)
+    
     const allRoles=roles.map((role)=>role.role)
     const yourRole= roles.filter((role)=> el.roleId===role.id)
    const [yourRoleaa] =yourRole.map((role)=>role.role)
 
-
+const points = useAppSelector(state=> state.point)
    const yourPoint= points.filter((point)=> el.id===point.userId)
    const [yourPointEnd] =yourPoint.map((point)=>point.point)
 

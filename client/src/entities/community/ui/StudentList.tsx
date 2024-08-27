@@ -4,10 +4,10 @@ import CommunityCard from "./CommunityCard";
 import { Grid } from '@mantine/core';
 const StudentList = () => {
 
-  const teacherAll = useAppSelector((state) => state.community);
+  const studentAll = useAppSelector((state) => state.community.students);
     return (
         <div> <Grid justify="center" align="stretch">
-           {teacherAll.students.map((el) => (
+           {studentAll.map((el) => (
         <div key={el.id}>
           <CommunityCard el={el} />
         </div>

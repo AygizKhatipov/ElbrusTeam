@@ -12,6 +12,8 @@ import CouchesPage from "../../pages/Community/Couches/CouchesPage";
 import PersonalPage from "../../pages/PersonalAccount/PersonalPage";
 import LogoutPage from '../../pages/LogOut/LogOut';
 import ChatPage from '../../pages/ChatPage/ChatPage';
+import AdminPage from '../../pages/AdminPage/AdminPage';
+import PeoplePage from '../../entities/community/ui/AllPeople';
 
 
 
@@ -22,6 +24,7 @@ function AppRoutes(): JSX.Element {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/community" element={<PeoplePage />} />
         <Route path="/graduates" element={<GraduatesPage />} />
         <Route path="/students" element={<StudentsPage />} />
         <Route path="/teachers" element={<TeachersPage />} />
@@ -32,6 +35,7 @@ function AppRoutes(): JSX.Element {
         <Route path="/registration" element={<RegistrationForm />} />
         <Route path="/base" element={<BasePage />} />
         <Route path="/logout" element={<LogoutPage />} />
+        <Route path="/admin" element={<AdminPage />} />
         <Route  path= "/chat" element={<ChatPage/>}/>
         <Route path="*" element={<div>404</div>} />
       </Routes>
