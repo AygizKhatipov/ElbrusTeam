@@ -6,6 +6,8 @@ import BaseCard from "./BaseDateCard";
 
 const BaseDateList = () => {
   const baseDateAll = useAppSelector((state) => state.baseDate);
+  console.log(baseDateAll
+  )
   return (
     <div>
       {baseDateAll.map((el) => (
