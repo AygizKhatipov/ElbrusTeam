@@ -175,7 +175,7 @@ function RegistrationForm(): JSX.Element {
           </Tooltip>
 
           <Button type="submit" color="violet" fullWidth mt="xl">
-            Войти
+            Зарегистрироваться
           </Button>
         </Paper>
       </form>

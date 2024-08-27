@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { FileInput, Button, Loader } from '@mantine/core';
 import { useAppDispatch, useAppSelector } from '../../../app/providers/store/store';
 import { updateAvatar } from '../model/accoutSlice';
-
+import { IconPhoto, IconDownload, IconArrowRight } from '@tabler/icons-react';
 function UpdateAvatar() {
   const [file, setFile] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
@@ -43,7 +43,7 @@ function UpdateAvatar() {
   return (
     <div>
       {file ? (
-        <Button onClick={upload} disabled={!file || loading}>
+        <Button variant="outline" color='violet'  rightSection={<IconDownload size={14} />} fullWidth onClick={upload} disabled={!file || loading}>
           {loading ? 'Загрузка...' : 'Загрузить'}
         </Button>
       )

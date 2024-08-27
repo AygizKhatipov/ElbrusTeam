@@ -27,8 +27,11 @@ function LoginForm(): JSX.Element {
     });
 
     const login: SubmitHandler<LoginFormType> = (data:LoginFormType) => {
-        dispatch(userLogin(data)).then(()=> {
-            navigate('/')
+        dispatch(userLogin(data)).then((data)=> {
+          console.log(data)
+          if(data.payload) {
+            navigate('/');
+          }
         })
         .catch(console.log)
     }
