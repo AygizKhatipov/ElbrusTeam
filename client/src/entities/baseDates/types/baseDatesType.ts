@@ -12,6 +12,7 @@ export type BaseDatesType = {
     id: number,
     title: string | null,
     description: string | null,
+    article: string | null,
     pic: string | null,
     userId: number,
 }
