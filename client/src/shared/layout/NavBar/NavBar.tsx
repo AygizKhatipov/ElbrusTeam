@@ -86,10 +86,11 @@ function Navbar(): JSX.Element {
       <header className={classes.header}>  
         <Group justify="space-between" h="100%">  
           <img  src='https://habrastorage.org/getpro/moikrug/uploads/company/100/007/092/7/logo/medium_a88920f785a30e86c6e4a0cebbc66644.png'  
-          style={{ width: 50 }} alt="logo" />  
+          style={{ width: 50, marginBottom:10 }} alt="logo" />  
           {user ? (  
             <>  
               <Group h="100%" gap={0} visibleFrom="sm">  
+                
                 <Link to="/" className={classes.link}>Главная</Link>  
                 <Link to="/events" className={classes.link}>События</Link>  
                 <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>  
@@ -133,9 +134,7 @@ function Navbar(): JSX.Element {
               <Group h="100%" gap={0} visibleFrom="sm">  
                 <Link to="/" className={classes.link}>Главная</Link>  
               </Group>  
-              <Button variant="default" onClick={() => toggleColorScheme()} aria-label="Toggle theme">  
-            {colorScheme === 'dark' ? <IconSun size={16} /> : <IconMoon size={16} />}  
-          </Button>  
+              
               <Group visibleFrom="sm">  
                <Link to="/login" className={classes.link}>Войти</Link> 
                <Link to="/registration" className={classes.link}>Зарегистрироваться</Link> 
