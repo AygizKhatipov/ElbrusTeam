@@ -1,7 +1,9 @@
+
 import { useState } from 'react';
 import { useInterval } from '@mantine/hooks';
 import { Button, Progress, rgba } from '@mantine/core';
 import classes from './ButtonProgress.module.css';
+
 
 export function ButtonProgress() {
   const [progress, setProgress] = useState(0);
