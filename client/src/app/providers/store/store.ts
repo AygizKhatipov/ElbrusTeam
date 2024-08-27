@@ -22,7 +22,7 @@ const store = configureStore({
         group: groupSliceReducer,
         account :accoutSliceReducer,
         community: communitySliceReducer,
-        point: pointSlice
+        point: pointSlice,
         chat: chatSliceReducer,
         baseDate: baseDateSliceReducer
 
