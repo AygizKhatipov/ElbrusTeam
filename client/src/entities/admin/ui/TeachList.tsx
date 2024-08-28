@@ -7,6 +7,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';  
 import { PesonalPageType, PesonalPageTypeOnly } from "../../accout/types/accountType";
 import { updateAccount } from "../../accout/model/accoutSlice";
+import { useState } from "react";
 
 const schemaNewPeople = yup  
     .object()  
@@ -51,6 +52,7 @@ const schemaNewPeople = yup
     ]
 
 const TeachList = ({ el, updateAll }) => {
+  
     const roles = useAppSelector(state=> state.role.roles)
 
 
