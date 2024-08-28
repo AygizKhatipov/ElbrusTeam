@@ -1,12 +1,26 @@
 import React from 'react';
 import { useAppSelector } from "../../../app/providers/store/store";
 import CommunityCard from "./CommunityCard";
-import { Grid } from '@mantine/core';
+import { Center, Grid, MultiSelect } from '@mantine/core';
 import PeopleCard from './PeopleCard';
 const PeoplePage = () => {
 
     const peopleAll = useAppSelector((state) => state.community);
-    return (
+    return (<>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>  
+    <MultiSelect  
+        style={{ width: '50%', marginTop:10}}  
+        
+        placeholder="Поиск"  
+        data={['React', 'Angular', 'Vue', 'Svelte']}  
+        searchable  
+        nothingFoundMessage="Ничего не найденно..."  
+    />  
+</div>  
+
+
+
+
         <div> 
             
             <Grid justify="center" align="stretch">
@@ -33,7 +47,7 @@ const PeoplePage = () => {
           <PeopleCard el={el} />
         </div>
       ))}</Grid>
-        </div>
+        </div></>
     );
 }
 

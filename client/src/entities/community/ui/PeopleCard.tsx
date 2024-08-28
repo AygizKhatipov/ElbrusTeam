@@ -35,7 +35,7 @@ const PeopleCard = ({ el }) => {
         {yourRoleaa} 
       </Badge>  
 
-      <Text className={classes.title} fw={500} component="a" {...linkProps}>  
+      <Text className={classes.title} fw={500} component="a" >  
         {el.firstName} {el.lastName} 
       </Text>  
 
