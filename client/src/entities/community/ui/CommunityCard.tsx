@@ -15,7 +15,7 @@ import { useAppSelector } from '../../../app/providers/store/store';
 const TeacherCard = ({ el }) => {  
   const linkProps = { href: 'https://mantine.dev', target: '_blank', rel: 'noopener noreferrer' };  
   // const theme = useMantineTheme();  
-  console.log(333, el);
+
   const roles = useAppSelector(state=> state.role.roles) 
     
     const yourRole= roles.filter((role)=> el.roleId===role.id)
@@ -35,7 +35,7 @@ const TeacherCard = ({ el }) => {
         {yourRoleaa} 
       </Badge>  
 
-      <Text className={classes.title} fw={500} component="a" {...linkProps}>  
+      <Text className={classes.title} fw={500} component="a" >  
         {el.firstName} {el.lastName} 
       </Text>  
 

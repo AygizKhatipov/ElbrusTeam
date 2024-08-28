@@ -4,24 +4,28 @@ import {
   Group,
   TypographyStylesProvider,
   Paper,
+  Title 
+
 } from '@mantine/core';
 import classes from '../style/CommentHtml.module.css'
 import { useAppSelector } from '../../../app/providers/store/store';
 
 function MessageComponent({userMessage}: any): JSX.Element {
-    const photo = useAppSelector(state => state.account.account.Account?.photo)
-    const {lastName, username,message, toId} = userMessage
+  const allAccouts = useAppSelector(state => state.account.allAccounts);
+    const {lastName, username,message, toId, fromId} = userMessage
+    const accouttPhoto = allAccouts.find((accout) => accout.id === fromId)
+
   return (
     <div>
       <Paper withBorder radius="md" className={classes.comment}>
         <Group>
           <Avatar
-            src={photo}
+            src={accouttPhoto?.Account?.photo}
             alt="Jacob Warnhalter"
             radius="xl"
           />
           <div>
-            <Text fz="sm">{toId}{' '}{lastName}</Text>
+            <Title mb={15} order={6}>{toId}{' '}{lastName}</Title >
           </div>
         </Group>
         <TypographyStylesProvider className={classes.body}>

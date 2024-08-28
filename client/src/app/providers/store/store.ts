@@ -26,8 +26,7 @@ const store = configureStore({
         point: pointSlice,
         baseDate: baseDateSliceReducer,
         chat: chatSliceReducer,
-        event: eventSlice
-
+        event: eventSlice,
     }
 })
 

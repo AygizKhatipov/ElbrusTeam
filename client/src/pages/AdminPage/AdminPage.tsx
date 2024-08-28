@@ -9,7 +9,7 @@ const AdminPage = () => {
     const teachers =useAppSelector(state=>state.community.teachers)
     const students =useAppSelector(state=>state.community.students)
     
-    console.log( teachers);
+
     
 
 
@@ -17,7 +17,7 @@ const AdminPage = () => {
     
       return (
       <>
-      
+      <title>Админка</title>
       <Table.ScrollContainer minWidth={800}>
       <Table  verticalSpacing="sm">
         <Table.Thead>
