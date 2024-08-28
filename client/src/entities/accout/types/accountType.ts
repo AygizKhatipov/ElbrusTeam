@@ -24,7 +24,14 @@ export type PesonalPageType = {
     roleId: number | null,
     Account: AccountType | null
 }
-
+export type PesonalPageTypeOnly = {
+    id: number,
+    firstName: string,
+    lastName: string,
+    email: string,
+    isMember: boolean | null,
+    roleId: number | null
+}
 
 export interface UpdateAccountType {
     firstName: string,
