@@ -14,6 +14,7 @@ import LogoutPage from '../../pages/LogOut/LogOut';
 import ChatPage from '../../pages/ChatPage/ChatPage';
 import AdminPage from '../../pages/AdminPage/AdminPage';
 import CommunitiesPage from '../../pages/Community/CommunityPage';
+import AnonimPage from '../../pages/AdminPage/AnonimousPage';
 
 
 
@@ -24,6 +25,7 @@ function AppRoutes(): JSX.Element {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/anonymous" element={<AnonimPage />} />
         <Route path="/community" element={<CommunitiesPage />} />
         <Route path="/graduates" element={<GraduatesPage />} />
         <Route path="/students" element={<StudentsPage />} />
