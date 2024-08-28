@@ -26,12 +26,12 @@ router.post("/",verifyAccessToken, async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
-router.route("/:id")
+router.route("/:userId")
 .put(async(req, res)=>{
     try {
-        const {id} =req.params
-        const {point, userId}= req.body
-        const baseUpdate = await Point.update({point, userId}, {where:{id}})
+        const {userId} =req.params
+        const {point}= req.body
+        const baseUpdate = await Point.update({point}, {where:{userId}})
 
         res.status(201).json(baseUpdate)
     } catch (error) {
