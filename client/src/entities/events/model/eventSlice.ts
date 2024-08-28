@@ -27,7 +27,6 @@ const eventsSlice = createSlice({
   },
 });
 
-// Экспортируем thunk для использования в компонентах
+
 export { loadEvents };
-// Экспортируем reducer для добавления в store
 export default eventsSlice.reducer;

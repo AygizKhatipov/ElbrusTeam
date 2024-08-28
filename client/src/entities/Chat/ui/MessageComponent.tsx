@@ -12,12 +12,12 @@ import { useAppSelector } from '../../../app/providers/store/store';
 
 function MessageComponent({userMessage}: any): JSX.Element {
   const allAccouts = useAppSelector(state => state.account.allAccounts);
-    const {lastName, username,message, toId, fromId} = userMessage
+    const {lastName,message, toId, fromId} = userMessage
     const accouttPhoto = allAccouts.find((accout) => accout.id === fromId)
 
   return (
     <div>
-      <Paper withBorder radius="md" className={classes.comment}>
+      <Paper mb={10}  radius="md" className={classes.comment}>
         <Group>
           <Avatar
             src={accouttPhoto?.Account?.photo}
