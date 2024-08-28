@@ -22,8 +22,6 @@ const points = useAppSelector(state=> state.point)
    const dispatch = useAppDispatch()
 
    const updatePoint =  (id:number, data : PointsWithoutId)=>{
-    console.log(123);
-    
     dispatch(updatePoints({ id, form: data}))
     .catch(console.log);
 

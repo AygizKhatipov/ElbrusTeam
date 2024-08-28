@@ -15,7 +15,7 @@ import { useAppSelector } from '../../../app/providers/store/store';
 const PeopleCard = ({ el }) => {  
   const linkProps = { href: 'https://mantine.dev', target: '_blank', rel: 'noopener noreferrer' };  
   // const theme = useMantineTheme();  
-  console.log(333, el);
+
   const roles = useAppSelector(state=> state.role.roles) 
     
     const yourRole= roles.filter((role)=> el.roleId===role.id)

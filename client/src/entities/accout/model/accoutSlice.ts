@@ -7,6 +7,10 @@ import { AccountType } from '../types/accountType';
 //     return await PersonalAPI.getAllAccounts();
 // });
 
+const getAllAccounts = createAsyncThunk('account/getAllAccounts', async () => {
+    return await PersonalAPI.getAllAccounts();
+})
+
 const getOneAccount = createAsyncThunk('account/getOneAccount', async (id: number ) => {
     return await PersonalAPI.getOneAccount(id);
 });
@@ -32,9 +36,13 @@ const accountSlice = createSlice({
         builder.addCase(updateAccount.fulfilled, (state, action) => {
             state.account = action.payload
         })
+        builder.addCase(getAllAccounts.fulfilled, (state, action) => {
+
+            state.allAccounts = action.payload 
+        })
     },
 });
 
 
-export {getOneAccount, updateAvatar, updateAccount}
+export {getOneAccount, updateAvatar, updateAccount, getAllAccounts}
 export default accountSlice.reducer;

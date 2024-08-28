@@ -1,15 +1,16 @@
 import { ChatType } from "../../../entities/Chat/types/chatType"
 import { PesonalPageType } from "../../../entities/accout/types/accountType"
 import { GroupType } from "../../../entities/group/types/groupType"
-import { RoleType } from "../../../entities/role/types/roleTypes"
+import { Roles } from "../../../entities/role/types/roleType"
 import { UserGroupType } from "../../../entities/userGroup/types/userGroupType"
 
 type InitialStateType = {
-    role: RoleType[],
+    role: Roles[],
     account: PesonalPageType,
     group: GroupType[],
     userGroup: UserGroupType[],
     chat: ChatType[],
+    allAccounts: PesonalPageType[],
 }
 
 const initialAccount: PesonalPageType = {
@@ -37,5 +38,5 @@ export const initialState:InitialStateType ={
     group: [],  
     userGroup: [],
     chat: [],
-    
+    allAccounts: [],
 }

@@ -9,7 +9,7 @@ const TeachList = ({ el }: any) => {
    const [yourRoleaa] =yourRole.map((role)=>role.role)
 
 
-    console.log(yourRoleaa);
+
     
     
     

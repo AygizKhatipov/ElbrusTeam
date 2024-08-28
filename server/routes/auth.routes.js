@@ -6,7 +6,7 @@ const jwtConfig = require('../config/jwtConfig');
 
 router.post('/registration', async (req, res) => {
     try {
-        console.log(111)
+
         const {lastName,firstName, email, password, isMember, roleId} = req.body;
         if (lastName.trim() === '' ||
         firstName.trim() === '' ||
@@ -46,7 +46,6 @@ router.post('/authorization', async (req, res) => {
 
         const user = (await User.findOne({where: {email}})).get();
         const isMatch = await bcrypt.compare(password, user.password)
-        console.log(user.password)
         if (user && isMatch) {
             const {accessToken, refreshToken} = generateTokens({user});
 
