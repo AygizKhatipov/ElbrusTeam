@@ -24,6 +24,7 @@ router.use('/upload', uploadsRouter)
 router.use('/community', communityRouter);
 router.use('/basedates', basedatesRouter);
 router.use('/chat',chatRouter )
+router.use('/events', eventsRouter)
 
 router.use('/auth', authRouter)
 router.use('/tokens', tokensRouter);
