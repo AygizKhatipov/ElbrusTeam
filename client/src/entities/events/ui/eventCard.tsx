@@ -1,28 +1,20 @@
-import { SimpleGrid, Card, Image, Text, Container, AspectRatio } from '@mantine/core';
-import classes from './ArticlesCardsGrid.module.css';
+import { Card, Image, Text, AspectRatio } from '@mantine/core';
+import classes from './EventCard.module.css';
 
-const EventCard = ({el}) => {
-
-const cards = ({el}) => (
-      <Card key={el.title} p="md" radius="md" component="a" href="#" className={classes.card}>
-        <AspectRatio ratio={1920 / 1080}>
-          <Image src={el.pic} />
-        </AspectRatio>
-        <Text c="dimmed" size="xs" tt="uppercase" fw={700} mt="md">
-          {el.date}
-        </Text>
-        <Text className={classes.title} mt={5}>
-          {el.title}
-        </Text>
-      </Card>
-    );
-  
-    return (
-      <Container py="xl">
-        <SimpleGrid cols={{ base: 1, sm: 2 }}>{cards}</SimpleGrid>
-      <section>{cards({el})}</section>
-      </Container>
-    );
-  }
+const EventCard = ({ el }) => {
+  return (
+    <Card p="md" radius="md" component="a" href="#" className={classes.card}>
+      <AspectRatio ratio={1920 / 1080}>
+        <Image src={el.pic} />
+      </AspectRatio>
+      <Text c="dimmed" size="xs" tt="uppercase" fw={700} mt="md">
+        {el.date}
+      </Text>
+      <Text className={classes.title} mt={5}>
+        {el.title}
+      </Text>
+    </Card>
+  );
+};
 
 export default EventCard;
