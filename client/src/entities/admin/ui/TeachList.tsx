@@ -7,7 +7,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';  
 import { PesonalPageTypeOnly } from "../../accout/types/accountType";
 import { updateAccount } from "../../accout/model/accoutSlice";
-import { useState } from "react";
+
 
 const schemaNewPeople = yup  
     .object()  
