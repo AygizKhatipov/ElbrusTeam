@@ -1,12 +1,13 @@
-import React from 'react';
+
+import EventList from "../../entities/events/ui/eventList";
+
 
 const EventPage = () => {
     return (
-         <>
-        <title>События</title>
-        <div>
-        События
-        </div></>
+      
+        <>
+            <EventList />
+        </>
     );
 }
 

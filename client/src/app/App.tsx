@@ -12,6 +12,7 @@ import { loadCouches, loadGraduates, loadStudents, loadTeachers } from "../entit
 import { loadRoles } from "../entities/role/model/roleSlice";
 import { loadPoints } from "../entities/point/model/pointSlice";
 import { loadMessages } from "../entities/Chat/model/chatSlice";
+import { loadEvents } from "../entities/events/model/eventSlice";
 
 
 
@@ -30,6 +31,7 @@ function App() {
 
   // console.log(teacherAll);
   console.log('База знаний', baseDatesAll);
+  
   
 
   useEffect(() => {
@@ -74,6 +76,12 @@ function App() {
     dispatch(loadBaseDates())
     .catch(console.log)},
      []);
+  
+     useEffect(()=> {
+      dispatch(loadEvents())
+      .catch(console.log)},
+       []);   
+     
 
   return (
     <div className="app-wrapper">
