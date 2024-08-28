@@ -132,7 +132,7 @@ function Navbar(): JSX.Element {
                   </HoverCard.Target>
                   <HoverCard.Dropdown style={{ overflow: "hidden" }}>
                     <Group justify="space-between" px="md">
-                      <Text color="#5430b0" fw={500}>Коммьюнити</Text>
+                      <Text className={classes.link} fw={500}>Коммьюнити</Text>
                     </Group>
                     <Divider my="sm" />
                     <SimpleGrid cols={2} spacing={0}>
