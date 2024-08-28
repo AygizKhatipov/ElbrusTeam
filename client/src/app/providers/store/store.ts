@@ -9,6 +9,7 @@ import communitySliceReducer from '../../../entities/community/model/communitySl
 import pointSlice from '../../../entities/point/model/pointSlice';
 import baseDateSliceReducer from '../../../entities/baseDates/model/baseDateSlice';
 import chatSliceReducer from '../../../entities/Chat/model/chatSlice';
+import eventSlice from '../../../entities/events/model/eventSlice';
 
 
 
@@ -24,7 +25,8 @@ const store = configureStore({
         community: communitySliceReducer,
         point: pointSlice,
         baseDate: baseDateSliceReducer,
-        chat: chatSliceReducer
+        chat: chatSliceReducer,
+        event: eventSlice
 
     }
 })
