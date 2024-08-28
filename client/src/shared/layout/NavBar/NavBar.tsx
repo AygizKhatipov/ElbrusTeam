@@ -120,9 +120,8 @@ function Navbar(): JSX.Element {
                         <Box component="span" color="#5430b0" mr={5}>
                           Коммьюнити
                         </Box>
-                        <IconChevronDown
+                        <IconChevronDown className="user"
                           style={{ width: rem(16), height: rem(16) }}
-                          color={theme.colors.violet[6]}
                         />
                       </Center>
                     </Link>

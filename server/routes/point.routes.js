@@ -31,7 +31,9 @@ router.route("/:userId")
     try {
         const {userId} =req.params
         const {point}= req.body
-        const baseUpdate = await Point.update({point}, {where:{userId}})
+        
+        const update = await Point.update({point}, {where:{userId}})
+        const baseUpdate = await Point.findOne({where:{userId}})
 
         res.status(201).json(baseUpdate)
     } catch (error) {
