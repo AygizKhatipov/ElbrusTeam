@@ -9,14 +9,13 @@ import {
 import classes from './ArticleCard.module.css';  
 import { useAppSelector } from '../../../app/providers/store/store';
 
-const PeopleCard = ({ el }: { el: any }) => {  
+const PeopleCard = ({ el}: { el: any }) => {  
   // const linkProps = { href: 'https://mantine.dev', target: '_blank', rel: 'noopener noreferrer' };  
   // const theme = useMantineTheme();  
-
   const roles = useAppSelector(state=> state.role.roles) 
-    
+
     const yourRole= roles.filter((role)=> el.roleId===role.id)
-   const [yourRoleaa] =yourRole.map((role)=>role.role)
+    const [yourRoleaa] =yourRole.map((role)=>role.role)
   
 
   return (  
@@ -27,24 +26,17 @@ const PeopleCard = ({ el }: { el: any }) => {
           <Image src={el.Account.photo} height={180} />  
         
       </Card.Section>  
-
       <Badge className={classes.rating} variant="gradient" gradient={{ from: 'yellow', to: 'red' }}>  
         {yourRoleaa} 
       </Badge>  
-
       <Text className={classes.title} fw={500} component="a" >  
         {el.firstName} {el.lastName} 
       </Text>  
-
       <Text fz="sm" c="dimmed" lineClamp={4}>  
         {el.Account.about}
       </Text>  
-
-      
-
-     
-      
-    </Card>  </Grid.Col>
+    </Card>
+      </Grid.Col>
     </>
   );  
 }  
