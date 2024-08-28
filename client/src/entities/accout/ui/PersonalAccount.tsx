@@ -10,7 +10,6 @@ function PersonalAccount(): JSX.Element {
   const [opened, { open, close }] = useDisclosure(false);
   const account = useAppSelector(state => state.account.account);
   const { Account } = account;
-  console.log(account);
 
   return (
     <div className={classes.container}>

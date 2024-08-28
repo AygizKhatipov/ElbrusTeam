@@ -9,7 +9,7 @@ const AdminPage = () => {
     const teachers =useAppSelector(state=>state.community.teachers)
     const students =useAppSelector(state=>state.community.students)
     
-    console.log( teachers);
+
     
 
 

@@ -8,6 +8,7 @@ import { AccountType, PesonalPageType } from "../types/accountType";
 class PersonalAPI { 
     static getAllAccounts = async (): Promise<PesonalPageType[]> => { 
         const response: AxiosResponse<PesonalPageType[]> = await axiosInstance.get('/users')
+
         return response.data
     }
 
@@ -17,7 +18,7 @@ class PersonalAPI {
     }
 
     static updateAccount = async ({data, accountId}: any): Promise<PesonalPageType> => {
-        console.log(data)
+
         const response: AxiosResponse<PesonalPageType> = await axiosInstance.put('/users', {data, accountId})
         return response.data
     }

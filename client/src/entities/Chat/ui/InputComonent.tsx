@@ -1,4 +1,4 @@
-import { Button, Container, Textarea } from '@mantine/core';
+import { Button, Container, Textarea, ScrollArea } from '@mantine/core';
 import classes from '../style/CommentHtml.module.css';
 import { Grid } from '@mantine/core';
 import MessageComponent from './MessageComponent';
@@ -66,9 +66,11 @@ function InputComonent(): JSX.Element {
   return (
     <>
       <Container className={classes.containermessage} p="xl">
+      <ScrollArea h={600}>
         {messages.map((message) => (
           <MessageComponent key={message.id} userMessage={message}/>
         ))}
+      </ScrollArea>
       </Container>
       <Container className={classes.container} p="xl">
         <form onSubmit={handleSubmit}>

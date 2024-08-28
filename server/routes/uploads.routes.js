@@ -12,7 +12,7 @@ router.put('/upload-avatar', upload.single('avatar'), async(req, res) => {
   
         const userUpdate =await  Account.update({ photo: fileUrl }, { where: { idUser: userId } });
         const user = (await Account.findOne({ where: { idUser: userId } })).get();
-        console.log(user)
+
         res.status(200).json(user);
     } catch (error) {
         res.status(500).json({ error: error.message });

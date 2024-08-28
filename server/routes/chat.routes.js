@@ -14,7 +14,7 @@ router.route('/')
 })
 .post( async(req, res) => {
     try {
-        console.log(req.body)
+
         const {fromId, message} = req.body
         const newMessage = await Chat.create({fromId, toId: fromId, message})
 
