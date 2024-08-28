@@ -3,7 +3,7 @@ import classes from './EventCard.module.css';
 import { Button } from '@mantine/core';
 
 
-const EventCard = ({ el, isDetailView, onBackClick }) => {
+const EventCard = ({ el, isDetailView, onBackClick }: any) => {
 
   return (
     <Card p="md" radius="md" className={classes.card}>
@@ -12,7 +12,7 @@ const EventCard = ({ el, isDetailView, onBackClick }) => {
       </AspectRatio>
       {isDetailView ? (
         <>
-          <Text size="lg" weight={700} mt="md">
+          <Text size="lg" w={700} mt="md">
             {el.title}
           </Text>
           <Text mt="sm">{el.description}</Text>
