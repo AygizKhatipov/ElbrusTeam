@@ -5,15 +5,12 @@ import {
   Image,  
   Text,  
   Badge,
-  Group,  
-  Center,  
-  Avatar
 } from '@mantine/core';  
 import classes from './ArticleCard.module.css';  
 import { useAppSelector } from '../../../app/providers/store/store';
 
-const PeopleCard = ({ el }) => {  
-  const linkProps = { href: 'https://mantine.dev', target: '_blank', rel: 'noopener noreferrer' };  
+const PeopleCard = ({ el }: { el: any }) => {  
+  // const linkProps = { href: 'https://mantine.dev', target: '_blank', rel: 'noopener noreferrer' };  
   // const theme = useMantineTheme();  
 
   const roles = useAppSelector(state=> state.role.roles) 

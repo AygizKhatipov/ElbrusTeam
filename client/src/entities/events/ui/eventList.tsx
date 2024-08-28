@@ -6,7 +6,8 @@ const EventList = () => {
   const eventAll = useAppSelector((state) => state.event);
 
   const scrollLeft = () => {
-    document.getElementById('carousel').scrollBy({ left: -300, behavior: 'smooth' });
+        document.getElementById('carousel').scrollBy({ left: -300, behavior: 'smooth' })
+
   };
 
   const scrollRight = () => {

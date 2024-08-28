@@ -1,11 +1,11 @@
-import { Avatar, Badge, Table, Group, Text, Select } from "@mantine/core";
+import { Avatar, Badge, Table, Group, Text } from "@mantine/core";
 import { useAppDispatch, useAppSelector } from "../../../app/providers/store/store";
 import { useForm } from "react-hook-form";
 
  
 import { yupResolver } from '@hookform/resolvers/yup';  
 import * as yup from 'yup';  
-import { PesonalPageType, PesonalPageTypeOnly } from "../../accout/types/accountType";
+import { PesonalPageTypeOnly } from "../../accout/types/accountType";
 import { updateAccount } from "../../accout/model/accoutSlice";
 
 const schemaNewPeople = yup  
@@ -50,15 +50,15 @@ const schemaNewPeople = yup
     
     ]
 
-const TeachList = ({ el, updateAll }) => {
+const TeachList = ({ el }: any) => {
     const roles = useAppSelector(state=> state.role.roles)
 
 
     const allRoles=roles.map((role)=>role.role)
     console.log(222, allRoles);
     
-    const yourRole= roles.filter((role)=> el.roleId===role.id)
-   const [yourRoleaa] =yourRole.map((role)=>role.role)
+  //   const yourRole= roles.filter((role)=> el.roleId===role.id)
+  //  const [yourRoleaa] =yourRole.map((role)=>role.role)
 
 
 
@@ -67,8 +67,6 @@ const TeachList = ({ el, updateAll }) => {
    const {  
     register,  
     handleSubmit,  
-    reset,  
-    formState: { errors },  
   } = useForm({  
     defaultValues: {  
       id:0,

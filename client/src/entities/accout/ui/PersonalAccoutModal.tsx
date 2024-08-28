@@ -59,7 +59,7 @@ function PersonalAccoutInfo({ onClose }: PersonalAccoutInfoProps): JSX.Element {
   const dispatch = useAppDispatch();
   const { firstName, lastName, email} = useAppSelector(state => state.account.account);
   console.log(useAppSelector(state => state.account.account))
-  const about = useAppSelector(state => state.account.account.Account?.about);
+  // const about = useAppSelector(state => state.account.account.Account?.about);
 
   const {
     register,
@@ -156,7 +156,7 @@ function PersonalAccoutInfo({ onClose }: PersonalAccoutInfoProps): JSX.Element {
         </Grid>
         <Grid>
           <Grid.Col>
-            <Textarea autosize minRows={3.5} size='md' defaultValue={about} label="О себе" placeholder="Напиши о себе" {...register("about")} ></Textarea>
+            <Textarea autosize minRows={3.5} size='md'  label="О себе" placeholder="Напиши о себе" {...register("about")} ></Textarea>
           </Grid.Col>
         </Grid>
         <Button type="submit" fullWidth radius="md" mt="xl" size="md" color="violet" variant="outline">

@@ -7,6 +7,7 @@ import { ChatType } from "../types/chatType"
 
 
 
+
 class ChatApi {
     static getAllMessages = async (): Promise<ChatType[]> => {
         const response: AxiosResponse<ChatType[]> = await axiosInstance.get('/chat')

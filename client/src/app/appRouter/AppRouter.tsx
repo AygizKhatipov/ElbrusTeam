@@ -13,7 +13,6 @@ import PersonalPage from "../../pages/PersonalAccount/PersonalPage";
 import LogoutPage from '../../pages/LogOut/LogOut';
 import ChatPage from '../../pages/ChatPage/ChatPage';
 import AdminPage from '../../pages/AdminPage/AdminPage';
-import PeoplePage from '../../entities/community/ui/AllPeople';
 import CommunitiesPage from '../../pages/Community/CommunityPage';
 
 
