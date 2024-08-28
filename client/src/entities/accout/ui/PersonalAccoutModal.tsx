@@ -57,6 +57,8 @@ type PersonalAccoutInfoProps = {
 function PersonalAccoutInfo({ onClose }: PersonalAccoutInfoProps): JSX.Element {
   const accountId = useAppSelector(state => state.account.account?.id);
   const dispatch = useAppDispatch();
+  const { firstName, lastName, email,  } = useAppSelector(state => state.account.account);
+  const about = useAppSelector(state => state.account.account.Account?.about);
 
   const {
     register,
@@ -70,9 +72,8 @@ function PersonalAccoutInfo({ onClose }: PersonalAccoutInfoProps): JSX.Element {
 
   const handlePhoneInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
-    // Заменяем все символы, не являющиеся цифрами, на пустую строку
     const numericValue = value.replace(/\D/g, '');
-    setValue('phone', numericValue); // Обновляем значение телефона в форме
+    setValue('phone', numericValue);
   };
 
 
@@ -89,6 +90,7 @@ function PersonalAccoutInfo({ onClose }: PersonalAccoutInfoProps): JSX.Element {
           <Grid.Col span={6}>
           <Tooltip label={errors.firstName?.message} withArrow opened={!!errors.firstName} position="top" color="red">
             <TextInput
+            defaultValue={firstName}
               label="Имя"
               placeholder="Имя"
               {...register("firstName", {
@@ -102,7 +104,7 @@ function PersonalAccoutInfo({ onClose }: PersonalAccoutInfoProps): JSX.Element {
           </Grid.Col>
           <Grid.Col span={6}>
           <Tooltip label={errors.lastName?.message} withArrow opened={!!errors.lastName} position="top" color="red">
-            <TextInput label="Фамилия" placeholder="Фамилия" {...register("lastName", {
+            <TextInput defaultValue={lastName} label="Фамилия" placeholder="Фамилия" {...register("lastName", {
               pattern: {
                 value: /[а-яА-ЯёЁ]+/i,
                 message: 'Фамилия должна содержать русские буквы'
@@ -143,7 +145,7 @@ function PersonalAccoutInfo({ onClose }: PersonalAccoutInfoProps): JSX.Element {
             opened={!!errors.email}
             position="top"
             color="red" >
-            <TextInput label="Email" placeholder="Актуальная почта" {...register("email", {
+            <TextInput label="Email" defaultValue={email} placeholder="Email" {...register("email", {
                 pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                     message: "Введите корректный email",
@@ -154,7 +156,7 @@ function PersonalAccoutInfo({ onClose }: PersonalAccoutInfoProps): JSX.Element {
         </Grid>
         <Grid>
           <Grid.Col>
-            <Textarea autosize minRows={3.5} size='md' label="О себе" placeholder="Напиши о себе" {...register("about")} ></Textarea>
+            <Textarea autosize minRows={3.5} size='md' defaultValue={about} label="О себе" placeholder="Напиши о себе" {...register("about")} ></Textarea>
           </Grid.Col>
         </Grid>
         <Button type="submit" fullWidth radius="md" mt="xl" size="md" color="violet" variant="outline">
