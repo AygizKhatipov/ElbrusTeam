@@ -6,7 +6,6 @@ import { updateAccount } from '../model/accoutSlice';
 import { UpdateAccountType } from '../types/accountType';
 const popularCountries = [
     "Россия",
-    "США",
     "Китай",
     "Германия",
     "Франция",
