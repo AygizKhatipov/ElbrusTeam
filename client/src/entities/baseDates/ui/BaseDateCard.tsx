@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { SimpleGrid, Card, Image, Text, Container, AspectRatio } from '@mantine/core';
 import classes from './ArticlesCardsGrid.module.css';
 

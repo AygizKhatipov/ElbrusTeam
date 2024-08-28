@@ -6,7 +6,6 @@ import { updateAccount } from '../model/accoutSlice';
 import { UpdateAccountType } from '../types/accountType';
 const popularCountries = [
     "Россия",
-    "США",
     "Китай",
     "Германия",
     "Франция",
@@ -30,10 +29,11 @@ const popularCountries = [
   const popularRussianCities = [
     "Москва",
     "Санкт-Петербург",
+    "Нижний Новгород",
+    "Волгоград",
     "Новосибирск",
     "Екатеринбург",
     "Казань",
-    "Нижний Новгород",
     "Челябинск",
     "Самара",
     "Омск",
@@ -42,7 +42,6 @@ const popularCountries = [
     "Красноярск",
     "Пермь",
     "Воронеж",
-    "Волгоград",
     "Краснодар",
     "Саратов",
     "Тюмень",
