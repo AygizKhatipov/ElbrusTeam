@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useAppSelector } from "../../../app/providers/store/store";
-import EventCard from "./EventCard";
+import EventCard from "./eventCard";
 import classes from './EventList.module.css';
 
 const EventList = () => {
@@ -8,15 +8,22 @@ const EventList = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
 
   const scrollLeft = () => {
-        document.getElementById('carousel').scrollBy({ left: -300, behavior: 'smooth' })
+    const div =  document.getElementById('carousel')
+    if(div){
+      div.scrollBy({ left: -300, behavior: 'smooth' })
+    }
+       
 
   };
 
   const scrollRight = () => {
-    document.getElementById('carousel').scrollBy({ left: 300, behavior: 'smooth' });
+    const div2 = document.getElementById('carousel')
+    if(div2){
+      div2.scrollBy({ left: 300, behavior: 'smooth' })
+    }
   };
 
-  const handleCardClick = (event) => {
+  const handleCardClick = (event: any) => {
     setSelectedEvent(event);
   };
 
