@@ -123,19 +123,14 @@ const TeachList = ({ el }: any) => {
             
           </Table.Td>
           <Table.Td>
-            {el.isMember ? (
-              <Badge fullWidth variant="light">
-                
-                Подтвержден
-              </Badge>
-            ) : (
+           
               <Badge color="gray" fullWidth variant="light">
-               <select {...register("isMember")}>
-        <option value={'true'}>Подтвердить</option>
+              
+        <option {...register("isMember")} value={'true'}>Подтвердить</option>
        
-      </select>
+   
               </Badge>
-            )}
+           
           </Table.Td>
     </Table.Tr>
   );

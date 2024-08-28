@@ -28,6 +28,7 @@ import {
   IconChevronDown,
   IconMoon,
   IconSun,
+  IconSpy,
 } from "@tabler/icons-react";
 import classes from "./HeaderMegaMenu.module.css";
 import { useAppSelector } from "../../../app/providers/store/store";
@@ -56,6 +57,18 @@ const mockdata = [
     description: "/couches",
   },
 ];
+const mockdataSecond = [
+  {
+    icon: IconSpy,
+    title: "Анонимы",
+    description: "/anonymous",
+  },
+  {
+    icon: IconBook,
+    title: "Студенты",
+    description: "/admin",
+  }
+];
 
 function Navbar(): JSX.Element {
   const user = useAppSelector((state) => state.user.user);
@@ -68,6 +81,25 @@ function Navbar(): JSX.Element {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme(); // Hook for color scheme
 
 
+  const linksAdmin = mockdataSecond.map((item) => (
+    <UnstyledButton className={classes.subLink} key={item.title}>
+      <Link to={item.description} className={classes.link}>
+        <Group wrap="nowrap" align="flex-start">
+          <ThemeIcon size={34} variant="default" radius="md">
+            <item.icon
+              style={{ width: rem(22), height: rem(22) }}
+              color={theme.colors.violet[5]}
+            />
+          </ThemeIcon>
+          <div>
+            <Text size="sm" fw={500}>
+              {item.title}
+            </Text>
+          </div>
+        </Group>
+      </Link>
+    </UnstyledButton>
+  ))
   const links = mockdata.map((item) => (
     <UnstyledButton className={classes.subLink} key={item.title}>
       <Link to={item.description} className={classes.link}>
@@ -141,13 +173,44 @@ function Navbar(): JSX.Element {
                   База знаний
                 </Link>
                 <Link to="/chat" className={classes.link}>Чат</Link>
+
+
+
+                
                 {user.roleId === 2 ||
                 user.roleId === 1 ||
                 user.roleId === 3 ||
                 user.roleId === 4 ? (
-                  <Link to="/admin" className={classes.link}>
-                    Админка
-                  </Link>
+                  <HoverCard
+                  width={600}
+                  position="bottom"
+                  radius="md"
+                  shadow="md"
+                  withinPortal
+                >
+                  <HoverCard.Target>
+                    <Link to="/admin" className={classes.link}>
+                      <Center inline>
+                        <Box component="span" color="#5430b0" mr={5}>
+                          Админка
+                        </Box>
+                        <IconChevronDown className="user"
+                          style={{ width: rem(16), height: rem(16) }}
+                        />
+                      </Center>
+                    </Link>
+                  </HoverCard.Target>
+                  <HoverCard.Dropdown style={{ overflow: "hidden" }}>
+                    <Group justify="space-between" px="md">
+                      <Text className={classes.link} fw={500}>Админка</Text>
+                    </Group>
+                    <Divider my="sm" />
+                    <SimpleGrid cols={2} spacing={0}>
+                      {linksAdmin}
+                    </SimpleGrid>
+                  </HoverCard.Dropdown>
+                </HoverCard>
+
                 ) : (
                   <></>
                 )}
