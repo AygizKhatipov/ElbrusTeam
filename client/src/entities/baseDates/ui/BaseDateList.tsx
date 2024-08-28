@@ -6,7 +6,7 @@ const BaseDateList = () => {
   const baseDateAll = useAppSelector((state) => state.baseDate);
   const [selectedCard, setSelectedCard] = useState(null);
 
-  const handleCardClick = (el) => {
+  const handleCardClick = (el: any) => {
     setSelectedCard(el);
   };
 

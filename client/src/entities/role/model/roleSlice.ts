@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Roles } from '../types/roleType';
-import RoleApi from '../api/roleApi';
+import RoleApi from '../api/RoleApi';
 
 
 const initialState: {

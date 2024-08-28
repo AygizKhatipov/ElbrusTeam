@@ -14,7 +14,7 @@ function UpdateAvatar() {
 
   const dispatch = useAppDispatch()
 
-  const fileChange = (selectedFile: File): void => {
+  const fileChange = (selectedFile: File| null): void => {
     setFile(selectedFile);
   };
 
@@ -27,7 +27,7 @@ function UpdateAvatar() {
     formData.append('avatar', file);
 
     if (userId) {
-      formData.append('userId', userId);
+      formData.append('userId', userId.toString());
     }
 
     setLoading(true);
@@ -65,8 +65,8 @@ function UpdateAvatar() {
         placeholder="Upload files"
       /> */}
       <Group justify="center">
-      <FileButton w={200} color='violet' radius="md" variant="outline" size="md" resetRef={resetRef} onChange={fileChange} accept="image/png,image/jpeg">
-        {(props) => <Button {...props}>Обновить аватарку</Button>}
+      <FileButton  resetRef={resetRef} onChange={fileChange} accept="image/png,image/jpeg">
+        {(props) => <Button {...props}  w={200} variant="outline" size="md" radius="md" color='violet'>Обновить аватарку</Button>}
       </FileButton>
     </Group>
     </>

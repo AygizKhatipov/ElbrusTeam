@@ -2,7 +2,9 @@ import { Card, Image, Text, AspectRatio } from '@mantine/core';
 import classes from './EventCard.module.css';
 import { Button } from '@mantine/core';
 
+
 const EventCard = ({ el, isDetailView, onBackClick }) => {
+
   return (
     <Card p="md" radius="md" className={classes.card}>
       <AspectRatio ratio={1920 / 1080}>

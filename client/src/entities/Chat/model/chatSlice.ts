@@ -2,24 +2,30 @@
 import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import ChatApi from '../api/chatApi';
 
-interface Message {
-    id: string;
+
+export interface Message {
+    id: number;
     fromId: number;
     toId: number;
     message: string;
-    username: string;
-    event: string;
   }
 
-interface ChatState {
+export interface ChatState {
     messages: Message[];
   }
+
+  export type ChatType = {
+    id: number,
+    message: string,
+    fromId: number,
+    toId: number
+}
 
 const initialState: ChatState = {
     messages: [],
   };
 
-  const loadMessages = createAsyncThunk('chat/loadMessages', async () => { 
+  const loadMessages = createAsyncThunk<ChatType[]>('chat/loadMessages', async () => { 
     return await ChatApi.getAllMessages()
   })
 
@@ -33,7 +39,7 @@ const chatSlice = createSlice({
         }
     },
     extraReducers: (builder) => {
-        builder.addCase(loadMessages.fulfilled, (state, action) => {
+        builder.addCase(loadMessages.fulfilled, (state, action: PayloadAction<ChatType[]>) => {
             state.messages = action.payload
         })
     }

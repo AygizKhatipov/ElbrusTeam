@@ -1,14 +1,13 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import type { PesonalCommunityType } from '../types/baseDatesType';
 import baseDatesApi from '../api/baseDatesApi';
 import { BaseDatesType } from '../types/baseDatesType';
 
 const initialState: BaseDatesType[] = [];
 
 // Создаем асинхронный thunk для загрузки базы знаний с использованием API
-const loadBaseDates = createAsyncThunk<PesonalCommunityType[]>('basedates/load', () =>
-    baseDatesApi.getAllBaseDates()
+const loadBaseDates = createAsyncThunk<BaseDatesType[]>('basedates/load', () =>
+     baseDatesApi.getAllBaseDates()
 );
 
 // Создаем slice для управления состоянием тем
@@ -21,7 +20,7 @@ const baseDatesSlice = createSlice({
     builder.addCase(
         loadBaseDates.fulfilled,
       (state, action: PayloadAction<BaseDatesType[]>) => {
-        state.push(...action.payload); 
+         state.push(...action.payload); 
       },
     );
   },

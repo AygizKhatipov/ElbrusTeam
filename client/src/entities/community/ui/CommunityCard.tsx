@@ -5,15 +5,12 @@ import {
   Image,  
   Text,  
   Badge,
-  Group,  
-  Center,  
-  Avatar
 } from '@mantine/core';  
 import classes from './ArticleCard.module.css';  
 import { useAppSelector } from '../../../app/providers/store/store';
 
-const TeacherCard = ({ el }) => {  
-  const linkProps = { href: 'https://mantine.dev', target: '_blank', rel: 'noopener noreferrer' };  
+const TeacherCard = ({ el }: { el: any }) => {  
+  // const linkProps = { href: 'https://mantine.dev', target: '_blank', rel: 'noopener noreferrer' };  
   // const theme = useMantineTheme();  
 
   const roles = useAppSelector(state=> state.role.roles) 

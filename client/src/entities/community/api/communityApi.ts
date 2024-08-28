@@ -1,6 +1,6 @@
 import type { AxiosResponse } from 'axios';
 import axiosInstance from '../../../services/apiAxiosInstance';
-import type {  CommunityType, PesonalCommunityType, PesonalComType} from '../types/communityType';
+import type {    PesonalComType} from '../types/communityType';
 
 class CommunityApi {
   static getAllTeachers = async (): Promise<PesonalComType[]> => {

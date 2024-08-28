@@ -1,7 +1,7 @@
 import { Card, Image, Text, Container, AspectRatio, Button } from '@mantine/core';
 import classes from './ArticlesCardsGrid.module.css';
 
-const BaseCard = ({ el, isDetailView, onBackClick }) => {
+const BaseCard = ({ el, isDetailView, onBackClick }: any) => {
   return (
     <Container py="xl">
       {isDetailView ? (
@@ -9,7 +9,7 @@ const BaseCard = ({ el, isDetailView, onBackClick }) => {
           <AspectRatio ratio={1920 / 1080}>
             <Image src={el.pic} />
           </AspectRatio>
-          <Text size="lg" weight={700} mt="md">
+          <Text size="lg" w={700} mt="md">
             {el.title}
           </Text>
           <Text mt="sm">{el.description}</Text>

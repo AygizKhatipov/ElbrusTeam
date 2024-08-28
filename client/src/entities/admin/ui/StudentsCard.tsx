@@ -16,7 +16,7 @@ const schemaStudents = yup
 
 const StudentsCard = ({ el, update }: any) => {  
     const roles = useAppSelector(state => state.role.roles);  
-    const allRoles = roles.map((role) => role.role);  
+    // const allRoles = roles.map((role) => role.role);  
     const yourRole = roles.filter((role) => el.roleId === role.id);  
     const [yourRoleaa] = yourRole.map((role) => role.role);  
 
@@ -27,8 +27,6 @@ const StudentsCard = ({ el, update }: any) => {
     const {  
         register,  
         handleSubmit,  
-        reset,  
-        formState: { errors },  
     } = useForm({  
         defaultValues: {  
             point: yourPointEnd,  

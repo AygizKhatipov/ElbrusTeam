@@ -1,4 +1,4 @@
-import React from 'react';
+
 import CoucheList from '../../../entities/community/ui/CoucheList';
 
 const CouchesPage = () => {

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { useAppSelector } from "../../../app/providers/store/store";
 import CommunityCard from "./CommunityCard";
 import { Grid } from '@mantine/core';

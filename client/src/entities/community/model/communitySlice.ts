@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import type {  CommunityType, PesonalCommunityType, PesonalComType } from '../types/communityType';
+import type {   PesonalComType } from '../types/communityType';
 import CommunityApi from '../api/communityApi';
 
 const initialState: {

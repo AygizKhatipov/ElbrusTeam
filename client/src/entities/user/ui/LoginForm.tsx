@@ -7,7 +7,6 @@ import {
     Text,
     Container,
     Button,
-    Group 
   } from '@mantine/core';
   import classes from '../css/AuthenticationImage.module.css';
 import { useNavigate } from 'react-router-dom';
@@ -24,7 +23,7 @@ function LoginForm(): JSX.Element {
 
 
 
-    const { register, handleSubmit, formState: { errors }, watch } = useForm<UserWithoutId>({
+    const { register, handleSubmit, } = useForm<UserWithoutId>({
         mode: 'onChange',
     });
 
