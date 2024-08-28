@@ -1,7 +1,7 @@
-import React from "react";
+
 import { useAppSelector } from "../../../app/providers/store/store";
 import CommunityCard from "./CommunityCard";
-import { PesonalCommunityType } from "../types/communityType";
+
 import { Grid } from "@mantine/core";
 
 const TeacherList = () => {

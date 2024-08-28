@@ -14,6 +14,7 @@ import { useAppDispatch } from '../../../app/providers/store/store';
 import { userLogin } from '../model/userSlice';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { LoginFormType, UserWithoutId } from '../types/userType';
+import { notifications } from '@mantine/notifications';
 
 function LoginForm(): JSX.Element {
 
@@ -22,7 +23,7 @@ function LoginForm(): JSX.Element {
 
 
 
-    const { register, handleSubmit, formState: { errors }, watch } = useForm<UserWithoutId>({
+    const { register, handleSubmit, } = useForm<UserWithoutId>({
         mode: 'onChange',
     });
 
@@ -30,6 +31,17 @@ function LoginForm(): JSX.Element {
         dispatch(userLogin(data)).then((data)=> {
           if(data.payload) {
             navigate('/');
+          }
+          else{
+            return (
+              notifications.show({
+                title: 'Error',
+                message: 'Пользователь не найден',
+                color: 'red',
+                classNames: classes,
+                position: 'top-center'
+              })
+            )
           }
         })
         .catch(console.log)

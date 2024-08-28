@@ -36,7 +36,10 @@ function PersonalAccount(): JSX.Element {
           Email: {account.email}
         </Text >
         <Text ta="center" fz="lg" fw={500} mt="sm">
-        Страна: {Account?.country}{' '}{Account?.city}
+        Страна: {Account?.country}
+        </Text >
+        <Text ta="center" fz="lg" fw={500} mt="sm">
+       Город:{Account?.city}
         </Text >
         <Text ta="center" fz="lg" fw={500} mt="sm">
           Телефон: {Account?.phone}
@@ -46,12 +49,13 @@ function PersonalAccount(): JSX.Element {
         </Text >
         <UpdateAvatar/>
         <Modal opened={opened} size="75%" onClose={close} centered>
-
           <PersonalAccoutInfo onClose={close} />
         </Modal>
-        <Button onClick={open} fullWidth color="violet" radius="md" mt="xl" size="md" variant="outline">
+        <Group justify="center">
+        <Button onClick={open} w={200}  color="violet" radius="md" mt="xl" size="md" variant="outline">
           Редактировать
         </Button>
+        </Group>
       </Card>
     </div>
   );

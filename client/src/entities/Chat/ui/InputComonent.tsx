@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../app/providers/store/store';
 import { setMessage } from '../model/chatSlice';
 
+
 function InputComonent(): JSX.Element {
     const [value, setValue] = useState('');
     const [connected, setConnected] = useState(false);
@@ -15,14 +16,14 @@ function InputComonent(): JSX.Element {
     const dispatch = useAppDispatch();
     const userId = useAppSelector(state => state.user.user?.id);
     const userName = useAppSelector(state => state.user.user?.firstName);
-    const lastName = useAppSelector(state => state.user.user?.lastName);
+    const scrollAreaRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {   
         socket.current = new WebSocket('ws://localhost:3000')
         socket.current.onopen = () => {
             setConnected(true)
             const connectMessage = JSON.stringify({ event: 'connection', username: userName });
-            socket.current.send(connectMessage);
+            socket.current?.send(connectMessage);
         }
         socket.current.onmessage = (event) => {
             const message = JSON.parse(event.data)
@@ -37,7 +38,7 @@ function InputComonent(): JSX.Element {
               socket.current.close();
             }
           };
-    }, [messages])
+    },  [dispatch, userName])
 
 
     const sendMessage = async()=> {
@@ -57,6 +58,12 @@ function InputComonent(): JSX.Element {
         }
     }
 
+    useEffect(() => {
+      if (scrollAreaRef.current) { 
+        scrollAreaRef.current.scrollTo({ top: scrollAreaRef.current.scrollHeight, behavior: 'smooth' });
+      }
+    }, [messages]);
+
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         sendMessage()
@@ -66,9 +73,11 @@ function InputComonent(): JSX.Element {
   return (
     <>
       <Container className={classes.containermessage} p="xl">
-      <ScrollArea h={600}>
+      <ScrollArea key={messages.length}  viewportRef={scrollAreaRef}  h={600}>
         {messages.map((message) => (
-          <MessageComponent key={message.id} userMessage={message}/>
+          <div key={message.id}>
+          <MessageComponent message={message.id}  userMessage={message}/>
+          </div>
         ))}
       </ScrollArea>
       </Container>
@@ -77,6 +86,7 @@ function InputComonent(): JSX.Element {
           <Grid >
             <Grid.Col span={10}>
               <Textarea
+              required
                 value={value}
                 onChange={(event) => setValue(event.target.value)}
                 radius="md"
@@ -90,7 +100,6 @@ function InputComonent(): JSX.Element {
               <Button
               type='submit'
                 radius="md"
-                
                 variant="gradient"
                 gradient={{ from: 'grape', to: 'yellow', deg: 291 }}
               >

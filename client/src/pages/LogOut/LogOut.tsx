@@ -1,6 +1,6 @@
-import React from 'react';
+
 import { useNavigate } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '../../app/providers/store/store';
+import { useAppDispatch } from '../../app/providers/store/store';
 import { userLogout } from '../../entities/user/model/userSlice';
 import { ButtonProgress } from './ButtonProgress';
 import './LogoutPage.css'; // Подключаем CSS файл
@@ -8,7 +8,7 @@ import './LogoutPage.css'; // Подключаем CSS файл
 function LogoutPage() {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const user = useAppSelector((state) => state.user.user);
+
 
   const logoutUser = () => {
     dispatch(userLogout())

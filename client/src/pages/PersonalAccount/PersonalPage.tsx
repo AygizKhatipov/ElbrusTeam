@@ -1,6 +1,6 @@
 
 import PersonalAccount from "../../entities/accout/ui/PersonalAccount";
-import PersonalAccountInformation from "../../entities/accout/ui/PersonalAccountInformation";
+// import PersonalAccountInformation from "../../entities/accout/ui/PersonalAccountInformation";
 
 import './style/personalPageCss.css';
 

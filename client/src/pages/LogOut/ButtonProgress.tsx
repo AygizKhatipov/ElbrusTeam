@@ -24,7 +24,9 @@ export function ButtonProgress() {
   );
 
   return (
+    
     <Button
+    ml={45}
       fullWidth
       className={classes.button}
       onClick={() => (loaded ? setLoaded(false) : !interval.active && interval.start())}
@@ -42,5 +44,6 @@ export function ButtonProgress() {
         />
       )}
     </Button>
+   
   );
 }

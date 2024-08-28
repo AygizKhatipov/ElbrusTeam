@@ -1,5 +1,5 @@
 
-import React from "react";
+
 import { Link } from "react-router-dom";
 import "@mantine/core/styles.css";
 import {
@@ -15,9 +15,6 @@ import {
   Center,
   Box,
   Burger,
-  Drawer,
-  Collapse,
-  ScrollArea,
   rem,
   useMantineTheme,
   useMantineColorScheme,
@@ -64,9 +61,9 @@ function Navbar(): JSX.Element {
   const user = useAppSelector((state) => state.user.user);
 
   const userAcc = useAppSelector((state) => state.account.account);
-  const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
+  const [drawerOpened, { toggle: toggleDrawer,  }] =
     useDisclosure(false);
-  const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
+  // const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
   const theme = useMantineTheme();
   const { colorScheme, toggleColorScheme } = useMantineColorScheme(); // Hook for color scheme
 

@@ -1,7 +1,7 @@
-import React from 'react';
+
 import { useAppSelector } from "../../../app/providers/store/store";
-import CommunityCard from "./CommunityCard";
-import { Center, Grid, MultiSelect } from '@mantine/core';
+
+import {  Grid, MultiSelect } from '@mantine/core';
 import PeopleCard from './PeopleCard';
 const PeoplePage = () => {
 

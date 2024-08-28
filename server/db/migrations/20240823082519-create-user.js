@@ -26,7 +26,8 @@ module.exports = {
         type: Sequelize.STRING
       },
       isMember: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.BOOLEAN,
+        defaultValue: false
       },
       roleId: {
         references: {

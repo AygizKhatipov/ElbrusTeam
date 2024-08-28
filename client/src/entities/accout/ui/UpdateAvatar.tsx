@@ -1,16 +1,20 @@
-import { useState } from 'react';
-import { FileInput, Button, Loader } from '@mantine/core';
+import { useState, useRef  } from 'react';
+import {  Button, Loader, FileButton, Group  } from '@mantine/core';
 import { useAppDispatch, useAppSelector } from '../../../app/providers/store/store';
 import { updateAvatar } from '../model/accoutSlice';
-import { IconPhoto, IconDownload, IconArrowRight } from '@tabler/icons-react';
+import {  IconDownload  } from '@tabler/icons-react';
+
+
+
 function UpdateAvatar() {
   const [file, setFile] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
+  const resetRef = useRef<() => void>(null);
   const userId = useAppSelector(state => state.user.user?.id);
 
   const dispatch = useAppDispatch()
 
-  const fileChange = (selectedFile: File): void => {
+  const fileChange = (selectedFile: File| null): void => {
     setFile(selectedFile);
   };
 
@@ -23,7 +27,7 @@ function UpdateAvatar() {
     formData.append('avatar', file);
 
     if (userId) {
-      formData.append('userId', userId);
+      formData.append('userId', userId.toString());
     }
 
     setLoading(true);
@@ -32,6 +36,8 @@ function UpdateAvatar() {
       dispatch(updateAvatar(formData))
       .then(() => {
         console.log('Аватар успешно загружен');
+        setFile(null);
+        resetRef.current?.();
       })
     } catch (error) {
       console.error('Ошибка загрузки аватара:', error);
@@ -43,18 +49,27 @@ function UpdateAvatar() {
   return (
     <div>
       {file ? (
-        <Button variant="outline" color='violet'  rightSection={<IconDownload size={14} />} fullWidth onClick={upload} disabled={!file || loading}>
-          {loading ? 'Загрузка...' : 'Загрузить'}
+         <Group justify="center">
+        <Button w={200} radius="md" size="md" variant="outline" color='violet'  rightSection={<IconDownload size={14} />}  onClick={upload} disabled={!file || loading}>
+          {loading ? <Loader color='violet'/> : 'Загрузить'}
         </Button>
+        </Group>
       )
       :
       (
-      <FileInput
+        <>
+      {/* <FileInput
         accept="image/png,image/jpeg"
         onChange={fileChange}
         label="Upload files"
         placeholder="Upload files"
-      />
+      /> */}
+      <Group justify="center">
+      <FileButton  resetRef={resetRef} onChange={fileChange} accept="image/png,image/jpeg">
+        {(props) => <Button {...props}  w={200} variant="outline" size="md" radius="md" color='violet'>Обновить аватарку</Button>}
+      </FileButton>
+    </Group>
+    </>
     )}
     {loading && <Loader size="xs" />}
     </div>

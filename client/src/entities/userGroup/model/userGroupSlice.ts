@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import { initialState } from '../../../app/providers/initialState/initialState';
 
 
@@ -7,7 +7,7 @@ const userGroupSlice  = createSlice({
     initialState,
     reducers: {
     },
-    extraReducers: (builder) => {}
+    extraReducers: () => {}
 })
 
 
