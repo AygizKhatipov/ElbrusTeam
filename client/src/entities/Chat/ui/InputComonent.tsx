@@ -66,7 +66,7 @@ function InputComonent(): JSX.Element {
   return (
     <>
       <Container className={classes.containermessage} p="xl">
-      <ScrollArea h={600}>
+      <ScrollArea  h={600}>
         {messages.map((message) => (
           <MessageComponent key={message.id} userMessage={message}/>
         ))}

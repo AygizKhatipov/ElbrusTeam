@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { useInterval } from '@mantine/hooks';
-import { Button, Progress, rgba } from '@mantine/core';
+import { Button, Progress, rgba, Group } from '@mantine/core';
 import classes from './ButtonProgress.module.css';
 
 
@@ -24,7 +24,9 @@ export function ButtonProgress() {
   );
 
   return (
+    
     <Button
+    ml={45}
       fullWidth
       className={classes.button}
       onClick={() => (loaded ? setLoaded(false) : !interval.active && interval.start())}
@@ -42,5 +44,6 @@ export function ButtonProgress() {
         />
       )}
     </Button>
+   
   );
 }
