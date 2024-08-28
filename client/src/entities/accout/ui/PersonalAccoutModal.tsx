@@ -57,7 +57,8 @@ type PersonalAccoutInfoProps = {
 function PersonalAccoutInfo({ onClose }: PersonalAccoutInfoProps): JSX.Element {
   const accountId = useAppSelector(state => state.account.account?.id);
   const dispatch = useAppDispatch();
-  const { firstName, lastName, email,  } = useAppSelector(state => state.account.account);
+  const { firstName, lastName, email} = useAppSelector(state => state.account.account);
+  console.log(useAppSelector(state => state.account.account))
   const about = useAppSelector(state => state.account.account.Account?.about);
 
   const {
@@ -65,7 +66,6 @@ function PersonalAccoutInfo({ onClose }: PersonalAccoutInfoProps): JSX.Element {
     handleSubmit,
     setValue,
     formState: { errors },
-    watch,
   } = useForm<UpdateAccountType>({
     mode: "onChange",
   });
