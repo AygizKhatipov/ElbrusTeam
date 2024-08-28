@@ -14,13 +14,13 @@
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
     padding: 10px 0;
-    width: 80%; /* Ширина контейнера для карусели */
+    width: 75%; /* Ширина контейнера для карусели */
   }
   
   .carouselItem {
     flex: 0 0 auto;
     scroll-snap-align: start;
-    margin-right: 16px; /* Расстояние между карточками */
+    margin-right: 15px; /* Расстояние между карточками */
   }
   
   .arrow {

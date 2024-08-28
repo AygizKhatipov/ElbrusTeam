@@ -24,7 +24,7 @@ const EventCard = ({ el, isDetailView, onBackClick }: any) => {
       ) : (
         <>
           <Text c="dimmed" size="xs" tt="uppercase" fw={700} mt="md">
-            {el.date}
+            {el.date.slice(0, 10)}
           </Text>
           <Text className={classes.title} mt={5}>
             {el.title}
