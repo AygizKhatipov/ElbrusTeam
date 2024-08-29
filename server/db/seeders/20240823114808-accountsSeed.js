@@ -15,15 +15,15 @@ module.exports = {
        },
        {
         idUser: 2, 
-         photo: 'https://uproger.com/wp-content/uploads/2023/05/image-2023-05-25-174156.jpg',
+         photo: 'https://i.postimg.cc/y6gCjSbJ/DMN06095-resized-1.jpg',
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
-         about: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+         about: `"Порой и черт боится мыслей, что зреют в женской голове."(с)`
        },
        {
         idUser: 3, 
-         photo: 'https://uproger.com/wp-content/uploads/2023/05/image-2023-05-25-174156.jpg',
+         photo: 'https://i.postimg.cc/B6jkmdMW/DMN05857-resized.jpg',
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
@@ -31,11 +31,11 @@ module.exports = {
        },
        {
         idUser: 4, 
-         photo: 'https://static17.tgcnt.ru/posts/_0/a2/a2a1e39b36767e5a01356e63b7a85c79.jpg',
+         photo: 'https://i.postimg.cc/vT6hnyXB/DMN05849-resized.jpg',
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
-         about: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+         about: `"Кааааайффф, клааааасссссс!!!"(с)`
        },
        {
         idUser: 5, 
