@@ -9,12 +9,12 @@ const BaseCard = ({ el, isDetailView, onBackClick }: any) => {
           <AspectRatio ratio={1920 / 1080}>
             <Image src={el.pic} />
           </AspectRatio>
-          <Text size="lg" w={700} mt="md">
+          <Text c="dimmed" size="xs" tt="uppercase" w={700} mt="md">
             {el.title}
           </Text>
-          <Text mt="sm">{el.description}</Text>
+          <Text  className={classes.title} mt={5}>{el.description}</Text>
           <Text mt="sm">{el.article}</Text>
-          <Button mt="md" variant="outline" onClick={onBackClick}>
+          <Button className={classes.card} mt="md" variant="outline" color='5430b0' onClick={onBackClick}>
             Назад
           </Button>
         </Card>

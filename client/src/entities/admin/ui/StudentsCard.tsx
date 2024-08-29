@@ -6,6 +6,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';  
 import { useForm } from "react-hook-form";   
 import { useState } from "react";  
+import classes from './admin.module.css'
 
 const schemaStudents = yup  
     .object()  
@@ -48,10 +49,10 @@ const StudentsCard = ({ el }: any) => {
     return (  
         <Table.Tr key={el.id}>  
             <Table.Td>  
-                <Group gap="sm">  
+                <Group  gap="sm">  
                     <Avatar size={40} src={el.Account?.photo} radius={40} />  
                     <div>  
-                        <Text color="#5430b0" fz="sm" className="text-center" fw={500}>  
+                        <Text color="#5430b0" fz="sm" className={classes.user}fw={500}>  
                             {el.firstName} {el.lastName}  
                         </Text>  
                         <Text color="#5430b0" fz="xs" className="text-center" c="dimmed">  
@@ -60,12 +61,12 @@ const StudentsCard = ({ el }: any) => {
                     </div>  
                 </Group>  
             </Table.Td>  
-            <Table.Td className="text-center" style={{ color: '#5430b0' }}>{yourRoleaa}</Table.Td>  
+            <Table.Td className={classes.user} >{yourRoleaa}</Table.Td>  
             {update ? (  
                 <>  
-                    <Table.Td className="text-center" style={{ color: '#5430b0' }}>{yourPointEnd}</Table.Td>   
+                    <Table.Td className={classes.user}>{yourPointEnd}</Table.Td>   
                     <Table.Td className="text-center">  
-                        <Button onClick={() => setUpdate(false)} variant="subtle" color="#5430b0" radius="md">  
+                        <Button onClick={() => setUpdate(false)} variant="subtle" className={classes.user} radius="md">  
                             Редактировать  
                         </Button>  
                     </Table.Td>  
@@ -74,8 +75,8 @@ const StudentsCard = ({ el }: any) => {
                 <Table.Td className="text-center">  
                     <form onSubmit={handleSubmit((data) => updatePoint(el.id, data))}>   
                         <Group gap="sm">   
-                            <Input color="#5430b0"type="text" placeholder={`${yourPointEnd}`} {...register('point')} variant="unstyled" style={{ color: '#5430b0' }} />  
-                            <Button type="submit"  variant="subtle" color="#5430b0" radius="md">  
+                            <Input className={classes.user} type="text" placeholder={`${yourPointEnd}`} {...register('point')} variant="unstyled"  />  
+                            <Button type="submit"  variant="subtle" className={classes.user} radius="md">  
                                 Обновить  
                             </Button>  
                         </Group>  

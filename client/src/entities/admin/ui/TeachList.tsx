@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { updateAccount } from "../../accout/model/accoutSlice";
 import { IconCheck } from "@tabler/icons-react";
+import classes from './admin.module.css'
 
 const Mockdata = [
   { id: 1, role: "Разработчик" },
@@ -41,7 +42,7 @@ const TeachList = ({ el, updateAll }: { el: any; updateAll: boolean }) => {
         <Group gap="sm">
           <Avatar size={40} src={el.Account?.photo} radius={40} />
           <div>
-            <Text fz="sm" fw={500}>
+            <Text className={classes.user} fz="sm" fw={500}>
               {el.firstName} {el.lastName}
             </Text>
             <Text fz="xs" c="dimmed">
@@ -53,8 +54,10 @@ const TeachList = ({ el, updateAll }: { el: any; updateAll: boolean }) => {
 
       <Table.Td>
         <form onSubmit={handleSubmit(updatePeople)}>
-          <Group spacing="xs">
+          <Group  spacing="xs">
             <Select
+            color="#5430b0"
+            className={classes.user}
               value={selectedRole}
               onChange={(value) => setSelectedRole(value)}
               placeholder="Выберите роль"
@@ -63,14 +66,15 @@ const TeachList = ({ el, updateAll }: { el: any; updateAll: boolean }) => {
                 label: role.role,
               }))}
               disabled={!updateAll} 
-              style={{ minWidth: 150 }}
+              style={{ minWidth: 150, color:"#5430b0" }}
             />
 <ActionIcon
                 type="submit"
                 variant="outline"
                 size="lg"
                 aria-label="Gradient action icon"
-                color="violet">
+                color="#5430b0"
+                className={classes.user}>
       <IconCheck />
     </ActionIcon>
 
