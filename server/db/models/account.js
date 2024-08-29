@@ -4,10 +4,8 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Account extends Model {
     static associate(models) {
-      // Связь один к одному с моделью User
       this.belongsTo(models.User, {
-        foreignKey: "idUser",  // Связываем поле idUser с id в User
-        
+        foreignKey: "idUser",
       });
       this.hasMany(models.Point, {
         foreignKey: "userId"
@@ -18,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   Account.init({
     idUser: {
       type: DataTypes.INTEGER,
-      primaryKey: true,  // Делаем idUser первичным ключом
+      primaryKey: true,
     },
     photo: DataTypes.STRING,
     country: DataTypes.STRING,
@@ -30,9 +28,7 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'Account',
   });
 
-  Account.addHook('afterCreate', async (Account, options) => {
-    await sequelize.models.Point.create({ id: Account.idUser });
-  });
+
 
   return Account;
 };
