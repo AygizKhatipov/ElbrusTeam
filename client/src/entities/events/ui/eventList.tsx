@@ -1,47 +1,47 @@
 import { useState } from "react";
 import {
-  useAppDispatch,
+  
   useAppSelector,
 } from "../../../app/providers/store/store";
 import EventCard from "./eventCard";
 import classes from "./EventList.module.css";
-import { useDisclosure } from "@mantine/hooks";
-import { Button, Input, Modal } from "@mantine/core";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
-import { useForm } from "react-hook-form";
-import { createEvent } from "../model/eventSlice";
-import { EventsTypeWithoutId } from "../types/eventsType";
+// import { useDisclosure } from "@mantine/hooks";
+// import { Button, Input, Modal } from "@mantine/core";
+// import { yupResolver } from "@hookform/resolvers/yup";
+// import * as yup from "yup";
+// import { useForm } from "react-hook-form";
+// import { createEvent } from "../model/eventSlice";
+// import { EventsTypeWithoutId } from "../types/eventsType";
 
-const schemaCharacter = yup
-  .object()
-  .shape({
-    date: yup.string().required(),
-    pic: yup.string().required(),
-    title: yup.string().required(),
-    description: yup.string().required(),
-    userId: yup.number(),
-  })
-  .required();
+// const schemaCharacter = yup
+//   .object()
+//   .shape({
+//     date: yup.string().required(),
+//     pic: yup.string().required(),
+//     title: yup.string().required(),
+//     description: yup.string().required(),
+//     userId: yup.number(),
+//   })
+//   .required();
 const EventList = () => {
-  const user = useAppSelector((state) => state.user.user);
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm({
-    defaultValues: {
-      date: "",
-      pic: "",
-      title: "",
-      description: "",
-      userId: user?.id,
-    },
-    resolver: yupResolver(schemaCharacter),
-  });
+  // const user = useAppSelector((state) => state.user.user);
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   reset,
+  //   formState: { errors },
+  // } = useForm({
+  //   defaultValues: {
+  //     date: "",
+  //     pic: "",
+  //     title: "",
+  //     description: "",
+  //     userId: user?.id,
+  //   },
+  //   resolver: yupResolver(schemaCharacter),
+  // });
   const eventAll = useAppSelector((state) => state.event);
-  const dispatch = useAppDispatch();
+  // const dispatch = useAppDispatch();
   const [selectedEvent, setSelectedEvent] = useState(null);
 
   const scrollLeft = () => {
@@ -66,16 +66,16 @@ const EventList = () => {
     setSelectedEvent(null);
   };
 
-  const [opened, { open, close }] = useDisclosure(false);
+  // const [opened, { open, close }] = useDisclosure(false);
 
-  const createEventS = (data: EventsTypeWithoutId): void => {
-    if (user?.id) {
-      data.userId = user.id;
-      dispatch(createEvent(data))
-        .then(() => reset())
-        .catch(console.log);
-    }
-  };
+  // const createEventS = (data: EventsTypeWithoutId): void => {
+  //   if (user?.id) {
+  //     data.userId = user.id;
+  //     dispatch(createEvent(data))
+  //       .then(() => reset())
+  //       .catch(console.log);
+  //   }
+  // };
 
 
 
@@ -118,7 +118,7 @@ const EventList = () => {
           </>
         )}
       </div>
-      {user?.roleId === 2 ||
+      {/* {user?.roleId === 2 ||
       user?.roleId === 1 ||
       user?.roleId === 3 ||
       user?.roleId === 4 ? (
@@ -155,14 +155,14 @@ const EventList = () => {
               </form>
             </Modal>
 
-            <Button color="#5430b0" variant="light" fullWidth onClick={open}>
+            <Button color="#5430b0" variant="light" className={classes.user} onClick={open}>
               Добавить событие
             </Button>
           </>
         </>
       ) : (
         <></>
-      )}
+      )} */}
     </>
   );
 };

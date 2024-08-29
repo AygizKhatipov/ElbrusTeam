@@ -22,7 +22,7 @@ const TeacherCard = ({ el }: { el: any }) => {
 
   return (  
       <>
-    <Grid.Col span={3} style={{ minHeight: rem(80) }}>
+    <Grid.Col  span={3}   style={{ minHeight: rem(80) }}>
     <Card withBorder radius="md" className={classes.card}>  
       <Card.Section>   
           <Image src={el.Account.photo} height={180} />  
