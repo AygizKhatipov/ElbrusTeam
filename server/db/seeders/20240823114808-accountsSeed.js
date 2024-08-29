@@ -7,11 +7,11 @@ module.exports = {
      await queryInterface.bulkInsert('Accounts', [
        {
         idUser: 1, 
-         photo: 'https://static17.tgcnt.ru/posts/_0/a2/a2a1e39b36767e5a01356e63b7a85c79.jpg',
+         photo: 'https://elbrusboot.camp/static/351685d1fcd29b0a83a26c5d8445db57/528bd/babayan.webp',
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
-         about: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+         about: `Генеральный директор.`
        },
        {
         idUser: 2, 
@@ -27,7 +27,7 @@ module.exports = {
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
-         about: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+         about: `Пока не придумала, что написать.`
        },
        {
         idUser: 4, 
@@ -43,7 +43,7 @@ module.exports = {
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
-         about: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+         about: `Фея кампуса`
        },
        {
         idUser: 6, 
@@ -106,7 +106,7 @@ module.exports = {
        },
        {
         idUser: 12, 
-         photo: 'https://static17.tgcnt.ru/posts/_0/a2/a2a1e39b36767e5a01356e63b7a85c79.jpg',
+         photo: 'https://i.postimg.cc/fWmDZ9jG/DSC00235.jpg',
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
@@ -134,11 +134,11 @@ module.exports = {
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
-         about: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+         about: `Люблю готовить, пинать мячи, лежать в гамаке и тайпскрипт`
        },
        {
         idUser: 16, 
-         photo: 'https://static17.tgcnt.ru/posts/_0/a2/a2a1e39b36767e5a01356e63b7a85c79.jpg',
+         photo: 'https://i.postimg.cc/W3JjdFRJ/DSC00944-w.jpg',
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
@@ -146,7 +146,7 @@ module.exports = {
        },
        {
         idUser: 17, 
-         photo: 'https://static17.tgcnt.ru/posts/_0/a2/a2a1e39b36767e5a01356e63b7a85c79.jpg',
+         photo: 'https://i.postimg.cc/1zXyZ7JB/DSC00946-w.jpg',
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
@@ -178,7 +178,7 @@ module.exports = {
        },
        {
         idUser: 21, 
-         photo: 'https://elbrusboot.camp/static/a988569b2a73dc5734ce8e611576d3d0/e2666/kuleshova.webpg',
+         photo: 'https://elbrusboot.camp/static/a988569b2a73dc5734ce8e611576d3d0/e2666/kuleshova.webp',
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
