@@ -110,7 +110,7 @@ module.exports = {
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
-         about: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+         about: `Спортсмен. Сон для слабаков.`
        },
        {
         idUser: 13, 
@@ -142,7 +142,7 @@ module.exports = {
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
-         about: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+         about: `Вечная мафия`
        },
        {
         idUser: 17, 
@@ -150,7 +150,7 @@ module.exports = {
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
-         about: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+         about: `Проплатил "Шерифство". Пьем пиво, живем красиво.`
        },
        {
         idUser: 18, 
