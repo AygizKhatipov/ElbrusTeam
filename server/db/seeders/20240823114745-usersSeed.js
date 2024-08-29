@@ -76,8 +76,8 @@ module.exports = {
       roleId: 4
     },
     {
-      firstName: 'Даниил',
-      lastName: 'Джаваскриптович',
+      firstName: 'Денис',
+      lastName: 'Образцов',
       email: 'js@mail.ru',
       password: await bcrypt.hash('123', 10),
       isMember: true,
