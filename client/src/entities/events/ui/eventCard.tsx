@@ -20,6 +20,7 @@ const EventCard = ({ el, isDetailView, onBackClick }: any) => {
           <Button mt="md" variant="outline" className={classes.card} style={{alignItems:'center'}} color='5430b0' onClick={onBackClick}>
             Назад
           </Button>
+          
         </>
       ) : (
         <>

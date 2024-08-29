@@ -1,6 +1,6 @@
 .card {
     width: 750px; /* Регулирует ширину каждой карточки */
-    height: 100%;
+    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
