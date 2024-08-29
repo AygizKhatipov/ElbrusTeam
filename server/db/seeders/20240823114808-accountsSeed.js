@@ -7,35 +7,35 @@ module.exports = {
      await queryInterface.bulkInsert('Accounts', [
        {
         idUser: 1, 
-         photo: 'https://static17.tgcnt.ru/posts/_0/a2/a2a1e39b36767e5a01356e63b7a85c79.jpg',
+         photo: 'https://elbrusboot.camp/static/351685d1fcd29b0a83a26c5d8445db57/528bd/babayan.webp',
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
-         about: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+         about: `Генеральный директор.`
        },
        {
         idUser: 2, 
-         photo: 'https://uproger.com/wp-content/uploads/2023/05/image-2023-05-25-174156.jpg',
+         photo: 'https://i.postimg.cc/y6gCjSbJ/DMN06095-resized-1.jpg',
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
-         about: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+         about: `"Порой и черт боится мыслей, что зреют в женской голове."(с)`
        },
        {
         idUser: 3, 
-         photo: 'https://uproger.com/wp-content/uploads/2023/05/image-2023-05-25-174156.jpg',
+         photo: 'https://i.postimg.cc/B6jkmdMW/DMN05857-resized.jpg',
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
-         about: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+         about: `Пока не придумала, что написать.`
        },
        {
         idUser: 4, 
-         photo: 'https://static17.tgcnt.ru/posts/_0/a2/a2a1e39b36767e5a01356e63b7a85c79.jpg',
+         photo: 'https://i.postimg.cc/vT6hnyXB/DMN05849-resized.jpg',
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
-         about: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+         about: `"Кааааайффф, клааааасссссс!!!"(с)`
        },
        {
         idUser: 5, 
@@ -43,7 +43,7 @@ module.exports = {
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
-         about: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+         about: `Фея кампуса`
        },
        {
         idUser: 6, 
@@ -97,15 +97,16 @@ module.exports = {
        },
        {
         idUser: 11, 
-         photo: 'https://uproger.com/wp-content/uploads/2023/05/image-2023-05-25-174156.jpg',
+         photo: 'https://i.postimg.cc/YCBgXY2b/photo-2024-08-29-16-52-50.jpg',
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
-         about: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+         about: `Клубничный слон и вроде бы айтишник, люблю кофе по утрам, а кто его не любит? Еще лакрицу и когда дают оффер.
+         А еще, когда Лика рисует рысей на доске до ночи)`
        },
        {
         idUser: 12, 
-         photo: 'https://static17.tgcnt.ru/posts/_0/a2/a2a1e39b36767e5a01356e63b7a85c79.jpg',
+         photo: 'https://i.postimg.cc/fWmDZ9jG/DSC00235.jpg',
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
@@ -113,31 +114,31 @@ module.exports = {
        },
        {
         idUser: 13, 
-         photo: 'https://static17.tgcnt.ru/posts/_0/a2/a2a1e39b36767e5a01356e63b7a85c79.jpg',
+         photo: 'https://i.postimg.cc/Kjqb1nqF/photo-2024-08-29-17-34-11.jpg',
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
-         about: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+         about: `Есть любимая собака Бим. Люблю мотоциклы, путешествовать по России и ПИИИВООО!`
        },
        {
         idUser: 14, 
-         photo: 'https://static17.tgcnt.ru/posts/_0/a2/a2a1e39b36767e5a01356e63b7a85c79.jpg',
+         photo: 'https://i.postimg.cc/85LsfnMG/DSC00951-w.jpg',
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
-         about: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+         about: `Люблю спорт и помогать людям.`
        },
        {
         idUser: 15, 
-         photo: 'https://static17.tgcnt.ru/posts/_0/a2/a2a1e39b36767e5a01356e63b7a85c79.jpg',
+         photo: 'https://i.postimg.cc/NLqyzvt5/photo-2024-08-29-16-11-28.jpg',
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
-         about: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+         about: `Люблю готовить, пинать мячи, лежать в гамаке и тайпскрипт`
        },
        {
         idUser: 16, 
-         photo: 'https://static17.tgcnt.ru/posts/_0/a2/a2a1e39b36767e5a01356e63b7a85c79.jpg',
+         photo: 'https://i.postimg.cc/W3JjdFRJ/DSC00944-w.jpg',
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
@@ -145,7 +146,7 @@ module.exports = {
        },
        {
         idUser: 17, 
-         photo: 'https://static17.tgcnt.ru/posts/_0/a2/a2a1e39b36767e5a01356e63b7a85c79.jpg',
+         photo: 'https://i.postimg.cc/1zXyZ7JB/DSC00946-w.jpg',
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
@@ -153,75 +154,75 @@ module.exports = {
        },
        {
         idUser: 18, 
-         photo: 'https://static17.tgcnt.ru/posts/_0/a2/a2a1e39b36767e5a01356e63b7a85c79.jpg',
+         photo: 'https://i.postimg.cc/9QPx1W2w/photo-2024-08-29-17-54-03.jpg',
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
-         about: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+         about: `"Люблю море, волны, паруса, карты и чистое звёздное небо. Путешественник и просто хороший человек"(c)`
        },
        {
         idUser: 19, 
-         photo: 'https://uproger.com/wp-content/uploads/2023/05/image-2023-05-25-174156.jpg',
+         photo: 'https://elbrusboot.camp/static/e1a0329b2dd53e8ebfc62ddb79da29cf/355ad/krutikova.webp',
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
-         about: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+         about: `5+ лет в IT рекрутменте, 15+ лет руководящих позиций в HR. 400+ карьерных консультаций по переходу в IT`
        },
        {
         idUser: 20, 
-         photo: 'https://uproger.com/wp-content/uploads/2023/05/image-2023-05-25-174156.jpg',
+         photo: 'https://elbrusboot.camp/static/f593659ee4fa70586f27d1691025b8b9/89627/kulikova.webp',
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
-         about: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+         about: `5+ лет опыта в карьерном консультировании в IT, 10+ лет опыта HR в международных компаниях. Эксперт по резюме на английском`
        },
        {
         idUser: 21, 
-         photo: 'https://static17.tgcnt.ru/posts/_0/a2/a2a1e39b36767e5a01356e63b7a85c79.jpg',
+         photo: 'https://elbrusboot.camp/static/a988569b2a73dc5734ce8e611576d3d0/e2666/kuleshova.webp',
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
-         about: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+         about: `3+ года опыта в международном IT рекрутинге и карьерном консультировании. Психолог, гештальт-терапевт`
        },
        {
         idUser: 22, 
-         photo: 'https://static17.tgcnt.ru/posts/_0/a2/a2a1e39b36767e5a01356e63b7a85c79.jpg',
+         photo: 'https://elbrusboot.camp/static/2055a4d7d246997726a9dccf8106cd98/89627/eliseeva.webp',
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
-         about: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+         about: `3+ года в IT рекрутменте и HR BP. Разработала и внедрила систему грейдов для программистов в международной IT компании`
        },
        {
         idUser: 23, 
-         photo: 'https://static17.tgcnt.ru/posts/_0/a2/a2a1e39b36767e5a01356e63b7a85c79.jpg',
+         photo: 'https://i.postimg.cc/vZG7Y5RD/DMN05906-resized.jpg',
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
-         about: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+         about: `Покорила всех своим "Брауни")`
        },
        {
         idUser: 24, 
-         photo: 'https://uproger.com/wp-content/uploads/2023/05/image-2023-05-25-174156.jpg',
+         photo: 'https://i.postimg.cc/ryW55fMK/DMN05841-resized.jpg',
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
-         about: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+         about: `"Я не мафия!"(с)`
        },
        {
         idUser: 25, 
-         photo: 'https://uproger.com/wp-content/uploads/2023/05/image-2023-05-25-174156.jpg',
+         photo: 'https://i.postimg.cc/15q7nGYH/photo-2024-08-29-17-50-00.jpg',
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
-         about: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+         about: `"Красивая , умная и скромная"(c)`
        },
        {
         idUser: 26, 
-         photo: 'https://uproger.com/wp-content/uploads/2023/05/image-2023-05-25-174156.jpg',
+         photo: 'https://i.postimg.cc/bvjT242Y/photo-2024-05-02-22-59-04.jpg',
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
-         about: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+         about: `"Люблю котиков"(с)`
        }
        
      ], {});
