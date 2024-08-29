@@ -39,7 +39,7 @@ function PersonalAccount(): JSX.Element {
         Страна: {Account?.country}
         </Text >
         <Text ta="center" fz="lg" fw={500} mt="sm">
-       Город: {Account?.city}
+       Город:  {Account?.city}
         </Text >
         <Text ta="center" fz="lg" fw={500} mt="sm">
           Телефон: {Account?.phone}
