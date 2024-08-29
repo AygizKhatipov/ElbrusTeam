@@ -30,8 +30,8 @@ const PeopleCard = ({ el}: { el: any }) => {
       <Badge className={classes.rating} variant="gradient" gradient={{ from: 'yellow', to: 'red' }}>  
         {yourRoleaa} 
       </Badge>  
-      <Link to={`/communityCard/${el.id}`}>
-      <Text  className={classes.title} fw={500} component="a" >  
+      <Link  style={{textDecoration:'none'}} to={`/communityCard/${el.id}`}>
+      <Text  className={classes.title} color="#5430b0" fw={500} component="a" >  
         {el.firstName} {el.lastName} 
       </Text>  
       </Link>
