@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const verifyAccessToken = require("../middleware/verifyAccessToken");
+const verifyRefreshToken = require("../middleware/verifyRefreshToken")
 const { Event } = require("../db/models");
 
 router.get("/", async (req, res) => {
@@ -10,9 +11,11 @@ router.get("/", async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
-router.post("/",verifyAccessToken, async (req, res) => {
+router.post("/",verifyRefreshToken, async (req, res) => {
   const { date, title, description, pic } = req.body;
-  res.locals.user = user;
+  user = res.locals.user;
+
+  
 
   try {
     if (
