@@ -20,8 +20,9 @@ router
     const [account] = await Account.update({city, country, phone, email, about}, {
       where: { idUser: accountId },
     })
+    const [updateUser] = await User.update({firstName, lastName}, {where : {id:accountId}})
 
-    if( account) {
+    if( account && updateUser ) {
       const updatingUser = (await User.findOne({
         where: { id: accountId },
         include: { model: Account, include: { model: Point } },

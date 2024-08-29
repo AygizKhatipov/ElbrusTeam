@@ -24,6 +24,7 @@ const updateAvatar = createAsyncThunk('account/updateAvatar', async (formData: a
 });
 
 const updateAccount = createAsyncThunk('account/updateAccount', async ({data, accountId}: any): Promise<PesonalPageType> => {
+    console.log(data)
 return await PersonalAPI.updateAccount({data, accountId});
 });
 

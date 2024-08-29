@@ -17,6 +17,8 @@ function InputComonent(): JSX.Element {
     const userId = useAppSelector(state => state.user.user?.id);
     const userName = useAppSelector(state => state.user.user?.firstName);
     const scrollAreaRef = useRef<HTMLDivElement | null>(null);
+    const message = useAppSelector(state => state.chat.messages);
+    console.log(message)
 
     useEffect(() => {   
         socket.current = new WebSocket('ws://localhost:3000')
