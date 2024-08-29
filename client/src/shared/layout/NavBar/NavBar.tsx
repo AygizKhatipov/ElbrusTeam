@@ -130,7 +130,7 @@ function Navbar(): JSX.Element {
             style={{ width: 60, margin: 5 }}
             alt="logo"
           />
-          {user ? (
+          {user?.isMember ? (
             <>
               <Group h="100%" gap={0} visibleFrom="sm">
                 <Link to="/" className={classes.link}>
