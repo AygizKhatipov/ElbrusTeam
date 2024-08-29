@@ -1,5 +1,5 @@
 
-import { Grid, rem } from '@mantine/core';
+import { Button, Grid, rem } from '@mantine/core';
 import {  
   Card,  
   Image,  
@@ -8,11 +8,12 @@ import {
 } from '@mantine/core';  
 import classes from './ArticleCard.module.css';  
 import { useAppSelector } from '../../../app/providers/store/store';
+import { Link, useNavigate } from 'react-router-dom';
 
 const TeacherCard = ({ el }: { el: any }) => {  
   // const linkProps = { href: 'https://mantine.dev', target: '_blank', rel: 'noopener noreferrer' };  
   // const theme = useMantineTheme();  
-
+  const navigate = useNavigate()
   const roles = useAppSelector(state=> state.role.roles) 
     
     const yourRole= roles.filter((role)=> el.roleId===role.id)
@@ -31,12 +32,14 @@ const TeacherCard = ({ el }: { el: any }) => {
       <Badge className={classes.rating} variant="gradient" gradient={{ from: 'yellow', to: 'red' }}>  
         {yourRoleaa} 
       </Badge>  
-
-      <Text className={classes.title} fw={500} component="a" >  
+      <Link to={`/communityCard/${el.id}`}>
+      <Text  className={classes.title} fw={500} component="a" >  
         {el.firstName} {el.lastName} 
       </Text>  
+      </Link>
 
       <Text fz="sm" c="dimmed" lineClamp={4}>  
+        
         {el.Account.about}
       </Text>  
 

@@ -15,6 +15,7 @@ import ChatPage from '../../pages/ChatPage/ChatPage';
 import AdminPage from '../../pages/AdminPage/AdminPage';
 import CommunitiesPage from '../../pages/Community/CommunityPage';
 import AnonimPage from '../../pages/AdminPage/AnonimousPage';
+import PersonalCard from '../../entities/community/ui/PersonalCard/PersonalCard';
 
 
 
@@ -27,6 +28,7 @@ function AppRoutes(): JSX.Element {
         <Route path="/" element={<HomePage />} />
         <Route path="/anonymous" element={<AnonimPage />} />
         <Route path="/community" element={<CommunitiesPage />} />
+        <Route path="/communityCard/:id" element={<PersonalCard/>} />
         <Route path="/graduates" element={<GraduatesPage />} />
         <Route path="/students" element={<StudentsPage />} />
         <Route path="/teachers" element={<TeachersPage />} />

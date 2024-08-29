@@ -8,6 +8,7 @@ import {
 } from '@mantine/core';  
 import classes from './ArticleCard.module.css';  
 import { useAppSelector } from '../../../app/providers/store/store';
+import { Link } from 'react-router-dom';
 
 const PeopleCard = ({ el}: { el: any }) => {  
   // const linkProps = { href: 'https://mantine.dev', target: '_blank', rel: 'noopener noreferrer' };  
@@ -29,9 +30,11 @@ const PeopleCard = ({ el}: { el: any }) => {
       <Badge className={classes.rating} variant="gradient" gradient={{ from: 'yellow', to: 'red' }}>  
         {yourRoleaa} 
       </Badge>  
-      <Text className={classes.title} fw={500} component="a" >  
+      <Link to={`/communityCard/${el.id}`}>
+      <Text  className={classes.title} fw={500} component="a" >  
         {el.firstName} {el.lastName} 
       </Text>  
+      </Link>
       <Text fz="sm" c="dimmed" lineClamp={4}>  
         {el.Account.about}
       </Text>  
