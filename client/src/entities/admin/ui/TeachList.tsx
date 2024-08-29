@@ -1,36 +1,39 @@
-import { Avatar, Group, Text, Button, Select, Table, ActionIcon } from "@mantine/core";
-import { useAppDispatch } from "../../../app/providers/store/store";
-import { useForm } from "react-hook-form";
-import { useState } from "react";
-import { updateAccount } from "../../accout/model/accoutSlice";
-import { IconCheck } from "@tabler/icons-react";
+import {
+  Avatar,
+  Group,
+  Text,
+  Select,
+  Table,
+  ActionIcon,
+} from '@mantine/core';
+import { useAppDispatch } from '../../../app/providers/store/store';
+
+import { useState } from 'react';
+import {
+
+  updatePretendent,
+} from '../../accout/model/accoutSlice';
+import { IconCheck } from '@tabler/icons-react';
 
 const Mockdata = [
-  { id: 1, role: "Разработчик" },
-  { id: 2, role: "Администратор" },
-  { id: 3, role: "Директор" },
-  { id: 4, role: "Преподаватель" },
-  { id: 5, role: "Выпускник" },
-  { id: 6, role: "Карьерный коуч" },
-  { id: 7, role: "Студент" },
+  { id: 1, role: 'Разработчик' },
+  { id: 2, role: 'Администратор' },
+  { id: 3, role: 'Директор' },
+  { id: 4, role: 'Преподаватель' },
+  { id: 5, role: 'Выпускник' },
+  { id: 6, role: 'Карьерный коуч' },
+  { id: 7, role: 'Студент' },
 ];
 
-const TeachList = ({ el, updateAll }: { el: any; updateAll: boolean }) => {
-  const { handleSubmit } = useForm({});
+const TeachList = ({ el }: { el: any}) => {
+  // const { handleSubmit } = useForm({});
   const dispatch = useAppDispatch();
 
-  // Используем состояние для отслеживания выбранного значения роли
+
   const [selectedRole, setSelectedRole] = useState<string | null>(null);
-
-  const updatePeople = (data: any) => {
-    // Присоединяем выбранную роль к данным формы
-    const formData = {
-      ...data,
-      roleId: selectedRole,
-    };
-
-    console.log(formData);
-    dispatch(updateAccount({ data: formData, accountId: el.id })).catch(
+console.log(selectedRole)
+  const updatePeople = (): any => {
+    dispatch(updatePretendent({ data: selectedRole, accountId: el.id })).catch(
       console.log
     );
   };
@@ -52,8 +55,8 @@ const TeachList = ({ el, updateAll }: { el: any; updateAll: boolean }) => {
       </Table.Td>
 
       <Table.Td>
-        <form onSubmit={handleSubmit(updatePeople)}>
-          <Group spacing="xs">
+        <form onSubmit={(updatePeople())}>
+          <Group>
             <Select
               value={selectedRole}
               onChange={(value) => setSelectedRole(value)}
@@ -62,18 +65,17 @@ const TeachList = ({ el, updateAll }: { el: any; updateAll: boolean }) => {
                 value: role.id.toString(),
                 label: role.role,
               }))}
-              disabled={!updateAll} 
               style={{ minWidth: 150 }}
             />
-<ActionIcon
-                type="submit"
-                variant="outline"
-                size="lg"
-                aria-label="Gradient action icon"
-                color="violet">
-      <IconCheck />
-    </ActionIcon>
-
+            <ActionIcon
+              type="submit"
+              variant="outline"
+              size="lg"
+              aria-label="Gradient action icon"
+              color="violet"
+            >
+              <IconCheck />
+            </ActionIcon>
           </Group>
         </form>
       </Table.Td>
@@ -82,17 +84,13 @@ const TeachList = ({ el, updateAll }: { el: any; updateAll: boolean }) => {
 };
 
 export default TeachList;
-
-
-
-
-
-
-{/* <ActionIcon
+{
+  /* <ActionIcon
                 type="submit"
                 variant="outline"
                 size="lg"
                 aria-label="Gradient action icon"
                 color="violet">
       <IconCheck />
-    </ActionIcon> */}
+    </ActionIcon> */
+}

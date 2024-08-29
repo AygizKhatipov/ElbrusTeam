@@ -10,7 +10,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       point: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       userId: {
         type: Sequelize.INTEGER,

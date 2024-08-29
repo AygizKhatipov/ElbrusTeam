@@ -17,16 +17,16 @@ import eventSlice from '../../../entities/events/model/eventSlice';
 
 const store = configureStore({
     reducer: {
-        user: userSliceReducer,
-        userGroup: userGroupSliceReducer,
-        role: roleSliceReducer,
-        group: groupSliceReducer,
-        account :accoutSliceReducer,
-        community: communitySliceReducer,
-        point: pointSlice,
-        baseDate: baseDateSliceReducer,
-        chat: chatSliceReducer,
-        event: eventSlice,
+        user: userSliceReducer, //здесь хранится accessToken и данные юзера без аккаунта
+        userGroup: userGroupSliceReducer, // здесь пока что ничего
+        role: roleSliceReducer,// здесь хранятся роли
+        group: groupSliceReducer,// пока что ничего не хранится
+        account :accoutSliceReducer, //здесь хранится аккаунт и все аккаунты 
+        community: communitySliceReducer, //здесь хранятся данные о студентах и преподавателях и т.д.
+        point: pointSlice, //ЗДЕСЬ ХРАНЯТСЯ БАЛЛЫ ДЛЯ КАЖДОГО ПОЛЬЗОВАТЕЛЯ
+        baseDate: baseDateSliceReducer, 
+        chat: chatSliceReducer, // ЧАТ 
+        event: eventSlice, // СОБЫТИЯ 
     }
 })
 
