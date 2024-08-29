@@ -78,6 +78,7 @@ function PersonalAccoutInfo({ onClose }: PersonalAccoutInfoProps): JSX.Element {
 
 
   const updateUserInformation: SubmitHandler<UpdateAccountType> = (data) => {
+    console.log(data)
     dispatch(updateAccount({ data, accountId }));
     onClose(); 
   };
