@@ -43,7 +43,9 @@ module.exports = (sequelize, DataTypes) => {
   // Хук, который создаст запись в Account автоматически после создания User
   User.addHook('afterCreate', async (user, options) => {
     await sequelize.models.Account.create({ idUser: user.id });
+     await sequelize.models.Point.create({ userId: user.id , point: 30 }); 
   });
+
 
   return User;
 };
