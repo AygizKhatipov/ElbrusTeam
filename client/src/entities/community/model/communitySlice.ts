@@ -42,25 +42,25 @@ const communitySlice = createSlice({
     builder.addCase(
         loadTeachers.fulfilled,
       (state, action: PayloadAction<PesonalComType[]>) => {
-        state.teachers.push(...action.payload); // Добавляем полученные темы в состояние
+         state.teachers.push(...action.payload); // Добавляем полученные темы в состояние
       },
     )
     .addCase(
         loadStudents.fulfilled,
       (state, action: PayloadAction<PesonalComType[]>) => {
-        state.students.push(...action.payload); // Добавляем полученные темы в состояние
+         state.students.push(...action.payload); // Добавляем полученные темы в состояние
       },
     )
     .addCase(
         loadGraduates.fulfilled,
       (state, action: PayloadAction<PesonalComType[]>) => {
-        state.graduates.push(...action.payload); // Добавляем полученные темы в состояние
+         state.graduates.push(...action.payload); // Добавляем полученные темы в состояние
       },
     )
     .addCase(
         loadCouches.fulfilled,
       (state, action: PayloadAction<PesonalComType[]>) => {
-        state.couches.push(...action.payload); // Добавляем полученные темы в состояние
+         state.couches.push(...action.payload); // Добавляем полученные темы в состояние
       },
     );
   },

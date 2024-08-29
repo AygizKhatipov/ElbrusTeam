@@ -15,16 +15,16 @@ router
 })
 .put('/', async (req, res) => {
   try {
-    const {firstName, lastName, city, country, phone, email, about, isMember, roleId } = req.body.data
+    const {firstName, lastName, city, country, phone, email, about, roleId } = req.body.data
     const {accountId} = req.body
     const [account] = await Account.update({city, country, phone, email, about}, {
       where: { idUser: accountId },
     })
-    const [user] = await User.update({firstName, lastName, isMember, roleId }, {
+    const [user] = await User.update({isMember: true, roleId }, {
       where: { id: accountId },
     });
     
-    if(user && account) {
+    if((user && account) || user) {
       const updatingUser = (await User.findOne({
         where: { id: accountId },
         include: { model: Account, include: { model: Point } },
