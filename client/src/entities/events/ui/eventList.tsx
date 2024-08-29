@@ -1,10 +1,46 @@
 import { useState } from 'react';
-import { useAppSelector } from "../../../app/providers/store/store";
+import { useAppDispatch, useAppSelector } from "../../../app/providers/store/store";
 import EventCard from "./eventCard";
 import classes from './EventList.module.css';
+import { useDisclosure } from '@mantine/hooks';
+import { Button, Input, Modal } from '@mantine/core';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+import { useForm } from 'react-hook-form';
+import { createEvent} from '../model/eventSlice';
 
+
+
+const schemaCharacter = yup
+    .object()
+    .shape({
+      date: yup.string().required(),
+      pic: yup.string().required(),
+      title: yup.string().required(),
+      description: yup.string().required(),
+      
+    })
+    .required();
 const EventList = () => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+        date: '',
+        pic: "",
+        title: "",
+        description: "",
+        
+        
+
+    },
+    resolver: yupResolver(schemaCharacter),
+  });
   const eventAll = useAppSelector((state) => state.event);
+  const dispatch = useAppDispatch()
   const [selectedEvent, setSelectedEvent] = useState(null);
 
   const scrollLeft = () => {
@@ -30,8 +66,16 @@ const EventList = () => {
   const handleBackClick = () => {
     setSelectedEvent(null);
   };
+  const user = useAppSelector((state) => state.user.user);
+  const [opened, { open, close }] = useDisclosure(false);
+  const createEventS =({date, pic, title, description, userId}: {date:string, pic:string, title:string, description:string, userId:number}): void=>{
+    dispatch(createEvent({ date, pic, title, description, userId}))
+    .then(()=>reset()).catch(console.log);
 
-  return (
+
+ }
+
+  return (<>
     <div className={classes.wrapper}>
       {selectedEvent ? (
         <div className={classes.detailView}>
@@ -55,6 +99,27 @@ const EventList = () => {
         </>
       )}
     </div>
+    {user?.roleId === 2 ||
+      user?.roleId === 1 ||
+      user?.roleId === 3 ||
+      user?.roleId === 4 ?(
+        <> <>
+        <Modal opened={opened}  onClose={close} title="Authentication">
+        <form onSubmit={handleSubmit(createEventS)}>
+        <Input placeholder="Дата" {...register('date')} />
+        <Input style={{ marginTop: "10px" }}placeholder="Фото" {...register('pic')} />
+        <Input style={{ marginTop: "10px" }}placeholder="Название" {...register('title')} />
+        <Input style={{ marginTop: "10px" }}placeholder="Описание" {...register('description')} />
+         <Button type="submit" variant="light" color="#5430b0" fullWidth mt="xl">
+            Создать
+          </Button></form>
+        </Modal>
+  
+        <Button color="#5430b0" variant="light" fullWidth onClick={open}>Добавить событие</Button>
+      </></>
+      ) : (
+        <></>
+      )}</>
   );
 };
 
