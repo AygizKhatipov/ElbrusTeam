@@ -59,7 +59,7 @@ console.log(selectedRole)
 
       <Table.Td>
 
-        <form onSubmit={(updatePeople())}>
+        <form onSubmit={()=> updatePeople()}>
           <Group>
 
             <Select

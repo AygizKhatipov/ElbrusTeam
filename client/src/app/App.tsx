@@ -22,7 +22,6 @@ import { loadEvents } from "../entities/events/model/eventSlice";
 function App() {
   const dispatch = useAppDispatch();
   const userId = useAppSelector(state => state.user.user?.id); 
-  const user = useAppSelector(state => state.user.user);
 
 
 
@@ -94,7 +93,7 @@ function App() {
         .catch((error) => {
           console.error('Failed to load pretendent accounts:', error);
         });
-    }, [user]);
+    }, []);
 
   return (
     <div className="app-wrapper">
