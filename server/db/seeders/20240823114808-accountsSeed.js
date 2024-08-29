@@ -158,39 +158,39 @@ module.exports = {
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
-         about: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+         about: `"Люблю море, волны, паруса, карты и чистое звёздное небо. Путешественник и просто хороший человек"(c)`
        },
        {
         idUser: 19, 
-         photo: 'https://uproger.com/wp-content/uploads/2023/05/image-2023-05-25-174156.jpg',
+         photo: 'https://elbrusboot.camp/static/e1a0329b2dd53e8ebfc62ddb79da29cf/355ad/krutikova.webp',
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
-         about: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+         about: `5+ лет в IT рекрутменте, 15+ лет руководящих позиций в HR. 400+ карьерных консультаций по переходу в IT`
        },
        {
         idUser: 20, 
-         photo: 'https://uproger.com/wp-content/uploads/2023/05/image-2023-05-25-174156.jpg',
+         photo: 'https://elbrusboot.camp/static/f593659ee4fa70586f27d1691025b8b9/89627/kulikova.webp',
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
-         about: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+         about: `5+ лет опыта в карьерном консультировании в IT, 10+ лет опыта HR в международных компаниях. Эксперт по резюме на английском`
        },
        {
         idUser: 21, 
-         photo: 'https://static17.tgcnt.ru/posts/_0/a2/a2a1e39b36767e5a01356e63b7a85c79.jpg',
+         photo: 'https://elbrusboot.camp/static/a988569b2a73dc5734ce8e611576d3d0/e2666/kuleshova.webpg',
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
-         about: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+         about: `3+ года опыта в международном IT рекрутинге и карьерном консультировании. Психолог, гештальт-терапевт`
        },
        {
         idUser: 22, 
-         photo: 'https://static17.tgcnt.ru/posts/_0/a2/a2a1e39b36767e5a01356e63b7a85c79.jpg',
+         photo: 'https://elbrusboot.camp/static/2055a4d7d246997726a9dccf8106cd98/89627/eliseeva.webp',
          country: 'Россия',
          city: 'Санкт-Петербург',
          phone: '+7-000-00-00',
-         about: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+         about: `3+ года в IT рекрутменте и HR BP. Разработала и внедрила систему грейдов для программистов в международной IT компании`
        },
        {
         idUser: 23, 
