@@ -18,6 +18,9 @@ import {
   rem,
   useMantineTheme,
   useMantineColorScheme,
+  ScrollArea,
+  Drawer,
+  Collapse,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import {
@@ -72,9 +75,10 @@ const mockdataSecond = [
 
 function Navbar(): JSX.Element {
   const user = useAppSelector((state) => state.user.user);
+  const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
 
   const userAcc = useAppSelector((state) => state.account.account);
-  const [drawerOpened, { toggle: toggleDrawer,  }] =
+  const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
     useDisclosure(false);
   // const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
   const theme = useMantineTheme();
@@ -289,25 +293,28 @@ function Navbar(): JSX.Element {
           />
         </Group>
       </header>
-
-      {/* <Drawer  
+      {user?.isMember ? (
+      <Drawer  className={classes.link}
         opened={drawerOpened}  
         onClose={closeDrawer}  
         size="100%"  
         padding="md"  
-        title="Navigation"  
+        title="Меню"  
         hiddenFrom="sm"  
         zIndex={1000000}  
       >  
         <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md">  
           <Divider my="sm" />  
-          <a href="#" className={classes.link}>  
-            Home  
-          </a>  
+          <Link to="/" className={classes.link}>
+                  Главная
+                </Link><Link to="/events" className={classes.link}>
+                  События
+                </Link>
           <UnstyledButton className={classes.link} onClick={toggleLinks}>  
+          
             <Center inline>  
-              <Box component="span" mr={5}>  
-                Features  
+              <Box component="span" mr={5}>  <Link to="/community" className={classes.link}>
+                Коммьюнити </Link>
               </Box>  
               <IconChevronDown  
                 style={{ width: rem(16), height: rem(16) }}  
@@ -316,18 +323,47 @@ function Navbar(): JSX.Element {
             </Center>  
           </UnstyledButton>  
           <Collapse in={linksOpened}>{links}</Collapse>  
-          <a href="#" className={classes.link}>  
-            База знаний  
-          </a>  
-          <a href="#" className={classes.link}>  
-            Academy  
-          </a>  
+          <Link to="/base" className={classes.link}>
+                  База знаний
+                </Link>
+                <Link to="/chat" className={classes.link}>Чат</Link>
+                {user?.roleId === 2 ||
+                user?.roleId === 1 ||
+                user?.roleId === 3 ||
+                user?.roleId === 4 ? (
+                <Link to="/admin" className={classes.link}>Админка</Link>):(<></>)}
           <Divider my="sm" />  
           <Group justify="center" grow pb="xl" px="md">  
-            <Button variant="default">Личный кабинет</Button>  
-          </Group>  
-        </ScrollArea>  
-      </Drawer>   */}
+          <Button variant="default"> <Link to="/logout" className={classes.link}>
+                  Выйти
+                </Link></Button>  
+
+          
+            
+          </Group> 
+          <Group justify="center" grow pb="xl" px="md"><Button variant="default"><Link to="/personal" className={classes.link}>Личный кабинет</Link></Button>   
+      </Group>  </ScrollArea>  
+      </Drawer>  ):( <Drawer  className={classes.link}
+        opened={drawerOpened}  
+        onClose={closeDrawer}  
+        size="100%"  
+        padding="md"  
+        title="Меню"  
+        hiddenFrom="sm"  
+        zIndex={1000000}  
+      >  
+        <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md">  
+          <Divider my="sm" />  
+          <Link to="/" className={classes.link}>
+                  Главная
+                </Link>
+          
+             <Link to="/login" className={classes.link}>Войти</Link>
+        
+            <Link to="/registration" className={classes.link}>Зарегистрироваться</Link>
+
+             </ScrollArea>  
+      </Drawer>)}
     </Box>
   );
 }
