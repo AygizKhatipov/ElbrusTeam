@@ -1,0 +1,8 @@
+.user {
+    
+    color:#5430b0;
+    color: light-dark(var(#5430b0), var(--mantine-color-white) );
+  
+    @mixin hover { background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-3))
+    }
+  }

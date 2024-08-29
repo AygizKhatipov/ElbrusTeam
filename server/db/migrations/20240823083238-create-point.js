@@ -11,6 +11,9 @@ module.exports = {
       },
       point: {
         type: Sequelize.INTEGER,
+
+        defaultValue: 30
+
       },
       userId: {
         type: Sequelize.INTEGER,

@@ -1,3 +1,4 @@
+
 import {
   Avatar,
   Group,
@@ -14,6 +15,7 @@ import {
   updatePretendent,
 } from '../../accout/model/accoutSlice';
 import { IconCheck } from '@tabler/icons-react';
+
 
 const Mockdata = [
   { id: 1, role: 'Разработчик' },
@@ -44,7 +46,7 @@ console.log(selectedRole)
         <Group gap="sm">
           <Avatar size={40} src={el.Account?.photo} radius={40} />
           <div>
-            <Text fz="sm" fw={500}>
+            <Text className={classes.user} fz="sm" fw={500}>
               {el.firstName} {el.lastName}
             </Text>
             <Text fz="xs" c="dimmed">
@@ -55,9 +57,13 @@ console.log(selectedRole)
       </Table.Td>
 
       <Table.Td>
+
         <form onSubmit={(updatePeople())}>
           <Group>
+
             <Select
+            color="#5430b0"
+            className={classes.user}
               value={selectedRole}
               onChange={(value) => setSelectedRole(value)}
               placeholder="Выберите роль"
@@ -65,6 +71,7 @@ console.log(selectedRole)
                 value: role.id.toString(),
                 label: role.role,
               }))}
+
               style={{ minWidth: 150 }}
             />
             <ActionIcon
@@ -76,6 +83,7 @@ console.log(selectedRole)
             >
               <IconCheck />
             </ActionIcon>
+
           </Group>
         </form>
       </Table.Td>

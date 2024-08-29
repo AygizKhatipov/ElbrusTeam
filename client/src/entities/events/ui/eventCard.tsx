@@ -12,19 +12,19 @@ const EventCard = ({ el, isDetailView, onBackClick }: any) => {
       </AspectRatio>
       {isDetailView ? (
         <>
-          <Text size="lg" w={700} mt="md">
+          <Text className={classes.title}  size="lg" w={700} mt="md">
             {el.title}
           </Text>
-          <Text mt="sm">{el.description}</Text>
+          <Text mt="sm" >{el.description}</Text>
           <Text mt="sm">{el.article}</Text>
-          <Button mt="md" variant="outline" onClick={onBackClick}>
+          <Button mt="md" variant="outline" className={classes.card} style={{alignItems:'center'}} color='5430b0' onClick={onBackClick}>
             Назад
           </Button>
         </>
       ) : (
         <>
           <Text c="dimmed" size="xs" tt="uppercase" fw={700} mt="md">
-            {el.date}
+            {el.date.slice(0, 10)}
           </Text>
           <Text className={classes.title} mt={5}>
             {el.title}
