@@ -30,5 +30,9 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'Account',
   });
 
+  User.addHook('afterCreate', async (Account, options) => {
+    await sequelize.models.Point.create({ id: Account.idUser });
+  });
+
   return Account;
 };
