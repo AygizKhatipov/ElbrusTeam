@@ -5,7 +5,7 @@ import { FooterSocial } from "../shared/layout/Footer/Footer";
 import { useAppDispatch, useAppSelector } from "./providers/store/store";
 import { useEffect } from "react";
 import { userRefreshTokens } from "../entities/user/model/userSlice";
-import { getAllAccounts, getOneAccount } from "../entities/accout/model/accoutSlice";
+import { allPretendent, getAllAccounts, getOneAccount } from "../entities/accout/model/accoutSlice";
 import { loadBaseDates } from "../entities/baseDates/model/baseDateSlice";
 import { loadCouches, loadGraduates, loadStudents, loadTeachers } from "../entities/community/model/communitySlice";
 
@@ -22,10 +22,10 @@ import { loadEvents } from "../entities/events/model/eventSlice";
 function App() {
   const dispatch = useAppDispatch();
   const userId = useAppSelector(state => state.user.user?.id); 
-  // console.log(user);
+  const user = useAppSelector(state => state.user.user);
 
-  // const teacherAll = useAppSelector(state=> state.community.teachers)
-  // const teacherAll = useAppSelector(state=> state.community);
+
+
 
 
 
@@ -85,6 +85,16 @@ function App() {
      useEffect(()=> {
        dispatch(getAllAccounts())
      }, [])
+     useEffect(() => {
+      dispatch(allPretendent())
+        .unwrap()
+        .then(() => {
+          console.log('Pretendent accounts loaded successfully.');
+        })
+        .catch((error) => {
+          console.error('Failed to load pretendent accounts:', error);
+        });
+    }, [user]);
 
   return (
     <div className="app-wrapper">

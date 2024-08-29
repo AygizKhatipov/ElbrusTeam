@@ -20,11 +20,8 @@ router
     const [account] = await Account.update({city, country, phone, email, about}, {
       where: { idUser: accountId },
     })
-    const [user] = await User.update({isMember: true, roleId }, {
-      where: { id: accountId },
-    });
-    
-    if((user && account) || user) {
+
+    if( account) {
       const updatingUser = (await User.findOne({
         where: { id: accountId },
         include: { model: Account, include: { model: Point } },
@@ -35,7 +32,40 @@ router
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
-});
+})
+
+router.put('/pretendent', async (req, res) => {
+  try {
+    const { roleId } = req.body.data
+    const {accountId} = req.body
+    const [user] = await User.update({isMember: true, roleId }, {
+      where: { id: accountId },
+    });
+    if(user) {
+      const updatePretendent = (await User.findOne({
+        where: { id: accountId },
+        include: { model: Account, include: { model: Point } },
+      })).get();
+      delete updatePretendent["password"];
+      res.status(200).json(updatePretendent);
+    }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+
+})
+
+router.get('/pretendent', async (req, res) => { 
+  try {
+    const pretendent = await User.findAll({where: {isMember: false}})
+    if(pretendent){
+      res.status(200).json(pretendent)
+    }
+    
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+})
 
 
 

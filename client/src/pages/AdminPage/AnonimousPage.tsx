@@ -1,15 +1,14 @@
-import { Button, Container, Table } from "@mantine/core";
+import { Container, Table } from "@mantine/core";
 import { useAppSelector } from "../../app/providers/store/store";
 import TeachList from "../../entities/admin/ui/TeachList";
-import { useState } from "react";
-import classes from '../../entities/admin/ui/admin.module.css'
+
+
+
 
 const AnonimPage = () => {
-  const allPeople = useAppSelector((state) => state.account.allAccounts);
+  const allPeople = useAppSelector((state) => state.account.pretendentAccounts);
 
-  const [updateAll, setUpdateAll] = useState(true);
 
-  const newPeople = allPeople.filter((one) => one.isMember === false);
 
   return (
     <>
@@ -27,8 +26,8 @@ const AnonimPage = () => {
               </Table.Tr>
             </Table.Thead>
             <Table.Tbody>
-              {newPeople.map((el) => (
-                <TeachList key={el.id} el={el} updateAll={updateAll} />
+              {allPeople.map((el) => (
+                <TeachList key={el.id} el={el}  />
               ))}
             </Table.Tbody>
           </Table>

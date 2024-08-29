@@ -42,3 +42,13 @@ export interface UpdateAccountType {
     phone: string,
     about: string
 }
+
+export interface pretendentType {
+    id: number,
+    firstname: string,
+    lastname: string,
+    email: string,
+    password: string,
+    isMember: boolean | null,
+    roleId: number | null
+}
