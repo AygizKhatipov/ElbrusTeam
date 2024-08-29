@@ -1,5 +1,5 @@
 .card {
-    width: 500px; /* Регулирует ширину каждой карточки */
+    width: 750px; /* Регулирует ширину каждой карточки */
     height: 100%;
     display: flex;
     flex-direction: column;
