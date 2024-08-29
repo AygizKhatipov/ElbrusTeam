@@ -1,7 +1,7 @@
 import { Container, Table } from '@mantine/core';  
 import { useAppSelector } from '../../app/providers/store/store';  
 import StudentsCard from '../../entities/admin/ui/StudentsCard';  
-
+import classes from '../../entities/admin/ui/admin.module.css'
   
 
 

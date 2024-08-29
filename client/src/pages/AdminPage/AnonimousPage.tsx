@@ -1,6 +1,7 @@
 import { Container, Table } from "@mantine/core";
 import { useAppSelector } from "../../app/providers/store/store";
 import TeachList from "../../entities/admin/ui/TeachList";
+import classes from '../../entities/admin/ui/admin.module.css'
 
 
 
