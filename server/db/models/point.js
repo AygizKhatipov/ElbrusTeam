@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
   Point.init({
     point: DataTypes.INTEGER,
     userId: DataTypes.INTEGER
+    
   }, {
     sequelize,
     modelName: 'Point',
