@@ -37,9 +37,12 @@ router
 
 router.put('/pretendent', async (req, res) => {
   try {
-    const { roleId } = req.body.data
+
+    const {data } = req.body
     const {accountId} = req.body
-    const [user] = await User.update({isMember: true, roleId }, {
+    console.log(req.body)
+    console.log(accountId)
+    const [user] = await User.update({isMember: true, roleId:data }, {
       where: { id: accountId },
     });
     if(user) {

@@ -6,7 +6,8 @@ import classes from '../../entities/admin/ui/admin.module.css'
 
 
 const AdminPage = () => {  
-    const students = useAppSelector(state => state.community.students);  
+    const students = useAppSelector(state => state.community.students);
+    console.log(students)  
     
 
 
