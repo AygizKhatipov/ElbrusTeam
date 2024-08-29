@@ -11,7 +11,7 @@ class CommunityApi {
 
   static getAllStudents = async (): Promise<PesonalComType[]> => {
     const response: AxiosResponse<PesonalComType[]> = await axiosInstance.get('/community/students');
-   
+    console.log(response.data);
     return response.data;
   };
   static getAllGraduates = async (): Promise<PesonalComType[]> => {
@@ -21,7 +21,6 @@ class CommunityApi {
   };
   static getAllCouches = async (): Promise<PesonalComType[]> => {
     const response: AxiosResponse<PesonalComType[]> = await axiosInstance.get('/community/couches');
- 
     return response.data;
   };
 }

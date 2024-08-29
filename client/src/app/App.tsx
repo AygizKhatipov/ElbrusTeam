@@ -22,6 +22,7 @@ import { loadEvents } from "../entities/events/model/eventSlice";
 function App() {
   const dispatch = useAppDispatch();
   const userId = useAppSelector(state => state.user.user?.id); 
+  // console.log(user);
 
   // const teacherAll = useAppSelector(state=> state.community.teachers)
   // const teacherAll = useAppSelector(state=> state.community);

@@ -1,97 +1,39 @@
-import { Avatar, Badge, Table, Group, Text } from "@mantine/core";
-import { useAppDispatch, useAppSelector } from "../../../app/providers/store/store";
+import { Avatar, Group, Text, Button, Select, Table, ActionIcon } from "@mantine/core";
+import { useAppDispatch } from "../../../app/providers/store/store";
 import { useForm } from "react-hook-form";
-
- 
-import { yupResolver } from '@hookform/resolvers/yup';  
-import * as yup from 'yup';  
-import { PesonalPageTypeOnly } from "../../accout/types/accountType";
+import { useState } from "react";
 import { updateAccount } from "../../accout/model/accoutSlice";
+import { IconCheck } from "@tabler/icons-react";
 
+const Mockdata = [
+  { id: 1, role: "Разработчик" },
+  { id: 2, role: "Администратор" },
+  { id: 3, role: "Директор" },
+  { id: 4, role: "Преподаватель" },
+  { id: 5, role: "Выпускник" },
+  { id: 6, role: "Карьерный коуч" },
+  { id: 7, role: "Студент" },
+];
 
-const schemaNewPeople = yup  
-    .object()  
-    .shape({  
-      id: yup.number().required() ,
-    firstName: yup.string().required() ,
-    lastName: yup.string().required() ,
-    email: yup.string().required() ,
-    isMember: yup.boolean().required(),  
-        roleId: yup.number().required()
+const TeachList = ({ el, updateAll }: { el: any; updateAll: boolean }) => {
+  const { handleSubmit } = useForm({});
+  const dispatch = useAppDispatch();
 
-      
-    })  
-    .required();  
+  // Используем состояние для отслеживания выбранного значения роли
+  const [selectedRole, setSelectedRole] = useState<string | null>(null);
 
+  const updatePeople = (data: any) => {
+    // Присоединяем выбранную роль к данным формы
+    const formData = {
+      ...data,
+      roleId: selectedRole,
+    };
 
-
-
-
-    const Mockdata=[{id:1,
-      role: "Разработчик",
-    },
-    {id:2,
-      role: "Администратор",
-    },
-    {id:3,
-      role: "Директор",
-    },
-    {id:4,
-      role: "Преподаватель",
-    },
-    {id:5,
-      role: "Выпускник",
-    },
-    {id:6,
-       role: "Карьерный коуч",
-    },
-    {id:7,
-        role: "Студент",
-    },
-    
-    ]
-
-
-const TeachList = ({ el }: any) => {
-
-    const roles = useAppSelector(state=> state.role.roles)
-
-
-    const allRoles=roles.map((role)=>role.role)
-    console.log(222, allRoles);
-    
-  //   const yourRole= roles.filter((role)=> el.roleId===role.id)
-  //  const [yourRoleaa] =yourRole.map((role)=>role.role)
-
-
-
-    
-    
-   const {  
-    register,  
-    handleSubmit,  
-  } = useForm({  
-    defaultValues: {  
-      id:0,
-      firstName:'',
-      lastName:'',
-      email:'',
-
-        isMember:false,  
-        roleId: 0 
-    },  
-    resolver: yupResolver(schemaNewPeople),  
-  });
-
-
-  const dispatch = useAppDispatch();  
-
-    const updatePeople = (accountId: number, data: PesonalPageTypeOnly) => {  
-        dispatch(updateAccount({ data,  accountId }))  
-            .catch(console.log);  
-    }  
-
-
+    console.log(formData);
+    dispatch(updateAccount({ data: formData, accountId: el.id })).catch(
+      console.log
+    );
+  };
 
   return (
     <Table.Tr key={el.id}>
@@ -108,32 +50,49 @@ const TeachList = ({ el }: any) => {
           </div>
         </Group>
       </Table.Td>
-      
 
       <Table.Td>
-      <form onSubmit={handleSubmit((data) => updatePeople(el.id, data))}>
-<select {...register("roleId")}>
-        {Mockdata.map((race)=> <option value={race.id}>{race.role}</option>)}
-       
-      </select>
+        <form onSubmit={handleSubmit(updatePeople)}>
+          <Group spacing="xs">
+            <Select
+              value={selectedRole}
+              onChange={(value) => setSelectedRole(value)}
+              placeholder="Выберите роль"
+              data={Mockdata.map((role) => ({
+                value: role.id.toString(),
+                label: role.role,
+              }))}
+              disabled={!updateAll} 
+              style={{ minWidth: 150 }}
+            />
+<ActionIcon
+                type="submit"
+                variant="outline"
+                size="lg"
+                aria-label="Gradient action icon"
+                color="violet">
+      <IconCheck />
+    </ActionIcon>
 
-
-      </form>
-      
-            
-          </Table.Td>
-          <Table.Td>
-           
-              <Badge color="gray" fullWidth variant="light">
-              
-        <option {...register("isMember")} value={'true'}>Подтвердить</option>
-       
-   
-              </Badge>
-           
-          </Table.Td>
+          </Group>
+        </form>
+      </Table.Td>
     </Table.Tr>
   );
 };
 
 export default TeachList;
+
+
+
+
+
+
+{/* <ActionIcon
+                type="submit"
+                variant="outline"
+                size="lg"
+                aria-label="Gradient action icon"
+                color="violet">
+      <IconCheck />
+    </ActionIcon> */}
