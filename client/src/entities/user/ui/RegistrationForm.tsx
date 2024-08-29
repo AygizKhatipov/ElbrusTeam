@@ -8,6 +8,7 @@ import {
   Container,
   Button,
   Tooltip,
+  Alert,
 } from "@mantine/core";
 import classes from "../css/AuthenticationImage.module.css";
 import { useNavigate } from "react-router-dom";
@@ -15,14 +16,20 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { UserWithoutId } from "../types/userType";
 import { useAppDispatch } from "../../../app/providers/store/store";
 import { userRegistration } from "../model/userSlice";
+import { useState } from "react";
+import { IconHeart } from "@tabler/icons-react";
+
 
 
 
 
 function RegistrationForm(): JSX.Element {
+  const icon = <IconHeart />;
   const dispatch = useAppDispatch();
 
   const navigate = useNavigate();
+
+  const [close, setClose]= useState(true)
 
   const {
     register,
@@ -40,7 +47,7 @@ function RegistrationForm(): JSX.Element {
     const { confirmPassword, ...userDataWithoutPassword } = data;
     dispatch(userRegistration(userDataWithoutPassword))
       .then(() => {
-        navigate("/");
+        setClose(false)
       })
       .catch(console.log);
   };
@@ -50,7 +57,7 @@ function RegistrationForm(): JSX.Element {
   }
 
   return (
-    <Container size={420} my={40}>
+    <Container size={420} my={40}>{close?(<>
       <Title ta="center" className={classes.title}>
         Регистрация
       </Title>
@@ -177,8 +184,14 @@ function RegistrationForm(): JSX.Element {
           <Button type="submit" color="violet" fullWidth mt="xl">
             Зарегистрироваться
           </Button>
+          
+          
         </Paper>
-      </form>
+      </form></>):(<><div className={classes.user} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '50vh' }}>  
+      <Alert className={classes.user} color="#5430b0" title="Поздравляем, Вы зарегистрированы!" icon={icon} >  
+        Пожалуйста, подождите когда администратор даст вам доступ и авторизуйтесь  
+      </Alert>  
+    </div>  </>)}
     </Container>
   );
 }
