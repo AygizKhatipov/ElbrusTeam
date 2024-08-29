@@ -15,6 +15,7 @@ import {
   updatePretendent,
 } from '../../accout/model/accoutSlice';
 import { IconCheck } from '@tabler/icons-react';
+import classes from './admin.module.css'
 
 
 const Mockdata = [
