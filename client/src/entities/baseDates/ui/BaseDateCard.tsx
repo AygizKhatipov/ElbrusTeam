@@ -13,7 +13,8 @@ const BaseCard = ({ el, isDetailView, onBackClick }: any) => {
             {el.title}
           </Text>
           <Text  className={classes.title} mt={5}>{el.description}</Text>
-          <Text mt="sm">{el.article}</Text>
+          
+          <Text mt="sm" dangerouslySetInnerHTML={{ __html:  el.article }} />
           <Button className={classes.card} mt="md" variant="outline" color='5430b0' onClick={onBackClick}>
             Назад
           </Button>
