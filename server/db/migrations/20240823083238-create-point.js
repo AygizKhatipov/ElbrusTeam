@@ -10,7 +10,8 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       point: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        defaultValue: 30
       },
       userId: {
         type: Sequelize.INTEGER,
