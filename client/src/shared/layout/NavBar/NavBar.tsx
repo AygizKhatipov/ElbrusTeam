@@ -129,13 +129,13 @@ function Navbar(): JSX.Element {
     <Box pb={0}>
       <header className={classes.header}>
         <Group justify="space-between" h="100%">
-          <img
+          
+          {user?.isMember ? (
+            <><img
             src="https://habrastorage.org/getpro/moikrug/uploads/company/100/007/092/7/logo/medium_a88920f785a30e86c6e4a0cebbc66644.png"
             style={{ width: 60, margin: 5 }}
             alt="logo"
           />
-          {user?.isMember ? (
-            <>
               <Group h="100%" gap={0} visibleFrom="sm">
                 <Link to="/" className={classes.link}>
                   Главная
@@ -254,8 +254,12 @@ function Navbar(): JSX.Element {
               </Group>
             </>
           ) : (
-            <>
-              <Group h="100%" gap={0} visibleFrom="sm">
+            <><Group h="100%"  visibleFrom="sm"><img
+            src="https://habrastorage.org/getpro/moikrug/uploads/company/100/007/092/7/logo/medium_a88920f785a30e86c6e4a0cebbc66644.png"
+            style={{ width: 60, margin: 5 }}
+            alt="logo"
+          />
+              
                 <Link to="/" className={classes.link}>
                   Главная
                 </Link>
