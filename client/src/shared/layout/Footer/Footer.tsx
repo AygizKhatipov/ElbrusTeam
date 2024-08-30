@@ -35,7 +35,7 @@ export function FooterSocial() {
         <Text flex-align="center" size="sm" color="dimmed" className={classes.year}>  
           
           <a target='_blank' href="https://github.com/AygizKhatipov/ElbrusTeam">  
-          С любовью Рыси!
+          С любовью, Рыси!
           <br />
               {/* <IconBrandTelegram style={{ width: rem(18), height: rem(18) }} stroke={1.5} />   */}
             </a> 

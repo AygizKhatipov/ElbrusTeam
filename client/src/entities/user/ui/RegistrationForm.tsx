@@ -189,7 +189,7 @@ function RegistrationForm(): JSX.Element {
         </Paper>
       </form></>):(<><div className={classes.user} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '50vh' }}>  
       <Alert className={classes.user} color="#5430b0" title="Поздравляем, Вы зарегистрированы!" icon={icon} >  
-        Пожалуйста, подождите когда администратор даст вам доступ и авторизуйтесь  
+        Пожалуйста, подождите, когда администратор даст вам доступ, после этого вы сможете авторизоваться.  
       </Alert>  
     </div>  </>)}
     </Container>

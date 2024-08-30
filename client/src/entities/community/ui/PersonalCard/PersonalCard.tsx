@@ -42,7 +42,7 @@ function PersonalCard(): JSX.Element {
         Страна: {account.Account?.country}
         </Text >
         <Text ta="center" fz="lg" fw={500} mt="sm">
-       Город:{account.Account?.city}
+       Город: {account.Account?.city}
         </Text >
         <Text ta="center" fz="lg" fw={500} mt="sm">
           Телефон: {account.Account?.phone}

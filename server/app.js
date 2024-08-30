@@ -7,7 +7,7 @@ const WebSocket = require('ws');
 const { Chat } = require('./db/models');
 const path = require('path');
 
-const PORT = 80 ;
+const PORT = 3000 ;
 const server = http.createServer(app);
 const staticFolder = path.join(__dirname, 'public', 'dist');
 

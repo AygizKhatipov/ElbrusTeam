@@ -35,7 +35,7 @@ function LoginForm(): JSX.Element {
           else{
             return (
               notifications.show({
-                title: 'Error',
+                title: 'Ошибка',
                 message: 'Пользователь не найден',
                 color: 'red',
                 classNames: classes,
