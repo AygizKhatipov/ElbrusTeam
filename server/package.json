@@ -5,8 +5,9 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js --ext js,jsx,json",
-    "dbr": " npx sequelize db:migrate && npx sequelize db:seed:all",
-    "dbm": " npx sequelize db:migrate:undo:all && npx sequelize db:seed:undo:all"
+    "dbs": " npx sequelize db:migrate && npx sequelize db:seed:all",
+    "dbm": " npx sequelize db:migrate:undo:all && npx sequelize db:seed:undo:all",
+    "dbr": "npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate:undo:all && npx sequelize db:migrate && npx sequelize db:seed:undo:all && npx sequelize db:seed:all"
   },
   "keywords": [],
   "author": "",
