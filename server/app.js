@@ -5,16 +5,22 @@ const apiRouter = require('./routes/api.routes');
 const http = require('http');
 const WebSocket = require('ws');
 const { Chat } = require('./db/models');
+const path = require('path');
 
-const PORT = process.env.PORT ?? 3000;
+const PORT = 80 ;
 const server = http.createServer(app);
+const staticFolder = path.join(__dirname, 'public', 'dist');
 
+app.use(express.static(staticFolder));
 
 const webSocketServer = new WebSocket.Server({ server });
 
 config(app);
 
 app.use('/api', apiRouter);
+app.use('*', (req, res) => {
+  res.sendFile(path.join(staticFolder, 'index.html'))
+})
 
 
 server.listen(PORT, () => {

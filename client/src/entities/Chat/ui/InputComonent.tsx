@@ -21,7 +21,7 @@ function InputComonent(): JSX.Element {
     console.log(message)
 
     useEffect(() => {   
-        socket.current = new WebSocket('ws://localhost:3000')
+        socket.current = new WebSocket('ws://localhost/')
         socket.current.onopen = () => {
             setConnected(true)
             const connectMessage = JSON.stringify({ event: 'connection', username: userName });
