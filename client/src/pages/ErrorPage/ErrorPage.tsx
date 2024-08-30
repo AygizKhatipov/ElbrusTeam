@@ -13,7 +13,7 @@ export function ErrorPage() {
       <div className={classes.textContainer}>
         <Title className={classes.title}>Что-то пошло не так...</Title>
         <Text c="dimmed" size="lg">
-          Страницу, на которую вы хотели попасть, не существует... Только, если в вашем воображении.
+          Страницы, на которую вы хотели попасть, не существует... Только, если в вашем воображении.
         </Text>
       </div>
     </Container>
