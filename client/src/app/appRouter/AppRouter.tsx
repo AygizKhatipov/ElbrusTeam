@@ -16,6 +16,8 @@ import AdminPage from '../../pages/AdminPage/AdminPage';
 import CommunitiesPage from '../../pages/Community/CommunityPage';
 import AnonimPage from '../../pages/AdminPage/AnonimousPage';
 import PersonalCard from '../../entities/community/ui/PersonalCard/PersonalCard';
+import { ErrorPage } from '../../pages/ErrorPage/ErrorPage';
+
 
 
 
@@ -41,7 +43,7 @@ function AppRoutes(): JSX.Element {
         <Route path="/logout" element={<LogoutPage />} />
         <Route path="/admin" element={<AdminPage />} />
         <Route  path= "/chat" element={<ChatPage/>}/>
-        <Route path="*" element={<div>404</div>} />
+        <Route path="*" element={<ErrorPage/>} />
       </Routes>
     </>
   );
