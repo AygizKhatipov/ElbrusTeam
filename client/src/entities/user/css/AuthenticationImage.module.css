@@ -1,0 +1,22 @@
+.title {
+    font-family:
+      Greycliff CF,
+      var(--mantine-font-family);
+    font-weight: 900;
+  }
+
+  .invalid {
+  background-color: var(--mantine-color-red-light);
+}
+
+.icon {
+  color: light-dark(var(--mantine-color-red-6), var(--mantine-color-red-7));
+}
+.user {
+    
+    color:#5430b0;
+    color: light-dark(var(#5430b0), var(--mantine-color-white) );
+  
+    @mixin hover { background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-3))
+    }
+  }

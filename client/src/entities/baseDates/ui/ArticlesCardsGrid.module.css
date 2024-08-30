@@ -1,0 +1,19 @@
+.card {color: #5430b0;
+  color: light-dark(var(#5430b0), var(--mantine-color-white) );
+    transition:
+      transform 150ms ease,
+      box-shadow 150ms ease;
+  
+    &:hover {
+      transform: scale(1.01);
+      box-shadow: var(--mantine-shadow-md);
+      
+    }
+  }
+  
+  .title {
+    font-family: 'Greycliff CF', var(--mantine-font-family);
+    font-weight: bold;
+    color: light-dark(var(#5430b0), var(--mantine-color-white) );
+    
+  }

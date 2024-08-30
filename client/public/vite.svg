@@ -1,0 +1,6 @@
+   <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">  
+        <rect width="200" height="200" fill="#5E4AE3"/>  
+        <text x="50%" y="30%" text-anchor="middle" fill="#00BFFF" font-size="24" font-family="Arial" dy=".3em">ELBRUS</text>  
+        <text x="50%" y="50%" text-anchor="middle" fill="#00BFFF" font-size="24" font-family="Arial" dy=".3em">/</text>  
+        <text x="50%" y="70%" text-anchor="middle" fill="#00BFFF" font-size="24" font-family="Arial" dy=".3em">BOOT CAMP</text>  
+    </svg>  
