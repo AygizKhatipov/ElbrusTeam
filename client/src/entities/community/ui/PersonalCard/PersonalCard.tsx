@@ -1,8 +1,7 @@
 
-import { Card, Avatar, Text, Group, Button } from '@mantine/core';
+import { Card, Avatar, Text, Group } from '@mantine/core';
 import classes from '../../../accout/style/UserCardImage.module.css';
-import { useDisclosure } from '@mantine/hooks';
-import { Modal } from '@mantine/core';
+
 import { useAppSelector } from '../../../../app/providers/store/store';
 import { useParams } from 'react-router-dom';
 

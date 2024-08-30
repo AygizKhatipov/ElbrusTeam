@@ -1,5 +1,5 @@
 
-import { Button, Grid, rem } from '@mantine/core';
+import {  Grid, rem } from '@mantine/core';
 import {  
   Card,  
   Image,  
@@ -8,12 +8,12 @@ import {
 } from '@mantine/core';  
 import classes from './ArticleCard.module.css';  
 import { useAppSelector } from '../../../app/providers/store/store';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const TeacherCard = ({ el }: { el: any }) => {  
   // const linkProps = { href: 'https://mantine.dev', target: '_blank', rel: 'noopener noreferrer' };  
   // const theme = useMantineTheme();  
-  const navigate = useNavigate()
+
   const roles = useAppSelector(state=> state.role.roles) 
     
     const yourRole= roles.filter((role)=> el.roleId===role.id)
